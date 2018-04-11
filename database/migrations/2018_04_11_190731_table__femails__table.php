@@ -15,6 +15,7 @@ class TableFemailsTable extends Migration
     {
         Schema::create('femals', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title', 255);
             $table->timestamps();
         });
     }
