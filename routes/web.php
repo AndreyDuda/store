@@ -21,3 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'IndexController@index');
 Route::get('product/{id}', 'IndexController@show');
+
+
+Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
+    Route::get('/', 'Admin/AuthController@index')->name('adminProduct');
+    Route::post('/product/{id}', 'Admin/AuthController@show')->name('adminProductOne');
+    Route::post('/edit', 'Admin/AuthController@store')->name('adminProductEdit');
+});
