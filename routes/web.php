@@ -28,5 +28,6 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::post('/product/{id}', 'Admin/AuthController@show')->name('adminProductOne');
     Route::post('/edit', 'Admin/AuthController@store')->name('adminProductEdit');
     Route::post('/delate', 'Admin/AuthController@destroy')->name('adminProductDelate');
+    Route::get('/ex', 'Admin\AuthController@ex');
 
 });

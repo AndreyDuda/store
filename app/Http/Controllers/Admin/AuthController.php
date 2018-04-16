@@ -4,9 +4,23 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+/*use IOFactory ;*/
+/*use App\Helpers\excel\PHPExcel;*/
+/*use App\Helpers\excel;*/
+/*include_once  __DIR__.'/../../../Helpers/excel/PHPExcel/IOFactory.php';*/
+//include_once  __DIR__.'/../../../Helpers/excel/PHPExcel.php';
+
+
 
 class AuthController extends Controller
 {
+    function ex()
+    {
+//
+        $app = view( 'index')->render();
+
+      dd($app);
+    }
     /**
      * Display a listing of the resource.
      *

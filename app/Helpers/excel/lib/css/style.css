@@ -1,0 +1,34 @@
+*{
+	background: white
+}
+
+.navigate
+{
+	height: 50px;
+	width: 100%;
+	background: black;
+	margin-bottom: 10px;
+
+}
+.navi
+{	
+	list-style: none;	
+}
+.navi li
+{
+	float: left; /* Выстраивание элементов списка в один ряд. */
+   margin-right: 1px; /* создание отступов для того, чтобы не сливались пункты меню. */
+   font-family: Verdana, Arial, Helvetica, sans-serif; /* Указание типа шрифта. */
+   font-size: 14px; /* Размер текста в ссылках. */
+}
+.navi li a {
+   display: block; /* Изменение отображения на блочное для того чтобы иметь возможность задать внутренние отступы. */
+   padding: 15px 10px;  /* Внутри блочные отступы. */
+   background: black;
+   color: white; /* Цвет текста в блоках меню. */
+   text-decoration: none; /* Устранение подчёркивания ссылок. */
+   
+}
+.navi li a:hover {
+      color: yellow;  /* Цвет текста при наведении курсора. */
+}
