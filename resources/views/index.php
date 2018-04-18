@@ -12,7 +12,9 @@ require_once '../app/Helpers/excel/PHPExcel.php';
 foreach($excel ->getWorksheetIterator() as $worksheet) {
     $lists[] = $worksheet->toArray();
 }
-return $lists;
+/*
+return redirect()->route('ex')->with('lists', $lists);*/
+
 
 
 

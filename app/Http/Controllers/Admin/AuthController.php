@@ -14,13 +14,18 @@ use App\Http\Controllers\Controller;
 
 class AuthController extends Controller
 {
-    function ex()
+    /*function ex(Request $request)
     {
-//
-        $app = view( 'index')->render();
+        if($request->lists)
+        {
+            dd($request->lists);
+        }
 
-      dd($app);
-    }
+//
+        return view( 'index')->render();
+
+
+    }*/
     /**
      * Display a listing of the resource.
      *
