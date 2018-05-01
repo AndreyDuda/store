@@ -29,7 +29,7 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::post('/edit', 'Admin/AuthController@store')->name('adminProductEdit');
     Route::post('/delate', 'Admin/AuthController@destroy')->name('adminProductDelate');
    /* Route::post('/ex', 'Admin\AuthController@ex')->name('ex');*/
-    Route::get('/ex', 'BackService\excel\ExcelController@ex')->name('ex');
+    Route::get('/ex', 'Admin\BackService\excel\ExcelController@ex')->name('ex');
 
 
 });
