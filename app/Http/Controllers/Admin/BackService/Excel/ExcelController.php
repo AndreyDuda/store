@@ -29,8 +29,8 @@ class ExcelController extends Controller
         }
         $dbExcel = $request->session()->pull('dbExcel');
         $count = count($dbExcel[0]);
-        dd($count);
-        for($i=1; $i<$dbExcel; $i++){
+//for($i=$count-1; $i>0; $i--){
+        for($i=1; $i>$count; $i++){
             DB::table('products')->insert(
 
                     [
@@ -49,7 +49,7 @@ class ExcelController extends Controller
                     ]
                 );
         }
-
+        return 1;
 
     }
 
