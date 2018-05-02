@@ -1,5 +1,5 @@
 <?php
-/*
+
 require_once 'PHPExcel.php';
 include 'header.html';
 
@@ -11,41 +11,14 @@ include 'header.html';
 
 foreach($excel ->getWorksheetIterator() as $worksheet) {
     $lists[] = $worksheet->toArray();
+
 }
-return $lists;*/
-
-
-
-
-
-
-
-
-
-
-
-	/*$objPHPExcel = new PHPExcel();
-
-	$objPHPExcel->setActiveSheetIndex(0);
-
-	$active_sheet = $objPHPExcel->getActiveSheet();
-
-
-
-	
-
-	$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');*/
-
-
-
-
-
-
-
-
-
-
-
+echo '1';
+Illuminate\Support\Facades\Session::flash('dbExcel', $lists);
+echo 'до';
+return true;
+echo 'после';
+/*return redirect()->route('excelWrite',['data' => $lists]);*/
 
 
 
