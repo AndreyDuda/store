@@ -30,26 +30,36 @@ class ExcelController extends Controller
         $dbExcel = $request->session()->pull('dbExcel');
         $count = count($dbExcel[0]);
 //for($i=$count-1; $i>0; $i--){
-        for($i=1; $i>$count; $i++){
+       /* dd($dbExcel[0]);*/
+        for($i=1; $i<$count; $i++){
             DB::table('products')->insert(
 
                     [
-                        '1c_id'      => isset($dbExcel[0][$i][0]) ? $dbExcel[0][$i][0] :0 ,
-                        'code'       => isset($dbExcel[0][$i][1]) ? $dbExcel[0][$i][1] :1 ,
-                        'title'      => isset($dbExcel[0][$i][2]) ? $dbExcel[0][$i][2] :'нет описания' ,
-                        'price_many' => isset($dbExcel[0][$i][3]) ? $dbExcel[0][$i][3] :0 ,
-                        'price_one'  => isset($dbExcel[0][$i][4]) ? $dbExcel[0][$i][4] :0 ,
-                        'count'      => isset($dbExcel[0][$i][5]) ? $dbExcel[0][$i][5] :0 ,
-                        'photo'      => isset($dbExcel[0][$i][6]) ? $dbExcel[0][$i][6] :'нет описания' ,
-                        'desc'       => isset($dbExcel[0][$i][18])? $dbExcel[0][$i][18]:'нет описания' ,
-                        'meta_title' => isset($dbExcel[0][$i][19])? $dbExcel[0][$i][19]:'нет описания' ,
-                        'meta_desc'  => isset($dbExcel[0][$i][20])? $dbExcel[0][$i][20]:'нет описания' ,
-                        'meta_key'   => isset($dbExcel[0][$i][21])? $dbExcel[0][$i][21]:'нет описания' ,
-                        'sale'       => isset($dbExcel[0][$i][22])? $dbExcel[0][$i][22]:0
+                        '1c_id'      => isset($dbExcel[0][$i][0]) ? $dbExcel[0][$i][0]  : 0 ,
+                        'code'       => isset($dbExcel[0][$i][1]) ? $dbExcel[0][$i][1]  : 1 ,
+                        'title'      => isset($dbExcel[0][$i][2]) ? $dbExcel[0][$i][2]  : 'нет описания' ,
+                        'price_many' => isset($dbExcel[0][$i][3]) ? $dbExcel[0][$i][3]  : 0 ,
+                        'price_one'  => isset($dbExcel[0][$i][4]) ? $dbExcel[0][$i][4]  : 0 ,
+                        'count'      => isset($dbExcel[0][$i][5]) ? $dbExcel[0][$i][5]  : 0 ,
+                        'photo'      => isset($dbExcel[0][$i][6]) ? $dbExcel[0][$i][6]  : 'нет описания' ,
+                        'femals'     => isset($dbExcel[0][$i][11]) ? $dbExcel[0][$i][11] : 'нет описания' ,
+                        'categories' => isset($dbExcel[0][$i][12]) ? $dbExcel[0][$i][12] : 'нет описания' ,
+                        'sesons'     => isset($dbExcel[0][$i][13]) ? $dbExcel[0][$i][13] : 'нет описания' ,
+                        'size'       => isset($dbExcel[0][$i][14]) ? $dbExcel[0][$i][14] : 'нет описания' ,
+                        'style'      => isset($dbExcel[0][$i][15]) ? $dbExcel[0][$i][15] : 'нет описания' ,
+                        'made'       => isset($dbExcel[0][$i][16]) ? $dbExcel[0][$i][16] : 'нет описания' ,
+                        'label'      => isset($dbExcel[0][$i][17]) ? $dbExcel[0][$i][17] : 'нет описания' ,
+                        'desc'       => isset($dbExcel[0][$i][18])? $dbExcel[0][$i][18] : 'нет описания' ,
+                        'meta_title' => isset($dbExcel[0][$i][19])? $dbExcel[0][$i][19] : 'нет описания' ,
+                        'meta_desc'  => isset($dbExcel[0][$i][20])? $dbExcel[0][$i][20] : 'нет описания' ,
+                        'meta_key'   => isset($dbExcel[0][$i][21])? $dbExcel[0][$i][21] : 'нет описания' ,
+                        'sale'       => isset($dbExcel[0][$i][22])? $dbExcel[0][$i][22] : 0
                     ]
                 );
+
+
         }
-        return 1;
+        dd($dbExcel[0]);
 
     }
 

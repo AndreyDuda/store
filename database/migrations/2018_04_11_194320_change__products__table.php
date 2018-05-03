@@ -13,9 +13,9 @@ class ChangeProductsTable extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
+        /*Schema::table('products', function (Blueprint $table) {
             //
-        });
+        });*/
     }
 
     /**

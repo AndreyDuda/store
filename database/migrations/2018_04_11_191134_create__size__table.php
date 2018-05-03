@@ -13,11 +13,11 @@ class CreateSizeTable extends Migration
      */
     public function up()
     {
-        Schema::create('sizes', function (Blueprint $table) {
+       /* Schema::create('sizes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 255);
             $table->timestamps();
-        });
+        });*/
     }
 
     /**

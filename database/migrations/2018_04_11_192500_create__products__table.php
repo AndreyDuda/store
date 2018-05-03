@@ -22,6 +22,13 @@ class CreateProductsTable extends Migration
             $table->float('price_one');
             $table->integer('count');
             $table->string('photo', 255);
+            $table->string('femals', 255);
+            $table->string('categories', 255);
+            $table->string('sesons', 255);
+            $table->string('size', 255);
+            $table->string('style', 255);
+            $table->string('made', 255);
+            $table->string('label', 255);
             $table->text('desc');
             $table->text('meta_title');
             $table->text('meta_desc');
