@@ -42,7 +42,7 @@ class ExcelController extends Controller
                         'price_one'  => isset($dbExcel[0][$i][4]) ? $dbExcel[0][$i][4]  : 0 ,
                         'count'      => isset($dbExcel[0][$i][5]) ? $dbExcel[0][$i][5]  : 0 ,
                         'photo'      => isset($dbExcel[0][$i][6]) ? $dbExcel[0][$i][6]  : 'нет описания' ,
-                        'femals'     => isset($dbExcel[0][$i][11]) ? $dbExcel[0][$i][11] : 'нет описания' ,
+                        'femals'     => isset($dbExcel[0][$i][11]) ? ($dbExcel[0][$i][11] == 'мужские товары')? '1': '2' : '0' ,
                         'categories' => isset($dbExcel[0][$i][12]) ? $dbExcel[0][$i][12] : 'нет описания' ,
                         'sesons'     => isset($dbExcel[0][$i][13]) ? $dbExcel[0][$i][13] : 'нет описания' ,
                         'size'       => isset($dbExcel[0][$i][14]) ? $dbExcel[0][$i][14] : 'нет описания' ,

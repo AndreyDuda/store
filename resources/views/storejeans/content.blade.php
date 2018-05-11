@@ -87,7 +87,7 @@
             </div>
         </div>
     </div>
-    <a href="catalog.php" class="all-catalog">
+    <a href="{{ route('productAll') }}" class="all-catalog">
         <h5>Смотреть весь каталог</h5>
     </a>
 </div>
