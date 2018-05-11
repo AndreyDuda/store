@@ -20,7 +20,12 @@ Auth::routes();
 /*Route::get('/home', 'HomeController@index')->name('home');*/
 
 Route::get('/', 'IndexController@index');
-Route::get('product/{id}', 'IndexController@show');
+Route::get('/contact', 'IndexController@contact');
+Route::get('/delivery', 'IndexController@delivery');
+Route::get('/product', 'ProductController@index');
+Route::get('/product/{id}', 'IndexController@show');
+Route::get('/cart', 'CartController@index');
+
 
 
 Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){

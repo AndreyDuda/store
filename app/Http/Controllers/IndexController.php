@@ -18,10 +18,20 @@ class IndexController extends SiteController
 
     public function index()
     {
-        /*$products = $this->product_rep->get();*/
+        $products = $this->product_rep->getAll();
        /* $content = view(env('THEME') . '.content')->with('products', $products)->render();*/
         $content = view(env('THEME') . '.content')->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
+    }
+
+    public function contact()
+    {
+
+    }
+
+    public function delivery()
+    {
+
     }
 }
