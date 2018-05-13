@@ -151,7 +151,7 @@ $(document).ready(function(){
 });
 		//Доставка в Другие страны
 $(document).ready(function(){
-	$('.delivery-box-country').click(function(event){
+	$('.index-box-country').click(function(event){
 		close();
 		if (event.target.localName == 'span') {
 			event.currentTarget.children[0].style.display = "block";

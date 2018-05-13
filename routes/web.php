@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/', 'IndexController@index');
 Route::get('/contact', 'IndexController@contact');
-Route::get('/delivery', 'IndexController@delivery');
+Route::get('/index', 'IndexController@index');
 Route::get('/product', 'ProductController@index')->name('productAll');
 Route::get('/product/{id}', 'IndexController@show');
 Route::get('/cart', 'CartController@index');
