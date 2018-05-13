@@ -21,7 +21,7 @@ abstract class Repository
     }
 
     public function getOne($one_c_id){
-        $result = $this->model->where('1c_id', $one_c_id)->first();
+        $result = $this->model->where('product_id', $one_c_id)->first();
 
         return $result;
     }

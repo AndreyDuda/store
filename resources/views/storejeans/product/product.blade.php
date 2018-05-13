@@ -19,7 +19,11 @@
 <div class="wrapper flex-between">
     <div class="product-foto">
         <div class="slider-product-nav">
-            <div class="slider-nav_item"><img src="img/product/product (1).jpg" alt=""></div>
+            @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
+            <div class="slider-nav_item"><img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt=""></div>
+            @else
+                <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt=""></div>
+            @endif
             <div class="slider-nav_item"><img src="img/product/product (2).jpg" alt=""></div>
             <div class="slider-nav_item"><img src="img/product/product (3).jpg" alt=""></div>
             <div class="slider-nav_item"><img src="img/product/product (4).jpg" alt=""></div>
@@ -36,15 +40,15 @@
     <div class="product-info">
         <div class="wrap">
             <div class="product-name">
-                <h2> 6102 CARACAJ СИНИЕ (25-30, 6 ЕД.) ДЖИНСЫ ЖЕНСКИЕ УЗКИЕ ТЕРКА ДЕМИСЕЗОННЫЕ СТРЕЙЧ
+                <h2> {{ $product->title }}
                 </h2>
                 <div class="product-barcode">
-                    код товара: <span> 547601 </span>
+                    код товара: <span> {{ $product->code }} </span>
                 </div>
             </div>
             <div class="product-price">
                 <p>12.00 <span><i class="fa fa-usd" aria-hidden="true"></i></span></p>
-                <div class="isset"> В наличии </div>
+                <div class="isset"> {{ ($product->count > 0)? 'В наличии' : 'Нет в наличии' }} </div>
             </div>
         </div>
         <hr>
@@ -55,37 +59,37 @@
                     <tr>
                         <td>Сезон</td>
                         <td>
-                            <a href="#" class="filter-link">Зима</a>
+                            <a href="#" class="filter-link">{{ $product->sesons }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td>Размер</td>
                         <td>
-                            <a href="#" class="filter-link">Норма</a>
+                            <a href="#" class="filter-link">{{ $product->size }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td>Стиль</td>
                         <td>
-                            <a href="#" class="filter-link">Класика</a>
+                            <a href="#" class="filter-link">{{ $product->size }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td>Страна</td>
                         <td>
-                            <a href="#" class="filter-link">Китай</a>
+                            <a href="#" class="filter-link">{{ $product->country }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td>Фирма</td>
                         <td>
-                            <a href="#" class="filter-link">Gloria</a>
+                            <a href="#" class="filter-link">{{ $product->label }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td>Упаковка</td>
                         <td>
-                            <a href="#" class="filter-link">6 шт.</a>
+                            <a href="#" class="filter-link">{{ $product->count }} шт.</a>
                         </td>
                     </tr>
                 </table>
@@ -320,7 +324,7 @@
                         </div>
                     </div><!-- id="myModal" -->
                     <div class="ruler" id="ruler">
-                        <img src="img/ruler-icon.png" alt="Таблица размеров">
+                        <img src="{{ asset(env('THEME')) }}/img/ruler-icon.png" alt="Таблица размеров">
                         <p >Таблица размеров</p>
                     </div>
                     <div class="product-buy">

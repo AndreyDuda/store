@@ -22,8 +22,10 @@ Auth::routes();
 Route::get('/', 'IndexController@index');
 Route::get('/contact', 'IndexController@contact');
 Route::get('/index', 'IndexController@index');
-Route::get('/product', 'ProductController@index')->name('productAll');
-Route::get('/product/{id}', 'IndexController@show');
+Route::get('/products', 'ProductController@index')->name('productAll');
+//Route::get('/product/code/{id}', 'IndexController@show')->name('productOne');
+Route::get('product/{id}', ['uses' => 'ProductController@show', 'as' => 'productOne'] );
+//Route::get('articles/cat/{cat_alias?}', ['uses' => 'ArticleController@index', 'as' => 'articlesCat' ] )->where('cat_alias', '[\w-]+');
 Route::get('/cart', 'CartController@index');
 
 

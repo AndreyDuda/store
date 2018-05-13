@@ -17,15 +17,17 @@ class ProductController extends SiteController
     public function index()
     {
         $products = $this->product_rep->getAll();
-        $content = view(env('THEME') . '.product.products')->render();
+        $content = view(env('THEME') . '.product.products')->with('products', $products)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
 
-    public function product()
+    public function show(Request $request)
     {
-        $products = $this->product_rep->getOne('1');
-        $content = view(env('THEME') . '.product.product')->render();
+        $id = $request->id;
+
+        $product = $this->product_rep->getOne($id);
+        $content = view(env('THEME') . '.product.product')->with('product', $product)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }

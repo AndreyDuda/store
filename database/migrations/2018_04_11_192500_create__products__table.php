@@ -15,19 +15,19 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('1c_id');
+            $table->integer('product_id');
             $table->string('code',255);
             $table->string('title', 255);
             $table->float('price_many');
             $table->float('price_one');
             $table->integer('count');
             $table->string('photo', 255);
-            $table->string('femals', 255);
+            $table->string('females', 255);
             $table->string('categories', 255);
             $table->string('sesons', 255);
             $table->string('size', 255);
             $table->string('style', 255);
-            $table->string('made', 255);
+            $table->string('country', 255);
             $table->string('label', 255);
             $table->text('desc');
             $table->text('meta_title');
