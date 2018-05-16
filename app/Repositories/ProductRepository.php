@@ -18,7 +18,7 @@ class ProductRepository extends Repository
         $this->model = $product;
     }
 
-    public function getCategories()
+    public function getCategory()
     {
 
     }
@@ -32,9 +32,10 @@ class ProductRepository extends Repository
     {
 
     }
-    public function getLable()
+    public function getLabel($label)
     {
-
+        $result = $this->model->where('label', $label)->limit(10);
+        return $result->get();
     }
 
     public function getStyle()

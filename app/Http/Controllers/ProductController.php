@@ -17,6 +17,7 @@ class ProductController extends SiteController
     public function index()
     {
         $products = $this->product_rep->getAll();
+
         $content = view(env('THEME') . '.product.products')->with('products', $products)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
@@ -25,9 +26,13 @@ class ProductController extends SiteController
     public function show(Request $request)
     {
         $id = $request->id;
-
         $product = $this->product_rep->getOne($id);
-        $content = view(env('THEME') . '.product.product')->with('product', $product)->render();
+        $products = $this->product_rep->getLabel($product->label);
+        $data = [
+            'product'  => $product,
+            'products' => $products
+        ];
+        $content = view(env('THEME') . '.product.product')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
