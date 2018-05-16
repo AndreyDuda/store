@@ -15,9 +15,27 @@ abstract class Repository
 
     public function getAll()
     {
-        $bulder = $this->model->select('*');
+        $pagination = true;
+        $builder = $this->model->select('*');
 
-        return $bulder->get();
+        if($pagination){
+            return $this->check( $builder->paginate('18') );
+        }
+        return $this->check($builder->get());
+    }
+
+    protected function check($result)
+    {
+        if( $result->isEmpty() ){
+            return FALSE;
+        }
+        $result->transform(function ($item, $key){
+            if( is_string($item->img ) && is_object( json_decode($item->img)) && (json_last_error() == JSON_ERROR_NONE) ){
+                $item->img = json_decode($item->img);
+            }
+            return $item;
+        });
+        return $result;
     }
 
     public function getOne($one_c_id){
