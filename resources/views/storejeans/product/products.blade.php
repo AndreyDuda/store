@@ -198,186 +198,45 @@
 @endforeach
         </div>
 
-        {{--<div class="wrapper">
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-            <a href="product.php" class="item-tovar">
-                <div class="img-tovar">
-                    <img src="{{ asset(env('THEME'))}}/img/tovar1.jpg" alt="">
-                </div>
-                <div class="brand">Franco Marela</div>
-                <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-            </a>
-        </div>--}}
+
     </div>
 </div>
-<div class="yet-tovar">
-    <h5>Показать ещё 20 товаров</h5>
-</div>
+{{--<div class="yet-tovar">
+    <h5>Показать ещё 18 товаров</h5>
+</div>--}}
 <div class="navigation">
-    <ul>
-        <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-        <li class="current">1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li class="not-hover"> ... </li>
-        <li>76</li>
-        <span><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+    <?
+        $count_product = $products->lastPage();
+    ?>
+    @if($count_product > 1)
+        <ul>
+        @if($products->currentPage() != 1)
+                <a href="{{ $products->url(1) }}"><span><i class="fa fa-arrow-left" aria-hidden="true"></i></span></a>
+        @endif
+
+        @for($i = 1; $i <= $count_product; $i++)
+            @if($products->currentPage() > $i && $products->currentPage()-$i < '2' && $products->currentPage() != $count_product - 1)
+                    <li> <a href="{{ $products->url($i) }}" >{{ $i }}</a></li>
+            @elseif($products->currentPage() == $i)
+                   {{-- <a class="selected disabled" >{{ $i }}</a>--}}
+                    <li class="current">{{ $i }}</li>
+            @elseif($products->currentPage() < $i && $i - $products->currentPage() < '2' && $products->currentPage() != $count_product - 1)
+                    <li> <a href="{{ $products->url($i) }}" >{{ $i }}</a></li>
+            @else
+
+            @endif
+        @endfor
+
+        {{--<li class="not-hover"> ... </li>--}}
+
+            @if($products->currentPage() != $count_product)
+                <a href="{{ $products->url($count_product - 1 ) }}"><span><i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
+            @endif
     </ul>
+    @endif
 </div>
+
+
 <div class="slider-catalog">
     <div class="title-carousel">
         <p>Выгодные предложения</p>
