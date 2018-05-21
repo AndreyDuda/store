@@ -204,7 +204,6 @@
 <div class="navigation">
     <?
         $count_product = $products->lastPage();
-
     ?>
     @if($count_product > 1)
         <ul>
@@ -214,19 +213,14 @@
 
         @for($i = 1; $i <= $count_product; $i++)
             @if($products->currentPage() > $i && $products->currentPage()-$i < $step && $products->currentPage() != $count_product - 1)
-                    <li> <a href="{{ $products->url($i) }}" >{{ $i }}</a></li>
+                    <a href="{{ $products->url($i) }}" ><li>{{ $i }}</li></a>
             @elseif($products->currentPage() == $i)
-                   {{-- <a class="selected disabled" >{{ $i }}</a>--}}
                     <li class="current">{{ $i }}</li>
             @elseif($products->currentPage() < $i && $i - $products->currentPage() < $step && $products->currentPage() != $count_product - 1)
-                    <li> <a href="{{ $products->url($i) }}" >{{ $i }}</a></li>
-            @else
-
+                    <a href="{{ $products->url($i) }}" > <li>{{ $i }}</li></a>
             @endif
         @endfor
-
         {{--<li class="not-hover"> ... </li>--}}
-
             @if($products->currentPage() != $count_product)
                 <a href="{{ $products->url($count_product - 1 ) }}"><span><i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
             @endif
@@ -239,8 +233,6 @@
     <div class="title-carousel">
         <p>Выгодные предложения</p>
     </div>
-
-
 
 
     <div class="slider-catalog">

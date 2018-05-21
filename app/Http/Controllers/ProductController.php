@@ -10,34 +10,34 @@ class ProductController extends SiteController
 {
     public function __construct(ProductRepository $product_rep)
     {
-        $this->product_rep = $product_rep;
-
         $this->template = env('THEME') . '.index';
+        $this->product_rep = $product_rep;
     }
 
     public function index()
     {
         $products = $this->product_rep->getAll();
-        $step = Config::get( 'settings.paginateStep' );
-        $data = [
+        $step     = Config::get( 'settings.paginateStep' );
+        $data     = [
             'products' => $products,
             'step'     => $step
         ];
-        $content = view(env('THEME') . '.product.products')->with($data)->render();
+
+        $content    = view(env('THEME') . '.product.products')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
 
     public function show(Request $request)
     {
-        $id = $request->id;
-        $product = $this->product_rep->getOne($id);
+        $id       = $request->id;
+        $product  = $this->product_rep->getOne($id);
         $products = $this->product_rep->getLabel($product->label);
-        $data = [
+        $data     = [
             'product'  => $product,
             'products' => $products
         ];
-        $content = view(env('THEME') . '.product.product')->with($data)->render();
+        $content    = view(env('THEME') . '.product.product')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
