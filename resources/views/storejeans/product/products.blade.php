@@ -1,8 +1,5 @@
 <div class="wrapper">
 
-
-
-
     <div class="slider-catalog">
         <div class="multiple-item">
             <div class="item">
@@ -207,6 +204,7 @@
 <div class="navigation">
     <?
         $count_product = $products->lastPage();
+
     ?>
     @if($count_product > 1)
         <ul>
@@ -215,12 +213,12 @@
         @endif
 
         @for($i = 1; $i <= $count_product; $i++)
-            @if($products->currentPage() > $i && $products->currentPage()-$i < '2' && $products->currentPage() != $count_product - 1)
+            @if($products->currentPage() > $i && $products->currentPage()-$i < $step && $products->currentPage() != $count_product - 1)
                     <li> <a href="{{ $products->url($i) }}" >{{ $i }}</a></li>
             @elseif($products->currentPage() == $i)
                    {{-- <a class="selected disabled" >{{ $i }}</a>--}}
                     <li class="current">{{ $i }}</li>
-            @elseif($products->currentPage() < $i && $i - $products->currentPage() < '2' && $products->currentPage() != $count_product - 1)
+            @elseif($products->currentPage() < $i && $i - $products->currentPage() < $step && $products->currentPage() != $count_product - 1)
                     <li> <a href="{{ $products->url($i) }}" >{{ $i }}</a></li>
             @else
 

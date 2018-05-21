@@ -7,7 +7,7 @@
  */
 
 namespace App\Repositories;
-
+use Config;
 
 abstract class Repository
 {
@@ -19,7 +19,7 @@ abstract class Repository
         $builder = $this->model->select('*');
 
         if($pagination){
-            return $this->check( $builder->paginate('18') );
+            return $this->check( $builder->paginate( Config::get( 'settings.paginate' )) );
         }
         return $this->check($builder->get());
     }

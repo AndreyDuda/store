@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Config;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 
@@ -17,8 +18,12 @@ class ProductController extends SiteController
     public function index()
     {
         $products = $this->product_rep->getAll();
-
-        $content = view(env('THEME') . '.product.products')->with('products', $products)->render();
+        $step = Config::get( 'settings.paginateStep' );
+        $data = [
+            'products' => $products,
+            'step'     => $step
+        ];
+        $content = view(env('THEME') . '.product.products')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
