@@ -13,10 +13,9 @@ abstract class Repository
 {
     protected $model = false;
 
-    public function getAll()
+    public function getAll($pagination = true)
     {
-        $pagination = true;
-        $builder = $this->model->select('*');
+        $builder = $this->model->select(['product_id', 'title', 'price_many', 'photo', 'label', 'desc']);
 
         if($pagination){
             return $this->check( $builder->paginate( Config::get( 'settings.paginate' )) );
