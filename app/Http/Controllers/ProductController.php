@@ -14,15 +14,28 @@ class ProductController extends SiteController
         $this->product_rep = $product_rep;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $select   = ['product_id', 'title', 'price_many', 'photo', 'label', 'desc'];
-        $paginate = Config::get( 'settings.paginate' );
-        $products = $this->product_rep->getAll($select, $paginate);
         $step     = Config::get( 'settings.paginateStep' );
+        $paginate = Config::get( 'settings.paginate' );
+        $select   = ['product_id', 'title', 'price_many', 'photo', 'label', 'desc'];
+
+       //dd($request->input());
+        $products = $this->product_rep->getAll($select, $paginate);
+        $lable    = $this->product_rep->uniqueValue('label');
+        $country  = $this->product_rep->uniqueValue('country');
+        $style    = $this->product_rep->uniqueValue('style');
+        $size     = $this->product_rep->uniqueValue('size');
+        $sesons   = $this->product_rep->uniqueValue('sesons');
+        //dd($lable);
         $data     = [
             'products' => $products,
-            'step'     => $step
+            'step'     => $step,
+            'lable'    => $lable,
+            'country'  => $country,
+            'style'    => $style,
+            'size'     => $size,
+            'sesons'   => $sesons
         ];
 
         $content    = view(env('THEME') . '.product.products')->with($data)->render();

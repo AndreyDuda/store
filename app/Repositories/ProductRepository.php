@@ -17,41 +17,4 @@ class ProductRepository extends Repository
     {
         $this->model = $product;
     }
-
-    public function getCategory()
-    {
-
-    }
-
-    public function getCountry()
-    {
-
-    }
-
-    public function getFemale()
-    {
-
-    }
-    public function getLabel($label)
-    {
-        $result = $this->model->where('label', $label)->limit(10);
-        return $result->get();
-    }
-
-    public function getStyle()
-    {
-
-    }
-
-    public function getSale()
-    {
-
-    }
-
-    public function getNew()
-    {
-
-    }
-
-
 }

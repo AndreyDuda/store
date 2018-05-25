@@ -21,10 +21,16 @@ abstract class Repository
             $builder = $this->model->select($select);
         }
 
-
         if($pagination){
             return $this->check( $builder->paginate( $pagination) );
         }
+        return $this->check($builder->get());
+    }
+
+    public function uniqueValue($select)
+    {
+        $builder = $this->model->distinct()->select($select);
+
         return $this->check($builder->get());
     }
 
