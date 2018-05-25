@@ -16,7 +16,9 @@ class ProductController extends SiteController
 
     public function index()
     {
-        $products = $this->product_rep->getAll();
+        $select   = ['product_id', 'title', 'price_many', 'photo', 'label', 'desc'];
+        $paginate = Config::get( 'settings.paginate' );
+        $products = $this->product_rep->getAll($select, $paginate);
         $step     = Config::get( 'settings.paginateStep' );
         $data     = [
             'products' => $products,

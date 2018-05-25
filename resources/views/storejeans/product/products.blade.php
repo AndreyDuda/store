@@ -273,6 +273,10 @@
                         </li>
                     </ul>
                 </dd>
+                <button type="submit" class="clear-filters-submit">
+                    <p>Применить фильтр</p>
+                </button>
+                {{--<button></button>--}}
             </form>
         </dl>
     </aside>

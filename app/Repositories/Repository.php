@@ -13,12 +13,17 @@ abstract class Repository
 {
     protected $model = false;
 
-    public function getAll($pagination = true)
+    public function getAll($select = '*',$pagination = false, $where = false)
     {
-        $builder = $this->model->select(['product_id', 'title', 'price_many', 'photo', 'label', 'desc']);
+        if($where){
+            $builder = $this->model->select($select)->where($where);
+        }else{
+            $builder = $this->model->select($select);
+        }
+
 
         if($pagination){
-            return $this->check( $builder->paginate( Config::get( 'settings.paginate' )) );
+            return $this->check( $builder->paginate( $pagination) );
         }
         return $this->check($builder->get());
     }

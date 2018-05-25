@@ -544,6 +544,25 @@ aside{
 	color: #fff;
 	cursor: pointer;
 }
+.clear-filters-submit{
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid #A3D80E;
+    background: #C1E55F;
+}
+.clear-filters-submit:hover{
+    background: #A3D80E;
+    color: #fff;
+    cursor: pointer;
+}
+.clear-filters-submit p{
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 2em;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
 .clear-filters p{
 	color: #fff;	
 	text-transform: uppercase;
