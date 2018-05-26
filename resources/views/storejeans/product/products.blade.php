@@ -126,10 +126,10 @@
                     <i class="fa fa-minus" aria-hidden="true"></i>
                 </dt>
                 <dd class="filter-body ">
-                    <ul>@foreach($sesons as $item)
+                    <ul>@foreach($sesons as $k=>$item)
                             <li>
-                                <input type="checkbox" class="checkbox" name="label[]" value="{{$item->sesons}}"/>
-                                <label >{{ $item->sesons }}</label>
+                                <input type="checkbox" class="checkbox" id="sesons{{$k}}" name="sesons[]" value="{{$item->sesons}}"/>
+                                <label for="sesons{{$k}}">{{ $item->sesons }}</label>
                             </li>
                         @endforeach
                     </ul>
@@ -140,10 +140,10 @@
                 </dt>
                 <dd class="filter-body ">
                     <ul>
-                        @foreach($size as $item)
+                        @foreach($size as $k=>$item)
                             <li>
-                                <input type="checkbox" class="checkbox" name="label[]" value="{{$item->size}}"/>
-                                <label >{{ $item->size }}</label>
+                                <input type="checkbox" class="checkbox" id="size{{$k}}" name="size[]" value="{{$item->size}}"/>
+                                <label for="size{{$k}}">{{ $item->size }}</label>
                             </li>
                         @endforeach
                     </ul>
@@ -154,10 +154,10 @@
                 </dt>
                 <dd class="filter-body ">
                     <ul>
-                        @foreach($style as $item)
+                        @foreach($style as $k=>$item)
                             <li>
-                                <input type="checkbox" class="checkbox" name="label[]" value="{{$item->style}}"/>
-                                <label >{{ $item->style }}</label>
+                                <input type="checkbox" class="checkbox" id="style{{ $k }}" name="style[]" value="{{$item->style}}"/>
+                                <label for="style{{ $k }}">{{ $item->style }}</label>
                             </li>
                         @endforeach
 
@@ -169,10 +169,10 @@
                 </dt>
                 <dd class="filter-body ">
                     <ul>
-                        @foreach($country as $item)
+                        @foreach($country as $k=>$item)
                             <li>
-                                <input type="checkbox" class="checkbox" name="label[]" value="{{$item->country}}"/>
-                                <label >{{ $item->country }}</label>
+                                <input type="checkbox" class="checkbox" id="country{{ $k }}" name="country[]" value="{{$item->country}}"/>
+                                <label for="country{{ $k }}">{{ $item->country }}</label>
                             </li>
                         @endforeach
 
@@ -184,13 +184,14 @@
                 </dt>
                 <dd class="filter-body ">
                     <ul>
-                        @foreach($lable as $item)
+                        @foreach($lable as $k=>$item)
                             <li>
-                                <input type="checkbox" class="checkbox" name="label[]" value="{{$item->label}}"/>
-                                <label >{{ $item->label }}</label>
+                                <input type="checkbox" class="checkbox" id="lable{{$k}}" name="label[]" value="{{$item->label}}"/>
+                                <label for="lable{{$k}}">{{ $item->label }}</label>
                             </li>
                         @endforeach
                     </ul>
+
                 </dd>
                 <button type="submit" class="clear-filters-submit">
                     <p>Применить фильтр</p>

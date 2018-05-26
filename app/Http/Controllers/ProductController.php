@@ -19,15 +19,35 @@ class ProductController extends SiteController
         $step     = Config::get( 'settings.paginateStep' );
         $paginate = Config::get( 'settings.paginate' );
         $select   = ['product_id', 'title', 'price_many', 'photo', 'label', 'desc'];
+        $where    = false;
 
        //dd($request->input());
-        $products = $this->product_rep->getAll($select, $paginate);
+
         $lable    = $this->product_rep->uniqueValue('label');
         $country  = $this->product_rep->uniqueValue('country');
         $style    = $this->product_rep->uniqueValue('style');
         $size     = $this->product_rep->uniqueValue('size');
         $sesons   = $this->product_rep->uniqueValue('sesons');
-        //dd($lable);
+
+        if($request->isMethod('post')){
+
+            if(true){
+                $input = $request->except('_token');
+                foreach ($input as $k=>$item){
+                    echo $k . '<br />';
+                    foreach ($item as $i){
+                        echo $i . '<br />';
+                    }
+                }
+            }
+
+
+
+            dd();
+        }else{
+            $products = $this->product_rep->getAll($select, $paginate);
+        }
+
         $data     = [
             'products' => $products,
             'step'     => $step,
