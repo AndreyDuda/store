@@ -119,8 +119,8 @@
             <div class="clear-filters">
                 <p>Очистить все фильтра</p>
             </div>
-            <form method="post" >
-                {{ csrf_field() }}
+            <form method="get" >
+               {{-- {{ csrf_field() }}--}}
                 <dt class="filter-header">
                     Сезон
                     <i class="fa fa-minus" aria-hidden="true"></i>
@@ -128,7 +128,7 @@
                 <dd class="filter-body ">
                     <ul>@foreach($sesons as $k=>$item)
                             <li>
-                                <input type="checkbox" class="checkbox" id="sesons{{$k}}" name="sesons[]" value="{{$item->sesons}}"/>
+                                <input data-name="{{$item->sesons}}" type="checkbox" class="checkbox" id="sesons{{$k}}" name="sesons[]" value="{{$item->sesons}}"/>
                                 <label for="sesons{{$k}}">{{ $item->sesons }}</label>
                             </li>
                         @endforeach
@@ -142,7 +142,7 @@
                     <ul>
                         @foreach($size as $k=>$item)
                             <li>
-                                <input type="checkbox" class="checkbox" id="size{{$k}}" name="size[]" value="{{$item->size}}"/>
+                                <input data-name="{{$item->size}}" type="checkbox" class="checkbox" id="size{{$k}}" name="size[]" value="{{$item->size}}"/>
                                 <label for="size{{$k}}">{{ $item->size }}</label>
                             </li>
                         @endforeach
@@ -156,7 +156,7 @@
                     <ul>
                         @foreach($style as $k=>$item)
                             <li>
-                                <input type="checkbox" class="checkbox" id="style{{ $k }}" name="style[]" value="{{$item->style}}"/>
+                                <input data-name="{{$item->style}}" type="checkbox" class="checkbox" id="style{{ $k }}" name="style[]" value="{{$item->style}}"/>
                                 <label for="style{{ $k }}">{{ $item->style }}</label>
                             </li>
                         @endforeach
@@ -171,7 +171,7 @@
                     <ul>
                         @foreach($country as $k=>$item)
                             <li>
-                                <input type="checkbox" class="checkbox" id="country{{ $k }}" name="country[]" value="{{$item->country}}"/>
+                                <input data-name="{{$item->country}}" type="checkbox" class="checkbox" id="country{{ $k }}" name="country[]" value="{{$item->country}}"/>
                                 <label for="country{{ $k }}">{{ $item->country }}</label>
                             </li>
                         @endforeach
@@ -186,17 +186,17 @@
                     <ul>
                         @foreach($lable as $k=>$item)
                             <li>
-                                <input type="checkbox" class="checkbox" id="lable{{$k}}" name="label[]" value="{{$item->label}}"/>
+                                <input data-name="{{$item->label}}" <?= (array_key_exists('label', $input) && array_search($item->label, $input['label']) !== FALSE )? 'checked="checked"':''?> type="checkbox" class="checkbox" id="lable{{$k}}" name="label[]" value="{{$item->label}}"/>
                                 <label for="lable{{$k}}">{{ $item->label }}</label>
                             </li>
                         @endforeach
                     </ul>
 
                 </dd>
-                <button type="submit" class="clear-filters-submit">
+                <input type="hidden" name="page" value="1" id="page">
+                <button type="submit" id="send" class="clear-filters-submit">
                     <p>Применить фильтр</p>
                 </button>
-                {{--<button></button>--}}
             </form>
         </dl>
     </aside>
@@ -318,21 +318,21 @@
     @if($count_product > 1)
         <ul>
         @if($products->currentPage() != 1)
-                <a href="{{ $products->url(1) }}"><span><i class="fa fa-arrow-left" aria-hidden="true"></i></span></a>
+                <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
         @endif
 
         @for($i = 1; $i <= $count_product; $i++)
             @if($products->currentPage() > $i && $products->currentPage()-$i < $step && $products->currentPage() != $count_product - 1)
-                    <a href="{{ $products->url($i) }}" ><li>{{ $i }}</li></a>
+                     <li class="page">{{ $i }}</li>
             @elseif($products->currentPage() == $i)
-                    <li class="current">{{ $i }}</li>
+                     <li class="current page">{{ $i }}</li>
             @elseif($products->currentPage() < $i && $i - $products->currentPage() < $step && $products->currentPage() != $count_product - 1)
-                    <a href="{{ $products->url($i) }}" > <li>{{ $i }}</li></a>
+                    <li class="page">{{ $i }}</li>
             @endif
         @endfor
         {{--<li class="not-hover"> ... </li>--}}
             @if($products->currentPage() != $count_product)
-                <a href="{{ $products->url($count_product - 1 ) }}"><span><i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
+               <span><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
             @endif
     </ul>
     @endif
@@ -429,14 +429,5 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
 </div>
 </div>

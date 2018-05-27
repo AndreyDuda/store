@@ -20,8 +20,13 @@ class ProductController extends SiteController
         $paginate = Config::get( 'settings.paginate' );
         $select   = ['product_id', 'title', 'price_many', 'photo', 'label', 'desc'];
         $where    = false;
-
-       //dd($request->input());
+        $input    = false;
+        $test = [
+            [
+                ['status', '=', '1'],
+                ['subscribed', '<>', '1'],
+            ]
+        ];
 
         $lable    = $this->product_rep->uniqueValue('label');
         $country  = $this->product_rep->uniqueValue('country');
@@ -29,24 +34,29 @@ class ProductController extends SiteController
         $size     = $this->product_rep->uniqueValue('size');
         $sesons   = $this->product_rep->uniqueValue('sesons');
 
-        if($request->isMethod('post')){
 
-            if(true){
-                $input = $request->except('_token');
+        $input = $request->input();
+        unset($input['page']);
+            if(count($input)){
+              //  $input = $request->except('_token');
+                $where = $input;
+               $n = 0;
                 foreach ($input as $k=>$item){
-                    echo $k . '<br />';
+                   $col = $k;
+
                     foreach ($item as $i){
-                        echo $i . '<br />';
+
+                        $where[$n] = ["$col", "=", "$i"];
+
+                        ++$n;
                     }
                 }
+
+            }else{
+
             }
 
-
-
-            dd();
-        }else{
-            $products = $this->product_rep->getAll($select, $paginate);
-        }
+        $products = $this->product_rep->getAll($select, $paginate, $where);
 
         $data     = [
             'products' => $products,
@@ -55,7 +65,8 @@ class ProductController extends SiteController
             'country'  => $country,
             'style'    => $style,
             'size'     => $size,
-            'sesons'   => $sesons
+            'sesons'   => $sesons,
+            'input'    => $input
         ];
 
         $content    = view(env('THEME') . '.product.products')->with($data)->render();
@@ -67,7 +78,8 @@ class ProductController extends SiteController
     {
         $id       = $request->id;
         $product  = $this->product_rep->getOne($id);
-        $products = $this->product_rep->getLabel($product->label);
+       // $products = $this->product_rep->getLabel($product->label);
+        $products = false;
         $data     = [
             'product'  => $product,
             'products' => $products

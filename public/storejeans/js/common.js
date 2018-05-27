@@ -5,6 +5,16 @@ $(document).ready(function(){
 			$('.menu-left-mobile').slideToggle();
 			event.stopPropagation();
 		});
+
+	$('.page').click(function () {
+		var page = $(this).text();
+		$('#page').val(page);
+		$('#send').click();
+	});
+	$('.checkbox').click(function () {
+        $('#page').val(1);
+    });
+
 });
 
 //Header slide
