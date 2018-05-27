@@ -128,7 +128,7 @@
                 <dd class="filter-body ">
                     <ul>@foreach($sesons as $k=>$item)
                             <li>
-                                <input data-name="{{$item->sesons}}" type="checkbox" class="checkbox" id="sesons{{$k}}" name="sesons[]" value="{{$item->sesons}}"/>
+                                <input <?= (array_key_exists('sesons', $input) && array_search($item->sesons, $input['sesons']) !== FALSE )? 'checked="checked"':''?> data-name="{{$item->sesons}}" type="checkbox" class="checkbox" id="sesons{{$k}}" name="sesons[]" value="{{$item->sesons}}"/>
                                 <label for="sesons{{$k}}">{{ $item->sesons }}</label>
                             </li>
                         @endforeach
@@ -142,7 +142,7 @@
                     <ul>
                         @foreach($size as $k=>$item)
                             <li>
-                                <input data-name="{{$item->size}}" type="checkbox" class="checkbox" id="size{{$k}}" name="size[]" value="{{$item->size}}"/>
+                                <input <?= (array_key_exists('size', $input) && array_search($item->size, $input['size']) !== FALSE )? 'checked="checked"':''?> data-name="{{$item->size}}" type="checkbox" class="checkbox" id="size{{$k}}" name="size[]" value="{{$item->size}}"/>
                                 <label for="size{{$k}}">{{ $item->size }}</label>
                             </li>
                         @endforeach
@@ -156,7 +156,7 @@
                     <ul>
                         @foreach($style as $k=>$item)
                             <li>
-                                <input data-name="{{$item->style}}" type="checkbox" class="checkbox" id="style{{ $k }}" name="style[]" value="{{$item->style}}"/>
+                                <input <?= (array_key_exists('style', $input) && array_search($item->style, $input['style']) !== FALSE )? 'checked="checked"':''?> data-name="{{$item->style}}" type="checkbox" class="checkbox" id="style{{ $k }}" name="style[]" value="{{$item->style}}"/>
                                 <label for="style{{ $k }}">{{ $item->style }}</label>
                             </li>
                         @endforeach
@@ -171,7 +171,7 @@
                     <ul>
                         @foreach($country as $k=>$item)
                             <li>
-                                <input data-name="{{$item->country}}" type="checkbox" class="checkbox" id="country{{ $k }}" name="country[]" value="{{$item->country}}"/>
+                                <input <?= (array_key_exists('country', $input) && array_search($item->country, $input['country']) !== FALSE )? 'checked="checked"':''?> data-name="{{$item->country}}" type="checkbox" class="checkbox" id="country{{ $k }}" name="country[]" value="{{$item->country}}"/>
                                 <label for="country{{ $k }}">{{ $item->country }}</label>
                             </li>
                         @endforeach
@@ -186,7 +186,7 @@
                     <ul>
                         @foreach($lable as $k=>$item)
                             <li>
-                                <input data-name="{{$item->label}}" <?= (array_key_exists('label', $input) && array_search($item->label, $input['label']) !== FALSE )? 'checked="checked"':''?> type="checkbox" class="checkbox" id="lable{{$k}}" name="label[]" value="{{$item->label}}"/>
+                                <input <?= (array_key_exists('label', $input) && array_search($item->label, $input['label']) !== FALSE )? 'checked="checked"':''?> data-name="{{$item->label}}"  type="checkbox" class="checkbox" id="lable{{$k}}" name="label[]" value="{{$item->label}}"/>
                                 <label for="lable{{$k}}">{{ $item->label }}</label>
                             </li>
                         @endforeach
@@ -288,6 +288,7 @@
         </form>
 
 <?= file_exists( asset(env('THEME') . '/img/tovarl.jpg')) ?>
+@if($products)
         <div class="wrapper">
 @foreach($products as $product)
             <a href="{{ route('productOne', ['id' => $product->product_id ] )  }}" class="item-tovar">
@@ -304,21 +305,23 @@
             </a>
 @endforeach
         </div>
-
+@endif
 
     </div>
 </div>
 {{--<div class="yet-tovar">
     <h5>Показать ещё 18 товаров</h5>
 </div>--}}
+@if($products)
 <div class="navigation">
     <?
+
         $count_product = $products->lastPage();
     ?>
     @if($count_product > 1)
         <ul>
         @if($products->currentPage() != 1)
-                <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+                <span class="page">1<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
         @endif
 
         @for($i = 1; $i <= $count_product; $i++)
@@ -332,12 +335,12 @@
         @endfor
         {{--<li class="not-hover"> ... </li>--}}
             @if($products->currentPage() != $count_product)
-               <span><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+               <span><i class="fa fa-arrow-right page" aria-hidden="true">{{$count_product}}</i></span>
             @endif
     </ul>
     @endif
 </div>
-
+@endif
 
 <div class="slider-catalog">
     <div class="title-carousel">

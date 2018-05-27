@@ -8,15 +8,17 @@
 
 namespace App\Repositories;
 use Config;
+use Illuminate\Support\Facades\DB;
+
 
 abstract class Repository
 {
     protected $model = false;
 
-    public function getAll($select = '*',$pagination = false, $where = false)
+    public function getAll($select = '*', $pagination = false, $where = false)
     {
         if($where){
-            $builder = $this->model->select($select)->where($where);
+            $builder = $this->model->select($select)->whereRaw($where);
         }else{
             $builder = $this->model->select($select);
         }

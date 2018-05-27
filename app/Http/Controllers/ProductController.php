@@ -6,6 +6,7 @@ use Config;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 
+
 class ProductController extends SiteController
 {
     public function __construct(ProductRepository $product_rep)
@@ -39,21 +40,20 @@ class ProductController extends SiteController
         unset($input['page']);
             if(count($input)){
               //  $input = $request->except('_token');
-                $where = $input;
-               $n = 0;
+
+                $or = 0;
                 foreach ($input as $k=>$item){
                    $col = $k;
-
+                   $and = 0;
                     foreach ($item as $i){
+                        $where .= ($or == 0 || $or > 0 && $and == 0 )? '':' OR ';
+                        $where .= ($or > 0 && $and == 0 )? ' AND ':'';
+                        $where .=  $col . " = '" . $i . "'";
 
-                        $where[$n] = ["$col", "=", "$i"];
-
-                        ++$n;
+                        ++$or;
+                        ++$and;
                     }
                 }
-
-            }else{
-
             }
 
         $products = $this->product_rep->getAll($select, $paginate, $where);
