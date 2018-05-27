@@ -15,6 +15,12 @@ $(document).ready(function(){
         $('#page').val(1);
     });
 
+	$('.sort').change(function () {
+        var value = $('.sort option:selected').val();
+        $('#sort').val(value);
+        $('#send').click();
+    });
+
 });
 
 //Header slide

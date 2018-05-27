@@ -194,6 +194,7 @@
 
                 </dd>
                 <input type="hidden" name="page" value="1" id="page">
+                <input type="hidden" name="sort" value="1" id="sort">
                 <button type="submit" id="send" class="clear-filters-submit">
                     <p>Применить фильтр</p>
                 </button>
@@ -279,10 +280,10 @@
                 <p>
                     Сортиртировка товаров:
                 </p>
-                <select name="sort">
-                    <option value="1">По дате добавления</option>
-                    <option value="2">По возрастанию цены</option>
-                    <option value="3">По убыванию цены</option>
+                <select name="sort" class="sort">
+                    <option value="0">Сортировать по</option>
+                    <option value="1">Возрастанию цены</option>
+                    <option value="2">Убыванию цены</option>
                 </select>
             </div>
         </form>

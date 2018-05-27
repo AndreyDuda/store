@@ -22,12 +22,7 @@ class ProductController extends SiteController
         $select   = ['product_id', 'title', 'price_many', 'photo', 'label', 'desc'];
         $where    = false;
         $input    = false;
-        $test = [
-            [
-                ['status', '=', '1'],
-                ['subscribed', '<>', '1'],
-            ]
-        ];
+        $order    = false;
 
         $lable    = $this->product_rep->uniqueValue('label');
         $country  = $this->product_rep->uniqueValue('country');
@@ -38,6 +33,8 @@ class ProductController extends SiteController
 
         $input = $request->input();
         unset($input['page']);
+        $order = $input['sort'];
+        unset($input['sort']);
             if(count($input)){
               //  $input = $request->except('_token');
 
@@ -56,7 +53,7 @@ class ProductController extends SiteController
                 }
             }
 
-        $products = $this->product_rep->getAll($select, $paginate, $where);
+        $products = $this->product_rep->getAll($select, $paginate, $where, $order);
 
         $data     = [
             'products' => $products,
@@ -66,7 +63,8 @@ class ProductController extends SiteController
             'style'    => $style,
             'size'     => $size,
             'sesons'   => $sesons,
-            'input'    => $input
+            'input'    => $input,
+            'order'    => $order
         ];
 
         $content    = view(env('THEME') . '.product.products')->with($data)->render();

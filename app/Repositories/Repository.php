@@ -15,13 +15,23 @@ abstract class Repository
 {
     protected $model = false;
 
-    public function getAll($select = '*', $pagination = false, $where = false)
+    public function getAll($select = '*', $pagination = false, $where = false, $order=false)
     {
         if($where){
             $builder = $this->model->select($select)->whereRaw($where);
+        }if($order){
+            if($order == 1){
+                $builder->orderBy('price_many', 'ASC');
+            }else{
+                $builder->orderBy('price_many', 'DESC');
+            }
+
         }else{
             $builder = $this->model->select($select);
         }
+
+
+
 
         if($pagination){
             return $this->check( $builder->paginate( $pagination) );
