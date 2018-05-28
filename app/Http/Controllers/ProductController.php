@@ -33,7 +33,7 @@ class ProductController extends SiteController
 
         $input = $request->input();
         unset($input['page']);
-        $order = $input['sort'];
+        $order = (array_key_exists('sort', $input))? $input['sort'] : false;
         unset($input['sort']);
             if(count($input)){
               //  $input = $request->except('_token');

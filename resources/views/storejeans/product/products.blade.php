@@ -117,7 +117,7 @@
         </div>
         <dl class="filters">
             <div class="clear-filters">
-                <p>Очистить все фильтра</p>
+                <a href="{{ route('productAll') }}"><p>Очистить все фильтра</p></a>
             </div>
             <form method="get" >
                {{-- {{ csrf_field() }}--}}
@@ -281,9 +281,21 @@
                     Сортиртировка товаров:
                 </p>
                 <select name="sort" class="sort">
-                    <option value="0">Сортировать по</option>
-                    <option value="1">Возрастанию цены</option>
-                    <option value="2">Убыванию цены</option>
+                    @if($order > 0)
+                        @if($order == 1)
+                            <option value="1">По уозрастанию цены</option>
+                            <option value="0">Не сортировать</option>
+                            <option value="2">Пл убыванию цены</option>
+                        @else
+                            <option value="2">Убыванию цены</option>
+                            <option value="0">Не сортировать</option>
+                            <option value="1">Возрастанию цены</option>
+                        @endif
+                    @else
+                    <option value="0">Не сортировать</option>
+                    <option value="1">По возрастанию цены</option>
+                    <option value="2">по убыванию цены</option>
+                    @endif
                 </select>
             </div>
         </form>
