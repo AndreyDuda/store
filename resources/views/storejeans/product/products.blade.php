@@ -211,18 +211,11 @@
             <li>
                 <a href="{{ route('productAll', ['catedories' => 'all']) }}">Каталог</a>
             </li>
-
+            @if($name_cat)
             <li class="current">
-                @switch($category)
-                    @case('new')
-                        <a href="{{ route('productAll', ['catedories' => 'new']) }}">Новинки</a>
-                        @break
-                    @case('male')
-                        <a href="{{ route('productAll', ['catedories' => 'male']) }}">Женская Одежда</a>
-                        @break
-                @endswitch
-
+                 <a href="{{ route('productAll', ['catedories' => $category]) }}">{{$name_cat}}</a>
             </li>
+            @endif
 
         </ol>
         <div class="filter-button">
@@ -230,7 +223,7 @@
         </div>
         <div class="clear"></div>
         <div class="category-name">
-            <p>Мужские джинсы</p>
+            <p>{{ $name_cat }}</p>
         </div>
 
         <div class="new-category">
@@ -364,6 +357,7 @@
     @endif
 </div>
 @endif
+
 
 <div class="slider-catalog">
     <div class="title-carousel">

@@ -15,10 +15,15 @@ abstract class Repository
 {
     protected $model = false;
 
-    public function getAll($select = '*', $pagination = false, $where = false, $order=false)
+    public function getAll($select = '*', $pagination = false, $where = false, $order=false, $limit = false)
     {
         if($where){
-            $builder = $this->model->select($select)->whereRaw($where);
+            if($limit){
+                $builder = $this->model->select($select)->whereRaw($where)->limit($limit);
+            }else{
+                $builder = $this->model->select($select)->whereRaw($where);
+            }
+
         }else{
             $builder = $this->model->select($select);
         }
