@@ -15,14 +15,16 @@ class ProductController extends SiteController
         $this->product_rep = $product_rep;
     }
 
-    public function index(Request $request)
+    public function index(Request $request, $categories = false)
     {
         $step     = Config::get( 'settings.paginateStep' );
         $paginate = Config::get( 'settings.paginate' );
-        $select   = ['product_id', 'title', 'price_many', 'photo', 'label', 'desc'];
+        $select   = ['product_id', 'title', 'price_many', 'females', 'photo', 'label', 'desc'];
         $where    = false;
         $input    = false;
         $order    = false;
+        $name_cat = false;
+
 
         $lable    = $this->product_rep->uniqueValue('label');
         $country  = $this->product_rep->uniqueValue('country');
@@ -32,9 +34,27 @@ class ProductController extends SiteController
 
 
         $input = $request->input();
+       // dd($categories);
         unset($input['page']);
         $order = (array_key_exists('sort', $input))? $input['sort'] : false;
         unset($input['sort']);
+
+        switch($categories) {
+            case 'male':
+                $input['females'][0] = '1';
+                $name_cat = 'Женская одежда';
+                break;
+            case 'female':
+                $input['females'][0] = '2';
+                $name_cat = 'Мужская одежда';
+                break;
+            case 'bestoffer':
+                $input['sale'][0] = '1';
+                break;
+            case 'new':
+                $input['sale'][0] = '1';
+        }
+
             if(count($input)){
               //  $input = $request->except('_token');
 
@@ -53,6 +73,8 @@ class ProductController extends SiteController
                 }
             }
 
+            //dd($where);
+
         $products = $this->product_rep->getAll($select, $paginate, $where, $order);
 
         $data     = [
@@ -64,8 +86,10 @@ class ProductController extends SiteController
             'size'     => $size,
             'sesons'   => $sesons,
             'input'    => $input,
-            'order'    => $order
+            'order'    => $order,
+            'category' => $name_cat
         ];
+
 
         $content    = view(env('THEME') . '.product.products')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);

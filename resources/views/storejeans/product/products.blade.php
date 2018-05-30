@@ -94,18 +94,18 @@
     <aside>
         <div class="stock">
             <ul>
-                <li><a href="#">Выгодные предложения</a></li>
-                <li><a href="#">Распродажа</a></li>
-                <li><a href="#">Новинки</a></li>
+                <li {{($category == 'bestoffer')? 'class=category-list-active':''}}><a href="{{ route('productAll', ['catedories' => 'bestoffer']) }}">Выгодные предложения</a></li>
+                <li {{($category == 'sale')? 'class=category-list-active':''}}><a href="{{ route('productAll', ['catedories' => 'sale']) }}">Распродажа</a></li>
+                <li {{($category == 'new')? 'class=category-list-active':''}}><a href="{{ route('productAll', ['catedories' => 'new']) }}">Новинки</a></li>
             </ul>
         </div>
         <div class="category-list">
             <ul>
-                <li>
-                    <a href="#">Мужская одежда</a>
+                <li {{($category == 'male')? 'class=category-list-active':''}}>
+                    <a href="{{ route('productAll', ['catedories' => 'male']) }}">Мужская одежда</a>
                 </li>
-                <li>
-                    <a href="#">Женская одежда</a>
+                <li {{($category == 'female')? 'class=category-list-active':''}}>
+                    <a href="{{ route('productAll', ['catedories' => 'female']) }}">Женская одежда</a>
                 </li>
             </ul>
             <div class="stock2">
@@ -205,15 +205,25 @@
     <div class="content">
         <ol id="breadcrumb">
             <li>
-                <a href="#"><i class="fa fa-home" aria-hidden="true"></i>
+                <a href="{{ route('index') }}"><i class="fa fa-home" aria-hidden="true"></i>
                     <span class="sr-only">Главная</span></a>
             </li>
             <li>
-                <a href="#">Каталог</a>
+                <a href="{{ route('productAll', ['catedories' => 'all']) }}">Каталог</a>
             </li>
+
             <li class="current">
-                <a href="#">Мужские джинсы</a>
+                @switch($category)
+                    @case('new')
+                        <a href="{{ route('productAll', ['catedories' => 'new']) }}">Новинки</a>
+                        @break
+                    @case('male')
+                        <a href="{{ route('productAll', ['catedories' => 'male']) }}">Женская Одежда</a>
+                        @break
+                @endswitch
+
             </li>
+
         </ol>
         <div class="filter-button">
             Фильтры
@@ -283,7 +293,7 @@
                 <select name="sort" class="sort">
                     @if($order > 0)
                         @if($order == 1)
-                            <option value="1">По уозрастанию цены</option>
+                            <option value="1">По возрастанию цены</option>
                             <option value="0">Не сортировать</option>
                             <option value="2">Пл убыванию цены</option>
                         @else

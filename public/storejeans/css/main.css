@@ -519,6 +519,9 @@ aside{
 	list-style-type: none;
 	text-transform: uppercase;
 }
+li.category-list-active a{
+    color: #178AE5!important;
+}
 .stock li a:hover, .category-list li a:hover{
 	cursor: pointer;
 	color: #178AE5;
@@ -543,6 +546,9 @@ aside{
 	background: #A3D80E;
 	color: #fff;
 	cursor: pointer;
+}
+.clear-filters a:hover{
+    text-decoration: none;
 }
 .clear-filters-submit{
     width: 100%;

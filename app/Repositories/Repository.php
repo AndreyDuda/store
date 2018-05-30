@@ -19,19 +19,17 @@ abstract class Repository
     {
         if($where){
             $builder = $this->model->select($select)->whereRaw($where);
-        }if($order){
+        }else{
+            $builder = $this->model->select($select);
+        }
+
+        if($order){
             if($order == 1){
                 $builder->orderBy('price_many', 'ASC');
             }else{
                 $builder->orderBy('price_many', 'DESC');
             }
-
-        }else{
-            $builder = $this->model->select($select);
         }
-
-
-
 
         if($pagination){
             return $this->check( $builder->paginate( $pagination) );

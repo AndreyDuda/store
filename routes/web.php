@@ -19,10 +19,10 @@ Auth::routes();
 
 /*Route::get('/home', 'HomeController@index')->name('home');*/
 
-Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@index')->name('index');
 Route::get('/contact', 'IndexController@contact');
 Route::get('/index', 'IndexController@index');
-Route::get('/products', 'ProductController@index')->name('productAll');
+Route::get('/products/{catedories?}/{id?}', 'ProductController@index')->name('productAll');
 //Route::get('/product/code/{id}', 'IndexController@show')->name('productOne');
 Route::get('product/{id}', ['uses' => 'ProductController@show', 'as' => 'productOne'] );
 //Route::get('articles/cat/{cat_alias?}', ['uses' => 'ArticleController@index', 'as' => 'articlesCat' ] )->where('cat_alias', '[\w-]+');
