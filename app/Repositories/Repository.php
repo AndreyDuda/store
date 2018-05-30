@@ -15,6 +15,12 @@ abstract class Repository
 {
     protected $model = false;
 
+    public function getOne($one_c_id){
+        $result = $this->model->where('product_id', $one_c_id)->first();
+
+        return $result;
+    }
+
     public function getAll($select = '*', $pagination = false, $where = false, $order=false, $limit = false)
     {
         if($where){
@@ -39,6 +45,8 @@ abstract class Repository
         if($pagination){
             return $this->check( $builder->paginate( $pagination) );
         }
+        dd(count($builder));
+
         return $this->check($builder->get());
     }
 
@@ -60,12 +68,6 @@ abstract class Repository
             }
             return $item;
         });
-        return $result;
-    }
-
-    public function getOne($one_c_id){
-        $result = $this->model->where('product_id', $one_c_id)->first();
-
         return $result;
     }
 

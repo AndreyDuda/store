@@ -1,95 +1,31 @@
 <div class="wrapper">
-
-
-
-    <div class="slider-catalog">
-        <div class="multiple-item">
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
+    @if($slider_p)
+        <div class="slider-catalog">
+            <div class="title-carousel">
+                <p>Выгодные предложения</p>
             </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
+            <div class="slider-catalog">
+                <div class="multiple-item">
+                    @foreach($slider_p as $product)
+                        <div class="item">
+                            <a href="{{ route('productOne', ['id' => $product->product_id ] )  }}" class="item-tovar">
+                                <div class="img-tovar">
+                                    @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
+                                        <img src="{{ asset(env('THEME'))}}/img/{{ $product->photo }}.jpg" alt="">
+                                    @else
+                                        <img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt="">
+                                    @endif
+                                </div>
+                                <div class="brand">{{ $product->label }}</div>
+                                <div class="description">{{ $product->title }}</div>
+                                <div class="price">{{$product->price_many}}<i class="fa fa-usd" aria-hidden="true"></i></div>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
-    </div>
-
-
-
-
+    @endif
 
     <aside>
         <div class="stock">
@@ -226,56 +162,16 @@
             <p>{{ $name_cat }}</p>
         </div>
 
+        @if($cat_prod)
         <div class="new-category">
-            <div class="new-category-item">
-                <p>Футболки мужские</p>
-                <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="">
-            </div>
-            <div class="new-category-item">
-                <p>Свитера мужские</p>
-                <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="">
-            </div>
-            <div class="new-category-item">
-                <p>Батники мужские</p>
-                <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="">
-            </div>
-            <div class="new-category-item">
-                <p>Куртки мужские</p>
-                <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="">
-            </div>
-            <div class="new-category-item">
-                <p>Ремни мужские</p>
-                <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="">
-            </div>
-            <div class="new-category-item">
-                <p>Джинсы женские</p>
-                <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="">
-            </div>
-            <div class="new-category-item">
-                <p>Шорты женские</p>
-                <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="">
-            </div>
-            <div class="new-category-item">
-                <p>Шорты женские</p>
-                <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="">
-            </div>
-            <div class="new-category-item">
-                <p>Жилетки женские</p>
-                <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="">
-            </div>
-            <div class="new-category-item">
-                <p>Футболки женские</p>
-                <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="">
-            </div>
-            <div class="new-category-item">
-                <p>Куртки женские</p>
-                <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="">
-            </div>
-            <div class="new-category-item">
-                <p>Шорты женские</p>
-                <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="">
-            </div>
+            @foreach($cat_prod as $category)
+           <div class="new-category-item">
+                <p>{{$category->categories}}</p>
+               <s href="{{ route('productAll', ['catedories' => $category->categories]) }}"> <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt=""></s>
+           </div>
+            @endforeach
         </div>
+        @endif
 
 
         <form action="#">
@@ -358,96 +254,31 @@
 </div>
 @endif
 
-
+@if($slider_p)
 <div class="slider-catalog">
     <div class="title-carousel">
         <p>Выгодные предложения</p>
     </div>
-
-
     <div class="slider-catalog">
         <div class="multiple-item">
+            @foreach($slider_p as $product)
             <div class="item">
-                <a href="product.php" class="item-tovar">
+                <a href="{{ route('productOne', ['id' => $product->product_id ] )  }}" class="item-tovar">
                     <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
+                        @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
+                            <img src="{{ asset(env('THEME'))}}/img/{{ $product->photo }}.jpg" alt="">
+                        @else
+                            <img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt="">
+                        @endif
                     </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
+                    <div class="brand">{{ $product->label }}</div>
+                    <div class="description">{{ $product->title }}</div>
+                    <div class="price">{{$product->price_many}}<i class="fa fa-usd" aria-hidden="true"></i></div>
                 </a>
             </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="product.php" class="item-tovar">
-                    <div class="img-tovar">
-                        <img src="{{ asset(env('THEME'))}}/img/tovar2.jpg" alt="">
-                    </div>
-                    <div class="brand">Franco Marela</div>
-                    <div class="description">7022 Franko Marela (30-38, 8 ед.) джинсы мужские демисезонные стрейч</div>
-                    <div class="price">8.00<i class="fa fa-usd" aria-hidden="true"></i></div>
-                </a>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
+@endif
 </div>

@@ -19,8 +19,9 @@ class ProductController extends SiteController
     {
         $step     = Config::get( 'settings.paginateStep' );
         $paginate = Config::get( 'settings.paginate' );
-        $select   = ['product_id', 'title', 'price_many', 'females', 'photo', 'label', 'desc'];
-        $slider_p = ['title', 'desc', 'photo', 'price'];
+        $count_p  = 8;
+        $select   = ['product_id', 'title', 'price_many', 'females', 'photo',  'desc'];
+        $slider_p = ['product_id', 'title', 'price_many', 'photo', 'label', 'desc',];
         $where    = false;
         $input    = false;
         $order    = false;
@@ -31,6 +32,7 @@ class ProductController extends SiteController
         $lable    = $this->product_rep->uniqueValue('label');
         $style    = $this->product_rep->uniqueValue('style');
         $size     = $this->product_rep->uniqueValue('size');
+        $cat_prod = $this->product_rep->uniqueValue('categories');
 
         $input = $request->input();
        // dd($categories);
@@ -85,7 +87,7 @@ class ProductController extends SiteController
             //dd($where);
 
         $products = $this->product_rep->getAll($select, $paginate, $where, $order);
-        $slider_p = $this->product_rep->getAll($slider_p, false, 'sale = "1"', false, 8);
+        $slider_p = $this->product_rep->getAll($slider_p, false, 'sale = "1"', false, $count_p);
 
         $data     = [
             'products' => $products,
@@ -99,7 +101,8 @@ class ProductController extends SiteController
             'input'    => $input,
             'order'    => $order,
             'category' => $categories,
-            'name_cat' => $name_cat
+            'name_cat' => $name_cat,
+            'cat_prod' => $cat_prod
         ];
 
 
@@ -111,9 +114,13 @@ class ProductController extends SiteController
     public function show(Request $request)
     {
         $id       = $request->id;
+        $count_p  = 8;
+        $products = ['product_id', 'title', 'price_many', 'photo', 'label', 'desc',];
         $product  = $this->product_rep->getOne($id);
+
+        $products = $this->product_rep->getAll($products, false, 'label = "' . $product . '"', false, $count_p);
        // $products = $this->product_rep->getLabel($product->label);
-        $products = false;
+
         $data     = [
             'product'  => $product,
             'products' => $products
