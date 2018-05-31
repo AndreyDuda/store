@@ -23,7 +23,7 @@ Route::get('/', 'IndexController@index')->name('index');
 Route::get('/products/{catedories?}/{id?}', 'ProductController@index')->name('productAll');
 Route::get('product/{id}', ['uses' => 'ProductController@show', 'as' => 'productOne'] );
 //Route::get('articles/cat/{cat_alias?}', ['uses' => 'ArticleController@index', 'as' => 'articlesCat' ] )->where('cat_alias', '[\w-]+');
-Route::get('/contact', 'ContactController@contact')->name('contacts');
+Route::get('/contact', 'ContactController@index')->name('contacts');
 Route::get('/delivery', 'DeliveryController@index')->name('delivery');
 Route::get('/cart', 'CartController@index');
 
