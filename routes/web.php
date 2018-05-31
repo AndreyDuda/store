@@ -24,7 +24,7 @@ Route::get('/products/{catedories?}/{id?}', 'ProductController@index')->name('pr
 Route::get('product/{id}', ['uses' => 'ProductController@show', 'as' => 'productOne'] );
 //Route::get('articles/cat/{cat_alias?}', ['uses' => 'ArticleController@index', 'as' => 'articlesCat' ] )->where('cat_alias', '[\w-]+');
 Route::get('/contact', 'ContactController@contact')->name('contacts');
-Route::get('/delivery', 'DeliveryController@delivery')->name('delivery');
+Route::get('/delivery', 'DeliveryController@index')->name('delivery');
 Route::get('/cart', 'CartController@index');
 
 
