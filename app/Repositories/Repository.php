@@ -43,18 +43,18 @@ abstract class Repository
         }
 
         if($pagination){
-            return $this->check( $builder->paginate( $pagination) );
+            return $builder->paginate( $pagination);
         }
-        dd(count($builder));
 
-        return $this->check($builder->get());
+
+        return$builder->get();
     }
 
     public function uniqueValue($select)
     {
         $builder = $this->model->distinct()->select($select);
 
-        return $this->check($builder->get());
+        return $builder->get();
     }
 
     protected function check($result)

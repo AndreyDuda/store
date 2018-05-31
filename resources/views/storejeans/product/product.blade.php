@@ -9,10 +9,10 @@
         <a href="{{ route('productAll') }}">Каталог</a>
     </li>
     <li class="current">
-        <a href="#">{{ $product->categories }}</a>
+        <a href="{{ route('productAll', ['catedories' => $product->categories]) }}">{{ $product->categories }}</a>
     </li>
     <li class="current long-text">
-        <a href="#">{{ $product->title }}</a>
+        <a href="{{ route('productOne', ['id' => $product->product_id ] )  }}">{{ $product->title }}</a>
     </li>
 </ol>
 <div class="clear"></div>

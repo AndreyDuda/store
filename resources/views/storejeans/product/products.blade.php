@@ -212,7 +212,7 @@
                     @endif
                 </div>
                 <div class="brand">{{ $product->label }}</div>
-                <div class="description">{{ $product->desc }}</div>
+                <div class="description">{{ $product->title }}</div>
                 <div class="price">{{ $product->price_many }}<i class="fa fa-usd" aria-hidden="true"></i></div>
             </a>
 @endforeach

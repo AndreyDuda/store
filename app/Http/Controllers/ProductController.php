@@ -20,8 +20,8 @@ class ProductController extends SiteController
         $step     = Config::get( 'settings.paginateStep' );
         $paginate = Config::get( 'settings.paginate' );
         $count_p  = 8;
-        $select   = ['product_id', 'title', 'price_many', 'females', 'photo',  'desc'];
-        $slider_p = ['product_id', 'title', 'price_many', 'photo', 'label', 'desc',];
+        $select   = ['product_id', 'title', 'price_many', 'photo', 'label'];
+        $slider_p = ['product_id', 'title', 'price_many', 'photo', 'label'];
         $where    = false;
         $input    = false;
         $order    = false;
@@ -64,6 +64,13 @@ class ProductController extends SiteController
             case 'all':
                 $name_cat = 'Весь каталог';
                 break;
+            case '':
+                $name_cat = 'Весь каталог';
+                break;
+            default:
+                $input['categories'][0] = $categories;
+                $name_cat = $categories;
+                break;
         }
 
             if(count($input)){
@@ -83,10 +90,9 @@ class ProductController extends SiteController
                     }
                 }
             }
-
-            //dd($where);
-
+        /*dd($where);*/
         $products = $this->product_rep->getAll($select, $paginate, $where, $order);
+
         $slider_p = $this->product_rep->getAll($slider_p, false, 'sale = "1"', false, $count_p);
 
         $data     = [
@@ -118,7 +124,7 @@ class ProductController extends SiteController
         $products = ['product_id', 'title', 'price_many', 'photo', 'label', 'desc',];
         $product  = $this->product_rep->getOne($id);
 
-        $products = $this->product_rep->getAll($products, false, 'label = "' . $product . '"', false, $count_p);
+        $products = $this->product_rep->getAll($products, false, 'label = "' . $product->label . '"', false, $count_p);
        // $products = $this->product_rep->getLabel($product->label);
 
         $data     = [

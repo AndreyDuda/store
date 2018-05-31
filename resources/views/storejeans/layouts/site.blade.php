@@ -24,11 +24,11 @@
             </a>
         </div>
         <div class="menu-left">
-            <a href="contacts.php">Контакты</a>
-            <a href="delivery.php">Доставка и Оплата</a>
+            <a href="{{ route('contacts') }}">Контакты</a>
+            <a href="{{ route('delivery') }}">Доставка и Оплата</a>
             <!-- <a href="faq.php">FAQ</a>
             <a href="#">Новости</a> -->
-            <a href="catalog.php">Каталог</a>
+            <a href="{{ route('productAll') }}">Каталог</a>
         </div>
         <div class="input-wrapper search" data-text="">
             <input type="text" placeholder="Поиск  по сайту…">

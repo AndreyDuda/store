@@ -20,7 +20,8 @@ Auth::routes();
 /*Route::get('/home', 'HomeController@index')->name('home');*/
 
 Route::get('/', 'IndexController@index')->name('index');
-Route::get('/contact', 'IndexController@contact');
+Route::get('/contact', 'IndexController@contact')->name('contacts');
+Route::get();
 Route::get('/index', 'IndexController@index');
 Route::get('/products/{catedories?}/{id?}', 'ProductController@index')->name('productAll');
 //Route::get('/product/code/{id}', 'IndexController@show')->name('productOne');
