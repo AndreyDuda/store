@@ -21,6 +21,29 @@ $(document).ready(function(){
         $('#send').click();
     });
 
+    $('.product-buy').on('click', function(e) {
+
+        var product = $(this);
+
+		var id = product.data('id');
+		var url = '/by/' + id;
+            $.ajax({
+                url:url,
+               /* headers:{'X-CSRF-TOKEN': $('meta[name="crsrf-token"]').attr('content')},*/
+                type:'GET',
+                /*datatype:'JSON',*/
+                success: function(data) {
+                    alert(data);
+                    console.log(data);
+                },
+                error:function() {
+                   alert('error');
+                }
+            });
+    });
+
+
+
 });
 
 //Header slide

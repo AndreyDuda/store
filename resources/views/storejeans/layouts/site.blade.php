@@ -66,8 +66,6 @@
         <div class="menu-left-mobile">
             <a href="{{ route('productAll') }}">Каталог</a>
             <a href="{{ route('delivery') }}">Доставка и Оплата</a>
-{{--            <a href="faq.php">FAQ</a>
-            <a href="#">Новости</a>--}}
             <a href="{{ route('contacts') }}">Контакты</a>
         </div>
     </div>

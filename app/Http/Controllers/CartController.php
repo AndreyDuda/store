@@ -20,4 +20,12 @@ class CartController extends SiteController
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
+
+    public function by($id = false)
+    {
+
+
+        echo $id;
+       /*dd($request);*/
+    }
 }

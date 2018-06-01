@@ -363,9 +363,9 @@
                         <img src="{{ asset(env('THEME')) }}/img/ruler-icon.png" alt="Таблица размеров">
                         <p >Таблица размеров</p>
                     </div>
-                    <div class="product-buy">
+                    <div data-id="{{ $product->product_id }}" class="product-buy">
                         Добавить в корзину
-                    </div>
+                        </div>
                 </div>
                 <div class="product-number">
                     <p>Звоните по телефону для обсуждения всех подробностей</p>
