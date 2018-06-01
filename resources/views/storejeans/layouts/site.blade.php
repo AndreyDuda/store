@@ -19,15 +19,13 @@
     <div class="header-desktop" >
         <div class="logo">
 
-            <a href="index.php">
+            <a href="{{ route('index') }}">
                 <img src="{{  asset(env('THEME')) }}/img/logo.png" alt="" >
             </a>
         </div>
         <div class="menu-left">
             <a href="{{ route('contacts') }}">Контакты</a>
             <a href="{{ route('delivery') }}">Доставка и Оплата</a>
-            <!-- <a href="faq.php">FAQ</a>
-            <a href="#">Новости</a> -->
             <a href="{{ route('productAll') }}">Каталог</a>
         </div>
         <div class="input-wrapper search" data-text="">
@@ -35,7 +33,7 @@
         </div>
         <!-- <div class="menu-right"> -->
 
-        <a href="cart.php" class="cart">
+        <a href="{{ route('cart') }}" class="cart">
             <i class="fa fa-shopping-cart " aria-hidden="true"></i>
             <span>0</span>
         </a>
@@ -45,21 +43,16 @@
                 <p class="icon kievstar"> 096 002 65 69</p>
             </div>
         </div>
-        <!-- <div class="numbers">
-            <a href="tel:0993783331" class="phone ">
-                099 378 33 31
-            </a>
-        </div> -->
     </div>
     <div class="header-mobile">
         <div class="menu-up">
-            <a href="index.php" class="logo-mobile">
+            <a href="{{ route('index') }}" class="logo-mobile">
                 <img src="{{  asset(env('THEME')) }}/img/1_whitemini_logo.png" alt="">
             </a>
             <a href="tel:0993783331" class="phone ">
                 099 378 33 31
             </a>
-            <a href="cart.php" class="cart">
+            <a href="{{ route('cart') }}" class="cart">
                 <i class="fa fa-shopping-cart " aria-hidden="true"></i>
                 <span>0</span>
             </a>
@@ -71,11 +64,11 @@
             </div>
         </div>
         <div class="menu-left-mobile">
-            <a href="catalog.php">Каталог</a>
-            <a href="delivery.php">Доставка и Оплата</a>
-            <a href="faq.php">FAQ</a>
-            <a href="#">Новости</a>
-            <a href="contacts.php">Контакты</a>
+            <a href="{{ route('productAll') }}">Каталог</a>
+            <a href="{{ route('delivery') }}">Доставка и Оплата</a>
+{{--            <a href="faq.php">FAQ</a>
+            <a href="#">Новости</a>--}}
+            <a href="{{ route('contacts') }}">Контакты</a>
         </div>
     </div>
 </header>

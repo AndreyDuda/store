@@ -4,13 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CartController extends Controller
+class CartController extends SiteController
 {
-    //
-    public function index()
+    public function __construct()
     {
-
+        $this->template = env('THEME') . '.index';
     }
 
+    public function index()
+    {
+        $data       = [
 
+        ];
+        $content    = view(env('THEME') . '.cart.index')->with($data)->render();
+        $this->vars = array_add($this->vars, 'content', $content);
+        return $this->renderOutput();
+    }
 }
