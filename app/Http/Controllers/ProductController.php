@@ -43,11 +43,11 @@ class ProductController extends SiteController
         switch($categories) {
             case 'male':
                 $input['females'][0] = '1';
-                $name_cat = 'Женская одежда';
+                $name_cat = 'Мужская одежда';
                 break;
             case 'female':
                 $input['females'][0] = '2';
-                $name_cat = 'Мужская одежда';
+                $name_cat = 'Женская одежда';
                 break;
             case 'bestoffer':
                 $input['sale'][0] = '1';

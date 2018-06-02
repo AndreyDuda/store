@@ -167,7 +167,7 @@
             @foreach($cat_prod as $category)
            <div class="new-category-item">
                 <p>{{$category->categories}}</p>
-               <s href="{{ route('productAll', ['catedories' => $category->categories]) }}"> <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt=""></s>
+               <a href="{{ route('productAll', ['catedories' => $category->categories]) }}"> <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt=""></a>
            </div>
             @endforeach
         </div>
