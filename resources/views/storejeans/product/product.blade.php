@@ -1,3 +1,5 @@
+{{ csrf_field() }}
+
 <ol id="breadcrumb" class="breadcrumb-product">
     <li>
         <a href="#">

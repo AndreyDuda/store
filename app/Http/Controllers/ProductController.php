@@ -11,6 +11,7 @@ class ProductController extends SiteController
 {
     public function __construct(ProductRepository $product_rep)
     {
+        parent::__construct();
         $this->template = env('THEME') . '.index';
         $this->product_rep = $product_rep;
     }
@@ -39,7 +40,7 @@ class ProductController extends SiteController
         unset($input['page']);
         $order = (array_key_exists('sort', $input))? $input['sort'] : false;
         unset($input['sort']);
-
+       /* dd($this->cart);*/
         switch($categories) {
             case 'male':
                 $input['females'][0] = '1';

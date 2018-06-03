@@ -26,7 +26,7 @@ Route::get('product/{id}', ['uses' => 'ProductController@show', 'as' => 'product
 Route::get('/contact', 'ContactController@index')->name('contacts');
 Route::get('/delivery', 'DeliveryController@index')->name('delivery');
 Route::get('/cart', 'CartController@index')->name('cart');
-Route::get('/by/{id?}', 'CartController@by')->name('cartBy');
+Route::post('/by', 'CartController@by')->name('cartBy');
 
 
 

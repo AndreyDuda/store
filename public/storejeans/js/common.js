@@ -26,11 +26,12 @@ $(document).ready(function(){
         var product = $(this);
 
 		var id = product.data('id');
-		var url = '/by/' + id;
+		var url = '/by';
             $.ajax({
                 url:url,
-               /* headers:{'X-CSRF-TOKEN': $('meta[name="crsrf-token"]').attr('content')},*/
-                type:'GET',
+				id:id,
+                headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
+                type:'POST',
                 /*datatype:'JSON',*/
                 success: function(data) {
                     alert(data);
@@ -38,6 +39,7 @@ $(document).ready(function(){
                 },
                 error:function() {
                    alert('error');
+                   alert($('input[name="_token"]').val());
                 }
             });
     });

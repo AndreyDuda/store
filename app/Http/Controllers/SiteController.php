@@ -10,12 +10,14 @@ class SiteController extends Controller
     //
     protected $product_rep;
 
+    protected $cart = false;
+
     protected $vars = array();
     protected $template;
 
     public function __construct()
     {
-
+        /*$this->cart = 5 ;*/
     }
 
     public function renderOutput()

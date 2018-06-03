@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 class CartController extends SiteController
 {
+
+
     public function __construct()
     {
         $this->template = env('THEME') . '.index';
@@ -21,11 +23,15 @@ class CartController extends SiteController
         return $this->renderOutput();
     }
 
-    public function by($id = false)
+    public function by(Request $request)
     {
 
 
-        echo $id;
-       /*dd($request);*/
+
+
+
+
+        echo 'adasd';
+
     }
 }
