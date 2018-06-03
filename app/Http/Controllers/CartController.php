@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
+use Session;
 
 class CartController extends SiteController
 {
@@ -29,18 +30,38 @@ class CartController extends SiteController
     {
         $id = $request->id;
         $product = $product  = $this->product_rep->getOne($id);
+        $cart = [];
 
 
         if(Session::has('cart'))
         {
-
+            $cart =  Session::get('cart', false);
+            if($cart){
+                $cart[] = [
+                    'photo' => $product->photo,
+                    'lable' => $product->label,
+                    'title' => $product->title,
+                    'price' => $product->price_many,
+                    'count' => 1
+                ];
+            }
+            Session::put('cart', $cart);
 
         }else{
+            $cart[] = [
+                'photo' => $product->photo,
+                'lable' => $product->label,
+                'title' => $product->title,
+                'price' => $product->price_many,
+                'count' => 1
+            ];
+
+            Session::put('cart', $cart);
 
         }
 
 
-        return $request->id;
+        return Session::get('cart', false);
 
 
         /*echo 'adasd';*/
