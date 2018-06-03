@@ -123,7 +123,7 @@
                     <tr>
                         <td>Стиль</td>
                         <td>
-                            <a href="#" class="filter-link">{{ $product->size }}</a>
+                            <a href="#" class="filter-link">{{ $product->style }}</a>
                         </td>
                     </tr>
                     <tr>

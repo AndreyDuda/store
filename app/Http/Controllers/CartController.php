@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\ProductRepository;
 
 class CartController extends SiteController
 {
 
 
-    public function __construct()
+    public function __construct(ProductRepository $product_rep)
     {
         $this->template = env('THEME') . '.index';
+        $this->product_rep = $product_rep;
     }
 
     public function index()
@@ -25,13 +27,23 @@ class CartController extends SiteController
 
     public function by(Request $request)
     {
+        $id = $request->id;
+        $product = $product  = $this->product_rep->getOne($id);
 
 
+        if(Session::has('cart'))
+        {
 
 
+        }else{
+
+        }
 
 
-        echo 'adasd';
+        return $request->id;
+
+
+        /*echo 'adasd';*/
 
     }
 }

@@ -21,18 +21,18 @@ $(document).ready(function(){
         $('#send').click();
     });
 
-    $('.product-buy').on('click', function(e) {
+    $('.product-buy').on('click', function() {
 
         var product = $(this);
 
-		var id = product.data('id');
+		var id    = product.data('id');
 		var url = '/by';
             $.ajax({
-                url:url,
-				id:id,
-                headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
                 type:'POST',
-                /*datatype:'JSON',*/
+                url:url,
+                headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
+				data:{id:id},
+                datatype:'JSON',
                 success: function(data) {
                     alert(data);
                     console.log(data);
