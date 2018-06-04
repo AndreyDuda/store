@@ -29,42 +29,47 @@ class CartController extends SiteController
     public function by(Request $request)
     {
         $id = $request->id;
-        $product = $product  = $this->product_rep->getOne($id);
+        $product = $product = $this->product_rep->getOne($id);
         $cart = [];
 
 
-        if(Session::has('cart'))
-        {
-            $cart =  Session::get('cart', false);
-            if($cart){
-                $cart[] = [
+        if (Session::has('cart')) {
+            $cart = Session::get('cart', false);
+            if ($cart) {
+
+                if(array_key_exists($product->product_id,$cart)){
+                    $cart[$product->product_id]['count'] += 1;
+                }else {
+                    $cart[$product->product_id] = [
+                        'photo' => $product->photo,
+                        'lable' => $product->label,
+                        'title' => $product->title,
+                        'price' => $product->price_many,
+                        'count' => 1
+                    ];
+
+                }
+                Session::put('cart', $cart);
+
+            } else {
+                $cart[$product->product_id] = [
                     'photo' => $product->photo,
                     'lable' => $product->label,
                     'title' => $product->title,
                     'price' => $product->price_many,
                     'count' => 1
                 ];
+
+                Session::put('cart', $cart);
+
             }
-            Session::put('cart', $cart);
 
-        }else{
-            $cart[] = [
-                'photo' => $product->photo,
-                'lable' => $product->label,
-                'title' => $product->title,
-                'price' => $product->price_many,
-                'count' => 1
-            ];
 
-            Session::put('cart', $cart);
+            return Session::get('cart', false);
+
+
+            /*echo 'adasd';*/
 
         }
-
-
-        return Session::get('cart', false);
-
-
-        /*echo 'adasd';*/
-
     }
 }

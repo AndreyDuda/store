@@ -36,6 +36,7 @@ $(document).ready(function(){
                 success: function(data) {
                     alert(data);
                     console.log(data);
+                    $('.modal-cart').css('display', 'block');
                 },
                 error:function() {
                    alert('error');

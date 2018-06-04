@@ -413,4 +413,503 @@
 
 
     </div>
+
 </div><!--wrapper-->
+
+<div class="modal-box modal-cart">
+    <span class="close">&times;</span>
+    <div class="order-contents order-modal">
+        <h3>
+            Содержимое заказа
+        </h3>
+        <table>
+            <tr>
+                <th>Наименование товара</th>
+                <th>Цена за шт.</th>
+                <th class="coli">Кол-во</th>
+                <th>Общая стоимость</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">15.5<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>7 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">129 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">8.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>6 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">274 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">8.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>6 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">274 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">8.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>6 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">274 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">12.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>10 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">156 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">8.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>6 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">274 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">8.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>6 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">274 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">12.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>10 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">156 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">8.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>6 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">274 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">8.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>6 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">274 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">12.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>10 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">156 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">8.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>6 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">274 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">8.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>6 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">274 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">12.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>10 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">156 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">8.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>6 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">274 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">8.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>6 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">274 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">12.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>10 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">156 <span> $</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-product-info">
+                        <img src="img/tovar2.jpg" alt="%name%">
+                        <div>
+                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <br>
+                            <a href="#" class="cart-product-title">
+                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                            </a>
+                            <p class="cart-product-code"><span># </span> 76548 </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="font-politica">8.00<span> $</span></td>
+                <td class="cart-quantity">
+										<span>
+											<i class="fa fa-minus-circle" aria-hidden="true"></i>
+										</span>
+                    <p>6 шт.</p>
+                    <span>
+											<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										</span>
+                </td>
+                <td class="font-politica">274 <span> $</span></td>
+            </tr>
+        </table>
+        <div class="total">
+            <h4 >
+                Итого к оплате  <span>1567.3</span>$
+            </h4>
+            <div class="but">
+                <a href="#" class="but-cart exit">
+                    Продолжить покупки
+                </a>
+                <a href="cart.php" class="but-cart">
+                    Оформить заказ
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
