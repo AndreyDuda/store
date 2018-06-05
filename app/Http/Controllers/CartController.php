@@ -37,9 +37,9 @@ class CartController extends SiteController
             $cart = Session::get('cart', false);
             if ($cart) {
 
-                if(array_key_exists($product->product_id,$cart)){
+                if (array_key_exists($product->product_id, $cart)) {
                     $cart[$product->product_id]['count'] += 1;
-                }else {
+                } else {
                     $cart[$product->product_id] = [
                         'photo' => $product->photo,
                         'lable' => $product->label,
@@ -50,11 +50,12 @@ class CartController extends SiteController
 
                 }
                 Session::put('cart', $cart);
+            }
 
             } else {
                 $cart[$product->product_id] = [
                     'photo' => $product->photo,
-                    'lable' => $product->label,
+                    'label' => $product->label,
                     'title' => $product->title,
                     'price' => $product->price_many,
                     'count' => 1
@@ -63,13 +64,7 @@ class CartController extends SiteController
                 Session::put('cart', $cart);
 
             }
-
-
             return Session::get('cart', false);
-
-
-            /*echo 'adasd';*/
-
         }
-    }
+
 }
