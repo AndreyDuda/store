@@ -22,10 +22,7 @@ $(document).ready(function(){
     });
 
     $('.product-buy').on('click', function() {
-
-        var product = $(this);
-
-		var id    = product.data('id');
+		var id    =  $(this).data('id');
 		var url = '/by';
             $.ajax({
                 type:'POST',
@@ -34,58 +31,47 @@ $(document).ready(function(){
 				data:{id:id},
                 datatype:'JSON',
                 success: function(data) {
-                    console.log(data);
                     var tableHead = '<tr><th>Наименование товара</th><th>Цена за шт.</th><th class="coli">Кол-во</th><th>Общая стоимость</th></tr>';
-                    var start = false;
+                    var start = '';
                     $('.ttt tbody').empty();
                     $('.ttt tbody').append(tableHead);
 
                     $.each(data, function(index, value){
-                        console.log("INDEX: " + index + " VALUE: " + value.lable);
-                        start = '<tr><td><div class="cart-product-info"><img src="img/' +  value.photo + '.jpg" ><div>' +
+                        start += '<tr><td><div class="cart-product-info"><img src="img/' +  value.photo + '.jpg" ><div>' +
                         '<a href="#" class="cart-product-company">' + value.lable + '</a><br><a href="#" class="cart-product-title">' + value.title + '</a>' +
                         '<p class="cart-product-code"><span># </span> 76548 </p></div></div></td><td class="font-politica">' + value.price + '<span> $</span></td>' +
                         '<td class="cart-quantity"><span><i class="fa fa-minus-circle" aria-hidden="true"></i></span><p>' + value.count + ' шт.</p>'+
 						'<span><i class="fa fa-plus-circle" aria-hidden="true"></i></span></td><td class="font-politica">' + value.count*value.price + '<span> $</span></td></tr>';
-
-                        $('.ttt tbody').append(start);
-                    });
-
-
-
-
+                      });
+                    $('.ttt tbody').append(start);
                     $('.modal-cart').css('display', 'block');
-
-
                 },
                 error:function() {
-                   alert('error');
-                   alert($('input[name="_token"]').val());
                 }
             });
     });
 
+    $('.search').click(function () {
+        var search = 5;
+        var url = '/search';
+        $.ajax({
+            type:'POST',
+            url:url,
+            headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
+            data:{search:search},
+            datatype:'JSON',
+            success: function(data) {
+                console.log(data);
+                alert(data);
+            },
+            error:function() {
+                alert('error');
+                alert($('input[name="_token"]').val());
+            }
+        });
 
-
+    });
 });
-
-//Header slide
-// $(window).scroll(function(){
-//     if ($(window).scrollTop() > 30) {
-//         $('.menu-left a').addClass('menu-scrol');
-//         $('.phone').addClass('menu-scrol');
-//         $('.search').addClass('scrol');
-//         $('.cart').addClass('menu-scrol');
-//         $('.logo img').addClass('menu-scrol');
-//     }
-//     else {
-//         $('.menu-left a').removeClass('menu-scrol');
-//         $('.phone').removeClass('menu-scrol');
-//         $('.search').removeClass('scrol');
-//         $('.cart').removeClass('menu-scrol');
-//         $('.logo img').removeClass('menu-scrol');
-//     }
-// });
 
 //Прокрутка вверх scrollTop
 (function($) {

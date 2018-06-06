@@ -16,6 +16,7 @@
 </head>
 <body>
 <header>
+
     <div class="header-desktop" >
         <div class="logo">
 
@@ -35,7 +36,7 @@
 
         <a href="{{ route('cart') }}" class="cart">
             <i class="fa fa-shopping-cart " aria-hidden="true"></i>
-            <span>0</span>
+            <span>{{ (Session::has('cart'))? count(Session::get('cart')):0}}</span>
         </a>
         <div class="contacts-wrap">
             <div class="phones phones-header">
@@ -54,7 +55,7 @@
             </a>
             <a href="{{ route('cart') }}" class="cart">
                 <i class="fa fa-shopping-cart " aria-hidden="true"></i>
-                <span>0</span>
+                <span>5</span>
             </a>
             <div class="burger">
                 <input type="checkbox" id="burger_check" class="burger_checkbox">
@@ -71,7 +72,7 @@
     </div>
 </header>
 <main>
-
+    {{ csrf_field() }}
 
 
 <?php

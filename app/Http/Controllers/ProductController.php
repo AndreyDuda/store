@@ -136,4 +136,9 @@ class ProductController extends SiteController
         return $this->renderOutput();
     }
 
+    public function search(Request $request)
+    {
+        return $request->search;
+    }
+
 }
