@@ -31,7 +31,8 @@ Route::post('/by/{id?}', 'CartController@by')->name('cartBy');
 
 
 Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
-    Route::get('/', 'Admin\AuthController@index')->name('adminProduct');
+    Route::get('/test', 'Admin\AuthController@index')->name('adminProduct');
+    Route::get('/', 'Admin\ProductController@index')->name('adminProduct');
     Route::post('/product/{id}', 'Admin/AuthController@show')->name('adminProductOne');
     Route::post('/edit', 'Admin/AuthController@store')->name('adminProductEdit');
     Route::post('/delate', 'Admin/AuthController@destroy')->name('adminProductDelate');

@@ -11,7 +11,6 @@ class ProductController extends SiteController
 {
     public function __construct(ProductRepository $product_rep)
     {
-        parent::__construct();
         $this->template = env('THEME') . '.index';
         $this->product_rep = $product_rep;
     }

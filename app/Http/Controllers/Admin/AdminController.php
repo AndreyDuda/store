@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Repositories\ProductRepository;
 
-class SiteController extends Controller
+class AdminController extends Controller
 {
-    //
     protected $product_rep;
 
     protected $vars = array();
