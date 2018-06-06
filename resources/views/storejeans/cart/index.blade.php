@@ -1,3 +1,7 @@
+<?
+$total = 0;
+?>
+
 <div class="margin"></div>
 <h2 class="title-cart">Оформление заказа</h2>
 <div class="wrap-cart">
@@ -63,6 +67,11 @@
         <h3>
             Содержимое заказа
         </h3>
+        @if(!$products)
+            <h2>
+                Корзина пуста
+            </h2>
+        @else
         <table>
             <tr>
                 <th>Наименование товара</th>
@@ -70,167 +79,44 @@
                 <th>Кол-во</th>
                 <th>Общая стоимость</th>
             </tr>
+            @foreach($products as $product)
             <tr>
                 <td>
                     <div class="cart-product-info">
-                        <img src="img/tovar2.jpg" alt="%name%">
+                        <img src="img/{{$product['photo']}}.jpg">
                         <div>
-                            <a href="#" class="cart-product-company">Dicesil</a>
+                            <a href="#" class="cart-product-company">{{$product['lable']}}</a>
                             <br>
                             <a href="#" class="cart-product-title">
-                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
+                                {{$product['title']}}
                             </a>
                             <p class="cart-product-code"><span># </span> 76548 </p>
                         </div>
                     </div>
                 </td>
-                <td class="font-politica">15.5<span> $</span></td>
+                <td class="font-politica">{{$product['price']}}<span> $</span></td>
                 <td class="cart-quantity">
 					<span>
 						<i class="fa fa-minus-circle" aria-hidden="true"></i>
 					</span>
-                    <p>7 шт.</p>
+                    <p>{{ $product['count'] }} шт.</p>
                     <span>
 						<i class="fa fa-plus-circle" aria-hidden="true"></i>
 					</span>
                 </td>
-                <td class="font-politica">129 <span> $</span></td>
+<?
+$total += $product['price'] * $product['count'];
+?>
+                <td class="font-politica">{{$product['price'] * $product['count']}} <span> $</span></td>
             </tr>
-            <tr>
-                <td>
-                    <div class="cart-product-info">
-                        <img src="img/tovar2.jpg" alt="%name%">
-                        <div>
-                            <a href="#" class="cart-product-company">Dicesil</a>
-                            <br>
-                            <a href="#" class="cart-product-title">
-                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
-                            </a>
-                            <p class="cart-product-code"><span># </span> 76548 </p>
-                        </div>
-                    </div>
-                </td>
-                <td class="font-politica">8.00<span> $</span></td>
-                <td class="cart-quantity">
-					<span>
-						<i class="fa fa-minus-circle" aria-hidden="true"></i>
-					</span>
-                    <p>6 шт.</p>
-                    <span>
-						<i class="fa fa-plus-circle" aria-hidden="true"></i>
-					</span>
-                </td>
-                <td class="font-politica">274 <span> $</span></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-product-info">
-                        <img src="img/tovar2.jpg" alt="%name%">
-                        <div>
-                            <a href="#" class="cart-product-company">Dicesil</a>
-                            <br>
-                            <a href="#" class="cart-product-title">
-                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
-                            </a>
-                            <p class="cart-product-code"><span># </span> 76548 </p>
-                        </div>
-                    </div>
-                </td>
-                <td class="font-politica">8.00<span> $</span></td>
-                <td class="cart-quantity">
-					<span>
-						<i class="fa fa-minus-circle" aria-hidden="true"></i>
-					</span>
-                    <p>6 шт.</p>
-                    <span>
-						<i class="fa fa-plus-circle" aria-hidden="true"></i>
-					</span>
-                </td>
-                <td class="font-politica">274 <span> $</span></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-product-info">
-                        <img src="img/tovar2.jpg" alt="%name%">
-                        <div>
-                            <a href="#" class="cart-product-company">Dicesil</a>
-                            <br>
-                            <a href="#" class="cart-product-title">
-                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
-                            </a>
-                            <p class="cart-product-code"><span># </span> 76548 </p>
-                        </div>
-                    </div>
-                </td>
-                <td class="font-politica">8.00<span> $</span></td>
-                <td class="cart-quantity">
-					<span>
-						<i class="fa fa-minus-circle" aria-hidden="true"></i>
-					</span>
-                    <p>6 шт.</p>
-                    <span>
-						<i class="fa fa-plus-circle" aria-hidden="true"></i>
-					</span>
-                </td>
-                <td class="font-politica">274 <span> $</span></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-product-info">
-                        <img src="img/tovar2.jpg" alt="%name%">
-                        <div>
-                            <a href="#" class="cart-product-company">Dicesil</a>
-                            <br>
-                            <a href="#" class="cart-product-title">
-                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
-                            </a>
-                            <p class="cart-product-code"><span># </span> 76548 </p>
-                        </div>
-                    </div>
-                </td>
-                <td class="font-politica">12.00<span> $</span></td>
-                <td class="cart-quantity">
-					<span>
-						<i class="fa fa-minus-circle" aria-hidden="true"></i>
-					</span>
-                    <p>10 шт.</p>
-                    <span>
-						<i class="fa fa-plus-circle" aria-hidden="true"></i>
-					</span>
-                </td>
-                <td class="font-politica">156 <span> $</span></td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="cart-product-info">
-                        <img src="img/tovar2.jpg" alt="%name%">
-                        <div>
-                            <a href="#" class="cart-product-company">Dicesil</a>
-                            <br>
-                            <a href="#" class="cart-product-title">
-                                5155 Dicesil (25-30, 7 ед.) джинсы женские весенние стрейчевые
-                            </a>
-                            <p class="cart-product-code"><span># </span> 76548 </p>
-                        </div>
-                    </div>
-                </td>
-                <td class="font-politica">8.00<span> $</span></td>
-                <td class="cart-quantity">
-					<span>
-						<i class="fa fa-minus-circle" aria-hidden="true"></i>
-					</span>
-                    <p>6 шт.</p>
-                    <span>
-						<i class="fa fa-plus-circle" aria-hidden="true"></i>
-					</span>
-                </td>
-                <td class="font-politica">274 <span> $</span></td>
-            </tr>
+            @endforeach
         </table>
+
         <div class="total">
             <h4>
-                Итого к оплате  <span>1567.3</span>$
+                Итого к оплате  <span>{{$total}}</span>$
             </h4>
         </div>
+        @endif
     </div>
 </div>

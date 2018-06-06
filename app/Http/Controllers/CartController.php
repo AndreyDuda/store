@@ -18,8 +18,11 @@ class CartController extends SiteController
 
     public function index()
     {
-        $data       = [
+        $cart = Session::get('cart', false);
 
+
+        $data       = [
+            'products' => $cart
         ];
         $content    = view(env('THEME') . '.cart.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
@@ -55,7 +58,7 @@ class CartController extends SiteController
             } else {
                 $cart[$product->product_id] = [
                     'photo' => $product->photo,
-                    'label' => $product->label,
+                    'lable' => $product->label,
                     'title' => $product->title,
                     'price' => $product->price_many,
                     'count' => 1
