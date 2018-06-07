@@ -138,7 +138,11 @@ class ProductController extends SiteController
 
     public function search(Request $request)
     {
-        return $request->search;
+        $search = $request->search;
+        $where = "label like '%$search%'  OR title like '%$search%' OR code like '%$search%' OR categories like '%$search%'";
+
+        $products = $this->product_rep->getAll('*', false, $where, false, false);
+        return json_encode($products);
     }
 
 }
