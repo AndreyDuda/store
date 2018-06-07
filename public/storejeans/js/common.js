@@ -51,8 +51,9 @@ $(document).ready(function(){
             });
     });
 
-    $('.search').keydown(function () {
-        var search = $('.search').val();
+    $('.search input').keydown(function () {
+        var search = $('.search input').val();
+        console.log('search : ' + search);
         var url = '/search';
         $.ajax({
             type:'POST',

@@ -139,10 +139,12 @@ class ProductController extends SiteController
     public function search(Request $request)
     {
         $search = $request->search;
-        $where = "label like '%$search%'  OR title like '%$search%' OR code like '%$search%' OR categories like '%$search%'";
+        $where = "LOWER(label) like '%$search%' OR LOWER(title) like '%$search%' OR code like '%$search%' OR LOWER(categories) like '%$search%'";
+        $count_search = 10;
+        $products = $this->product_rep->getAll('*', false, $where, false, $count_search);
 
-        $products = $this->product_rep->getAll('*', false, $where, false, false);
-        return json_encode($products);
+        return $products;
+        //return json_encode($products);
     }
 
 }
