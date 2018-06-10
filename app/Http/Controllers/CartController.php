@@ -21,10 +21,10 @@ class CartController extends SiteController
         $cart = Session::get('cart', false);
 
 
-        $data = [
+        $data       = [
             'products' => $cart
         ];
-        $content = view(env('THEME') . '.cart.index')->with($data)->render();
+        $content    = view(env('THEME') . '.cart.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
@@ -39,10 +39,12 @@ class CartController extends SiteController
         if (Session::has('cart')) {
             $cart = Session::get('cart', false);
             if ($cart) {
+
                 if (array_key_exists($product->product_id, $cart)) {
                     $cart[$product->product_id]['count'] += 1;
                 } else {
                     $cart[$product->product_id] = [
+                        'code'  => $product->code,
                         'photo' => $product->photo,
                         'lable' => $product->label,
                         'title' => $product->title,
@@ -52,23 +54,39 @@ class CartController extends SiteController
 
                 }
                 Session::put('cart', $cart);
+            }
+
             } else {
                 $cart[$product->product_id] = [
+                    'code'  => $product->code,
                     'photo' => $product->photo,
                     'lable' => $product->label,
                     'title' => $product->title,
                     'price' => $product->price_many,
                     'count' => 1
                 ];
+
                 Session::put('cart', $cart);
+
             }
             return Session::get('cart', false);
-        }
-
     }
 
     public function sendRequest(Request $request)
     {
+        $product = array();
 
+        $request = $request->input();
+        unset($request['_token']);
+        $request['new'] = 1;
+        $cart = Session::get('cart', false);
+        foreach ($cart as $item){
+            $product[] = $item['lable'];
+        }
+        $request['product'] = json_encode($product);
+
+        dd($request);
+        return redirect()->route('cart')->with('Ваш заказ отправлен в обрабатываетку');
     }
+
 }

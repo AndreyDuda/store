@@ -10,6 +10,7 @@ $total = 0;
             Контактная информация
         </h3>
         <form action="{{ route('sendRequest') }}" autocomplete="on" method="post">
+            {{ csrf_field() }}
             <ul>
                 <li>
                     <label> Страна </label>
@@ -21,42 +22,43 @@ $total = 0;
                 </li>
                 <li>
                     <label> Город </label>
-                    <input class="town" name="town" type="text">
+                    <input class="town" name="city" type="text">
                 </li>
                 <li>
                     <label alt="Обязательное поле для заполнения"> ФИО <span> *</span></label>
 
-                    <input class="info-name" name="info-name" type="text" required>
+                    <input class="info-name" name="fio" type="text" required>
                 </li>
                 <li>
                     <label> Телефон <span> *</span></label>
-                    <input class="phone-info" name="phone-info" placeholder="+38 ( _ _ _ ) _  _  _  _  _  _  _" type="number" required>
+                    <input class="phone-info" name="telephone" placeholder="+38 ( _ _ _ ) _  _  _  _  _  _  _" type="number" required>
                 </li>
             </ul>
             <div class="cart-payment">
                 <h3>
                     Выберите способ оплаты:
                 </h3>
-                <input  class="radio" name="payment" type="radio" id="privat-radio">
+                <input  class="radio" name="oplata" type="radio" id="privat-radio" value="Карта Приват Банка">
                 <label for="privat-radio"> Карта Приват Банка </label>
-                <input  class="radio" name="payment" type="radio" id="imposed-radio">
+                <input  class="radio" name="oplata" type="radio" id="imposed-radio" value="Наложенный платеж">
                 <label for="imposed-radio"> Наложенный платеж </label>
-                <input  class="radio" name="payment" type="radio" id="pickup-radio">
+                <input  class="radio" name="oplata" type="radio" id="pickup-radio" value="Самовывоз (наличные)">
                 <label for="pickup-radio"> Самовывоз (наличные) </label>
             </div>
             <div class="cart-delivery">
                 <h3>
                     Выберите способ доставки:
                 </h3>
-                <input  class="radio" name="delivery" type="radio" id="delivery-pickup-radio">
+                <input  class="radio" name="delivery" type="radio" id="delivery-pickup-radio" value="Самовывоз">
                 <label for="delivery-pickup-radio"> Самовывоз (Одесса, 7 км) </label>
-                <input  class="radio" name="delivery" type="radio" id="delivery-nova-radio">
+                <input  class="radio" name="delivery" type="radio" id="delivery-nova-radio" value="Новая почта">
                 <label for="delivery-nova-radio"> Новая почта </label>
-                <input  class="radio" name="delivery" type="radio" id="delivery-intaim-radio">
+                <input  class="radio" name="delivery" type="radio" id="delivery-intaim-radio" value="Интайм">
                 <label for="delivery-intaim-radio"> Интайм </label>
             </div>
             <p>Комментарий к заказу:</p>
-            <textarea name="text-area" class="text-area" placeholder="Здесь вы можете написать комментарий или уточнение по поводу заказа..."></textarea>
+            <textarea name="comment" class="text-area" placeholder="Здесь вы можете написать комментарий или уточнение по поводу заказа..."></textarea>
+
             <div class="product-number info-number">
                 <p>После оформления заказа с вами обязательно свяжется менеджер для уточнения подробностей и только после этого заказ будет сформирован !</p>
             </div>
