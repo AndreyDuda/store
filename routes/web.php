@@ -28,6 +28,7 @@ Route::get('/contact', 'ContactController@index')->name('contacts');
 Route::get('/delivery', 'DeliveryController@index')->name('delivery');
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::post('/by/{id?}', 'CartController@by')->name('cartBy');
+Route::post('/send_request/', 'CartController@sendRequest')->name('sendRequest');
 
 
 

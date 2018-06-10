@@ -21,10 +21,10 @@ class CartController extends SiteController
         $cart = Session::get('cart', false);
 
 
-        $data       = [
+        $data = [
             'products' => $cart
         ];
-        $content    = view(env('THEME') . '.cart.index')->with($data)->render();
+        $content = view(env('THEME') . '.cart.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
@@ -39,7 +39,6 @@ class CartController extends SiteController
         if (Session::has('cart')) {
             $cart = Session::get('cart', false);
             if ($cart) {
-
                 if (array_key_exists($product->product_id, $cart)) {
                     $cart[$product->product_id]['count'] += 1;
                 } else {
@@ -53,8 +52,6 @@ class CartController extends SiteController
 
                 }
                 Session::put('cart', $cart);
-            }
-
             } else {
                 $cart[$product->product_id] = [
                     'photo' => $product->photo,
@@ -63,11 +60,15 @@ class CartController extends SiteController
                     'price' => $product->price_many,
                     'count' => 1
                 ];
-
                 Session::put('cart', $cart);
-
             }
             return Session::get('cart', false);
         }
 
+    }
+
+    public function sendRequest(Request $request)
+    {
+
+    }
 }

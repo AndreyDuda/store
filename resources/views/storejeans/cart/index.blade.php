@@ -9,7 +9,7 @@ $total = 0;
         <h3>
             Контактная информация
         </h3>
-        <form action="#" autocomplete="on" method="post">
+        <form action="{{ route('sendRequest') }}" autocomplete="on" method="post">
             <ul>
                 <li>
                     <label> Страна </label>
