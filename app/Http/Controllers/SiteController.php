@@ -9,6 +9,7 @@ class SiteController extends Controller
 {
     //
     protected $product_rep;
+    protected $request_rep;
 
     protected $vars = array();
     protected $template;

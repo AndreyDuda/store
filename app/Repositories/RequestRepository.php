@@ -22,7 +22,7 @@ class RequestRepository extends Repository
     public function validator($input)
     {
         $validator = Validator::make($input, [
-            'telephone' => 'required',
+
             'fio'       => 'required'
         ]);
 

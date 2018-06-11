@@ -11,9 +11,6 @@ use Session;
 class CartController extends SiteController
 {
 
-
-    public $request_rep = false;
-
     public function __construct(ProductRepository $product_rep, Request_rep $request_rep)
     {
         $this->template = env('THEME') . '.index';
@@ -90,8 +87,8 @@ class CartController extends SiteController
         }
         $input['product'] = json_encode($product);
 
-        $this->request_rep->add($input);
-        dd($input);
+       /* $this->request_rep->add($input);*/
+        dd($this->request_rep->test());
         /*return redirect()->route('cart')->with('Ваш заказ отправлен в обрабатываетку');*/
     }
 

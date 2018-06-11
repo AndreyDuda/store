@@ -75,9 +75,14 @@ abstract class Repository
     {
         $model = new $this->model;
         $model->fill($input);
-        $model->save();
+        $model->save($input);
 
         return $model;
+    }
+
+    public function test()
+    {
+        return 'test';
     }
 
 }
