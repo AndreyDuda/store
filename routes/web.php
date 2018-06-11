@@ -22,13 +22,16 @@ Auth::routes();
 Route::get('/', 'IndexController@index')->name('index');
 Route::get('/products/{catedories?}/{id?}', 'ProductController@index')->name('productAll');
 Route::get('product/{id}', ['uses' => 'ProductController@show', 'as' => 'productOne'] );
-Route::post('/search/{search?}', 'ProductController@search')->name('searchProduct');
+
 //Route::get('articles/cat/{cat_alias?}', ['uses' => 'ArticleController@index', 'as' => 'articlesCat' ] )->where('cat_alias', '[\w-]+');
 Route::get('/contact', 'ContactController@index')->name('contacts');
 Route::get('/delivery', 'DeliveryController@index')->name('delivery');
 Route::get('/cart', 'CartController@index')->name('cart');
+
+
 Route::post('/by/{id?}', 'CartController@by')->name('cartBy');
-Route::post('/send_request/', 'CartController@sendRequest')->name('sendRequest');
+Route::post('/search/{search?}', 'ProductController@search')->name('searchProduct');
+Route::post('/send_request/{send_request?}', 'CartController@sendRequest')->name('sendRequest');
 
 
 

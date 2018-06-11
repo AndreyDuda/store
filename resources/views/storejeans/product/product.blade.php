@@ -365,7 +365,7 @@
                         <img src="{{ asset(env('THEME')) }}/img/ruler-icon.png" alt="Таблица размеров">
                         <p >Таблица размеров</p>
                     </div>
-                    <div data-id="{{ $product->product_id }}" class="product-buy">
+                    <div data-id="{{ $product->product_id }}" data-url="{{ route('cartBy') }}" class="product-buy">
                         Добавить в корзину
                         </div>
                 </div>

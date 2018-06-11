@@ -4,25 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
+use App\Request as Request_rep;
+
 use Session;
 
 class CartController extends SiteController
 {
 
 
-    public function __construct(ProductRepository $product_rep)
+    public $request_rep = false;
+
+    public function __construct(ProductRepository $product_rep, Request_rep $request_rep)
     {
         $this->template = env('THEME') . '.index';
         $this->product_rep = $product_rep;
+        $this->request_rep = $request_rep;
+
     }
 
     public function index()
     {
-        $cart = Session::get('cart', false);
-
-
+        $products = Session::get('cart', false);
         $data       = [
-            'products' => $cart
+            'products' => $products
         ];
         $content    = view(env('THEME') . '.cart.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
@@ -34,7 +38,6 @@ class CartController extends SiteController
         $id = $request->id;
         $product = $product = $this->product_rep->getOne($id);
         $cart = [];
-
 
         if (Session::has('cart')) {
             $cart = Session::get('cart', false);
@@ -75,18 +78,21 @@ class CartController extends SiteController
     public function sendRequest(Request $request)
     {
         $product = array();
-
-        $request = $request->input();
-        unset($request['_token']);
-        $request['new'] = 1;
+        $i = 0;
+        $input = $request->input();
+        unset($input['_token']);
+        $input['new'] = 1;
         $cart = Session::get('cart', false);
         foreach ($cart as $item){
-            $product[] = $item['lable'];
+            $i++;
+            $product[$i]['code']  = $item['code'];
+            $product[$i]['count'] = $item['count'];
         }
-        $request['product'] = json_encode($product);
+        $input['product'] = json_encode($product);
 
-        dd($request);
-        return redirect()->route('cart')->with('Ваш заказ отправлен в обрабатываетку');
+        $this->request_rep->add($input);
+        dd($input);
+        /*return redirect()->route('cart')->with('Ваш заказ отправлен в обрабатываетку');*/
     }
 
 }

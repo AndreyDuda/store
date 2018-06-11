@@ -31,6 +31,8 @@ $(document).ready(function(){
 				data:{id:id},
                 datatype:'JSON',
                 success: function(data) {
+
+                    console.log(data);
                     var tableHead = '<tr><th>Наименование товара</th><th>Цена за шт.</th><th class="coli">Кол-во</th><th>Общая стоимость</th></tr>';
                     var start = '';
                     $('.ttt tbody').empty();
@@ -47,13 +49,31 @@ $(document).ready(function(){
                     $('.modal-cart').css('display', 'block');
                 },
                 error:function() {
+                    console.log('ERRORE');
                 }
             });
     });
 
+    /*$('.product-buy').on('click', function() {
+        var id  =  $(this).data('id');
+        var url =  $(this).data('url');
+        $.ajax({
+            type:'POST',
+            url:url,
+            headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
+            data:{id:id},
+            datatype:'JSON',
+            success: function(data) {
+                console.log(data);
+            },
+            error:function() {
+                console.log('ERROR');
+            }
+        });
+    });*/
+
     $('.search input').keydown(function () {
         var search = $('.search input').val();
-        console.log('search : ' + search);
         var url = '/search';
         $.ajax({
             type:'POST',
@@ -70,8 +90,9 @@ $(document).ready(function(){
                 alert($('input[name="_token"]').val());
             }
         });
-
     });
+
+
 });
 
 //Прокрутка вверх scrollTop
