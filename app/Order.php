@@ -5,9 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 
-class RequestProduct extends Model
+class Order extends Model
 {
-    protected $table = 'request';
+    protected $table = 'order';
 
     protected $fillable = [
         'telephone', 'fio', 'country','city','oplata','delivery','product','comment','new'

@@ -16,8 +16,8 @@ $total = 0;
                     <label> Страна </label>
                     <select name="country" class="info-country">
                         <option disabled selected>Выберите страну</option>
-                        <option value="ua">Украина</option>
-                        <option value="ru">Росиия</option>
+                        <option value="Украина">Украина</option>
+                        <option value="Россия">Росиия</option>
                     </select>
                 </li>
                 <li>

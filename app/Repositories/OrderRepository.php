@@ -8,15 +8,15 @@
 
 namespace App\Repositories;
 
-use App\RequestProduct;
+use App\Order;
 use Validator;
 
 
-class RequestProductRepository extends Repository
+class OrderRepository extends Repository
 {
-    public  function __construct(RequestProduct $request_product)
+    public  function __construct(Order $order_rep)
     {
-        $this->model = $request_product;
+        $this->model = $order_rep;
     }
 
     public function validator($input)

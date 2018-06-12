@@ -13,11 +13,11 @@ class CreateRequestTable extends Migration
      */
     public function up()
     {
-        Schema::create('request', function (Blueprint $table) {
+        Schema::create('order', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('telephone');
             $table->string('fio',255);
-            $table->string('country',3);
+            $table->string('country',255);
             $table->string('city',255);
             $table->string('oplata', 255);
             $table->string('delivery', 255);

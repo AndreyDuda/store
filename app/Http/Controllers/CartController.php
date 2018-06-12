@@ -4,23 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
-use App\Repositories\RequestProductRepository;
+use App\Repositories\OrderRepository;
 
 use Session;
 
 class CartController extends SiteController
 {
 
-    public function __construct(ProductRepository $product_rep, RequestProductRepository $request_product)
+    public function __construct(ProductRepository $product_rep, OrderRepository $order_rep)
     {
         $this->template = env('THEME') . '.index';
         $this->product_rep = $product_rep;
-        $this->request_rep = $request_product;
+        $this->order_rep = $order_rep;
 
     }
 
     public function index()
     {
+        Session::forget('cart');
         $products = Session::get('cart', false);
         $data       = [
             'products' => $products
@@ -88,8 +89,8 @@ class CartController extends SiteController
         }
         $input['product'] = json_encode($product);
 
-        $this->request_rep->add($input);
-        dd($this->request_rep);
+        $this->order_rep->add($input);
+        dd($this->order_rep);
         /*return redirect()->route('cart')->with('Ваш заказ отправлен в обрабатываетку');*/
     }
 
