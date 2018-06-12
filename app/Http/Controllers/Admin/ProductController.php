@@ -11,7 +11,7 @@ class ProductController extends AdminController
 {
     public function __construct(ProductRepository $product_rep)
     {
-        $this->template = env('THEME') . '.admin.index';
+        $this->template    = env('THEME') . '.admin.index';
         $this->product_rep = $product_rep;
     }
 
@@ -27,7 +27,7 @@ class ProductController extends AdminController
             'products' => $products
         ];
 
-        $content    = view(env('THEME') . '.admin.product.content')->with($data)->render();
+        $content    = view(env('THEME') . '.admin.product.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }

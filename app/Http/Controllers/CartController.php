@@ -21,7 +21,7 @@ class CartController extends SiteController
 
     public function index()
     {
-        /*Session::forget('cart');*/
+
         $products = Session::get('cart', false);
         $data       = [
             'products' => $products
@@ -90,6 +90,7 @@ class CartController extends SiteController
         $input['product'] = json_encode($product);
 
         $this->order_rep->add($input);
+        /*Session::forget('cart');*/
         dd($this->order_rep);
         /*return redirect()->route('cart')->with('Ваш заказ отправлен в обрабатываетку');*/
     }
