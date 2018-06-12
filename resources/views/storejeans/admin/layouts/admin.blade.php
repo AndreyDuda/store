@@ -76,72 +76,13 @@
         <dd class="filter-body ">
             <ul>
                 <li>
-                    <a href="#">Редактировать</a>
+                    <a href="#">Все товары</a>
                 </li>
                 <li>
-                    <a href="#">Удалить</a>
+                    <a href="#">Добавить один товар</a>
                 </li>
                 <li>
-                    <a href="#">Дрочнуть</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Обосрать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Категории
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Насцыкать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Настройки
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Замутить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
+                    <a href="#">Добавить товары Excel</a>
                 </li>
             </ul>
         </dd>
@@ -151,27 +92,18 @@
         <dd class="filter-body ">
             <ul>
                 <li>
-                    <a href="#">Редактировать</a>
+                    <a href="#">Новые</a>
                 </li>
                 <li>
-                    <a href="#">Удалить</a>
+                    <a href="#">Обработанные</a>
                 </li>
                 <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
+                    <a href="#">Все</a>
                 </li>
             </ul>
         </dd>
         <dt class="filter-header">
-            Товары
+            Настройки сайта
         </dt>
         <dd class="filter-body ">
             <ul>
@@ -179,294 +111,7 @@
                     <a href="#">Редактировать</a>
                 </li>
                 <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Дрочнуть</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Обосрать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Категории
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Насцыкать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Настройки
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Замутить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Заказы
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Товары
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Дрочнуть</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Обосрать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Категории
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Насцыкать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Товары
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Дрочнуть</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Обосрать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Категории
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Насцыкать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Настройки
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Замутить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Настройки
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Замутить</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Профиль
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Замучать профиль</a>
-                </li>
-                <li>
-                    <a href="#">Удалить печень</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать ситуацию в стране</a>
-                </li>
-                <li>
-                    <a href="#">Залупить</a>
-                </li>
-            </ul>
-        </dd>
-        <dt class="filter-header">
-            Профиль
-        </dt>
-        <dd class="filter-body ">
-            <ul>
-                <li>
-                    <a href="#">Редактировать</a>
-                </li>
-                <li>
-                    <a href="#">Удалить</a>
-                </li>
-                <li>
-                    <a href="#">Замучать профиль</a>
-                </li>
-                <li>
-                    <a href="#">Удалить печень</a>
-                </li>
-                <li>
-                    <a href="#">Редактировать ситуацию в стране</a>
-                </li>
-                <li>
-                    <a href="#">Залупить</a>
+                    <a href="#">Удалить картинки</a>
                 </li>
             </ul>
         </dd>

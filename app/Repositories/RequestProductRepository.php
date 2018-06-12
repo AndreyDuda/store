@@ -8,15 +8,15 @@
 
 namespace App\Repositories;
 
-use App\Request as Request_model;
+use App\RequestProduct;
 use Validator;
 
 
-class RequestRepository extends Repository
+class RequestProductRepository extends Repository
 {
-    public  function __construct(Request_model $request)
+    public  function __construct(RequestProduct $request_product)
     {
-        $this->model = $request;
+        $this->model = $request_product;
     }
 
     public function validator($input)

@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
-use App\Request as Request_rep;
+use App\Repositories\RequestProductRepository;
 
 use Session;
 
 class CartController extends SiteController
 {
 
-    public function __construct(ProductRepository $product_rep, Request_rep $request_rep)
+    public function __construct(ProductRepository $product_rep, RequestProductRepository $request_product)
     {
         $this->template = env('THEME') . '.index';
         $this->product_rep = $product_rep;
-        $this->request_rep = $request_rep;
+        $this->request_rep = $request_product;
 
     }
 
@@ -27,6 +27,7 @@ class CartController extends SiteController
         ];
         $content    = view(env('THEME') . '.cart.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+
         return $this->renderOutput();
     }
 
@@ -87,8 +88,8 @@ class CartController extends SiteController
         }
         $input['product'] = json_encode($product);
 
-       /* $this->request_rep->add($input);*/
-        dd($this->request_rep->test());
+        $this->request_rep->add($input);
+        dd($this->request_rep);
         /*return redirect()->route('cart')->with('Ваш заказ отправлен в обрабатываетку');*/
     }
 

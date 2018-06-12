@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Request extends Model
+class RequestProduct extends Model
 {
     protected $table = 'request';
 
