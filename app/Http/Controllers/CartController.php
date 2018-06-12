@@ -21,7 +21,7 @@ class CartController extends SiteController
 
     public function index()
     {
-        Session::forget('cart');
+        /*Session::forget('cart');*/
         $products = Session::get('cart', false);
         $data       = [
             'products' => $products
