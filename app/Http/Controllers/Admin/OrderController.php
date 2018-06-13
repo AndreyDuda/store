@@ -29,6 +29,7 @@ class OrderController extends AdminController
         ];
 
         $content    = view(env('THEME') . '.admin.order.index')->with($data)->render();
-
+        $this->vars = array_add($this->vars, 'content', $content);
+        return $this->renderOutput();
     }
 }

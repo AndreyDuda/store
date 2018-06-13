@@ -87,7 +87,7 @@ class CartController extends SiteController
             $product[$i]['code']  = $item['code'];
             $product[$i]['count'] = $item['count'];
         }
-        $input['product'] = json_encode($product);
+        $input['product'] = json_encode(Session::get('cart', false));
 
         $this->order_rep->add($input);
         /*Session::forget('cart');*/
