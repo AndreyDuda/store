@@ -6,6 +6,14 @@ use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use App\Repositories\OrderRepository;
 
+
+
+
+/*use App\Mail;*/
+use App\Mail\OrderShipped;
+
+
+use Illuminate\Support\Facades\Mail;
 use Session;
 
 class CartController extends SiteController
@@ -90,7 +98,13 @@ class CartController extends SiteController
         $input['product'] = json_encode(Session::get('cart', false));
 
         $this->order_rep->add($input);
-        /*Session::forget('cart');*/
+
+
+       $name = 'Andrey';
+       $email = 'credonull@gmail.com';
+
+       Mail::to('dudavx85@gmail.com')->send(new OrderShipped($name, $email));
+
         dd($this->order_rep);
         /*return redirect()->route('cart')->with('Ваш заказ отправлен в обрабатываетку');*/
     }

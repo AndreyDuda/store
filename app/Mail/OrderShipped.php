@@ -11,14 +11,18 @@ class OrderShipped extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $name;
+    protected $email;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($name, $email)
     {
-        //
+        $this->name = $name;
+        $this->email = $email;
     }
 
     /**
@@ -28,6 +32,11 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        $data = [
+            'name' => $this->name,
+            'email' => $this->email
+        ];
+
+        return $this->from('credonull@gmail.com', 'store jeans')->view(env('THEME') . '.mail.order')->with($data)->subject('Новое письмо');
     }
 }

@@ -19,7 +19,7 @@ class OrderController extends AdminController
     public function index()
     {
         $step     = 3;
-        $paginate = 25;
+        $paginate = 125;
         $select   = '*';
         $where    = 'new = 1';
         $order    = false;
