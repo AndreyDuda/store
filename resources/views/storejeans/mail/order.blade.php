@@ -8,7 +8,7 @@
 <body>
 @if(!$products)
     <h1 style="width: 100%; text-align: center">Уважаемый {{$name}}</h1>
-    <p>Ваш заказ принят в обработку. Ближайшее время с Вами свяжется наш менеджер для уточнени покупки.</p>
+    <p>Ваш заказ принят в обработку. Ближайшее время с Вами свяжется наш менеджер для уточнени заказа.</p>
     <p>С Ув. магази storeJeans</p>
     <p>тел. 099 378 33 31</p>
     <p>тел. 096 002 65 69</p>
@@ -33,14 +33,15 @@
         @else
             <table>
                 <tr>
-                    <th>Наименование товара</th>
+                    <th>Наименование</th>
+                    <th>Код</th>
                     <th>Цена за шт.</th>
                     <th>Кол-во</th>
                     <th>Общая стоимость</th>
                 </tr>
                 @foreach($products as $product)
                     <tr>
-                        <td>
+                        <td style="text-align:center;" >
                             <div class="cart-product-info">
 
                                 <div>
@@ -49,12 +50,13 @@
                                     <a href="#" class="cart-product-title">
                                         {{$product['title']}}
                                     </a>
-                                    <p class="cart-product-code"><span># </span> 76548 </p>
+
                                 </div>
                             </div>
                         </td>
-                        <td class="font-politica">{{$product['price']}}<span> $</span></td>
-                        <td class="cart-quantity">
+                        <td style="text-align:center;"  class="font-politica">{{$product['code']}}</td>
+                        <td style="text-align:center;"  class="font-politica">{{$product['price']}}<span> $</span></td>
+                        <td style="text-align:center;"  class="cart-quantity">
 					<span>
 						<i class="fa fa-minus-circle" aria-hidden="true"></i>
 					</span>
@@ -66,7 +68,7 @@
                         <?
                         $total += $product['price'] * $product['count'];
                         ?>
-                        <td class="font-politica">{{$product['price'] * $product['count']}} <span> $</span></td>
+                        <td style="text-align:center;"  class="font-politica">{{$product['price'] * $product['count']}} <span> $</span></td>
                     </tr>
                 @endforeach
             </table>

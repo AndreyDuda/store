@@ -110,8 +110,10 @@ class CartController extends SiteController
        }
        Mail::to('credonull@gmail.com')->send(new OrderShipped($name, $tel, $email, $user, Session::get('cart', false)));
 
-        dd($this->order_rep);
+       /* dd($this->order_rep);*/
         /*return redirect()->route('cart')->with('Ваш заказ отправлен в обрабатываетку');*/
+        $request->session()->forget('cart');
+        return redirect()->route('cart')->with('status', 'Заказ успешно отправлен');
     }
 
 }

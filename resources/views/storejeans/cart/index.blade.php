@@ -1,7 +1,11 @@
 <?
 $total = 0;
 ?>
-
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
 <div class="margin"></div>
 <h2 class="title-cart">Оформление заказа</h2>
 <div class="wrap-cart">
