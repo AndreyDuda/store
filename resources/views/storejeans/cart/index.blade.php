@@ -33,6 +33,10 @@ $total = 0;
                     <label> Телефон <span> *</span></label>
                     <input class="phone-info" name="telephone" placeholder="+38 ( _ _ _ ) _  _  _  _  _  _  _" type="number" required>
                 </li>
+                <li>
+                    <label> E-mail <span>(для отслеживания заказа) </span></label>
+                    <input class="phone-info" name="email" placeholder="exemple@mail.com" type="email">
+                </li>
             </ul>
             <div class="cart-payment">
                 <h3>

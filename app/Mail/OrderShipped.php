@@ -13,16 +13,23 @@ class OrderShipped extends Mailable
 
     protected $name;
     protected $email;
+    protected $user;
+    protected $tel;
+    protected $product;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name, $email)
+    public function __construct($name, $tel, $email, $user, $product = false)
     {
-        $this->name = $name;
-        $this->email = $email;
+        $this->name    = $name;
+        $this->email   = $email;
+        $this->user    = $user;
+        $this->tel     = $tel;
+        $this->product = $product;
+
     }
 
     /**
@@ -32,11 +39,17 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
-        $data = [
-            'name' => $this->name,
-            'email' => $this->email
-        ];
 
-        return $this->from('credonull@gmail.com', 'store jeans')->view(env('THEME') . '.mail.order')->with($data)->subject('Новое письмо');
+            $data = [
+                'name'     => $this->name,
+                'email'    => $this->email,
+                'user'     => $this->user,
+                'tel'      => $this->tel,
+                'products' => $this->product
+            ];
+
+            return $this->from('credonull@gmail.com', 'story jeans')->view(env('THEME') . '.mail.order')->with($data)->subject('StoryJeans');
+
     }
+
 }

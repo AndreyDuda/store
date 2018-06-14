@@ -10,6 +10,6 @@ class Order extends Model
     protected $table = 'order';
 
     protected $fillable = [
-        'telephone', 'fio', 'country','city','oplata','delivery','product','comment','new'
+        'telephone', 'fio', 'email', 'country','city','oplata','delivery','product','comment','new'
     ];
 }

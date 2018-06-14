@@ -100,10 +100,15 @@ class CartController extends SiteController
         $this->order_rep->add($input);
 
 
-       $name = 'Andrey';
+       $name = ($input['fio'])? $input['fio']:'Клиент';
+       $user = ($input['email'])? $input['email']:false;
+       $tel  = $input['telephone'];
        $email = 'credonull@gmail.com';
 
-       Mail::to('dudavx85@gmail.com')->send(new OrderShipped($name, $email));
+       if($user){
+           Mail::to($user)->send(new OrderShipped($name, $tel, $email, $user, false));
+       }
+       Mail::to('credonull@gmail.com')->send(new OrderShipped($name, $tel, $email, $user, Session::get('cart', false)));
 
         dd($this->order_rep);
         /*return redirect()->route('cart')->with('Ваш заказ отправлен в обрабатываетку');*/

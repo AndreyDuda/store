@@ -16,6 +16,7 @@ class CreateRequestTable extends Migration
         Schema::create('order', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('telephone');
+            $table->char('email',255);
             $table->string('fio',255);
             $table->string('country',255);
             $table->string('city',255);
@@ -35,6 +36,6 @@ class CreateRequestTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_request_');
+        Schema::dropIfExists('order');
     }
 }
