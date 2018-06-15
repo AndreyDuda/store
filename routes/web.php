@@ -39,7 +39,9 @@ Route::post('/search/{search?}', 'ProductController@search')->name('searchProduc
 Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
    /* Route::get('/test', 'Admin\AuthController@index')->name('adminProduct');*/
     Route::get('/', 'Admin\ProductController@index')->name('adminProduct');
-    Route::get('/upload', 'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
+    Route::get('/upload/product', 'Admin\ProductController@uploadProductFile')->name('uploadProduct');
+    Route::post('/upload/product', 'Admin\ProductController@uploadProductFile')->name('saveProduct');
+    Route::get('/upload/excel', 'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
 
 
     Route::get('/order', 'Admin\OrderController@index')->name('OrderIndex');

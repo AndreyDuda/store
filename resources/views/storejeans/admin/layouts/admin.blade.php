@@ -76,13 +76,13 @@
         <dd class="filter-body ">
             <ul>
                 <li>
-                    <a href="#">Все товары</a>
+                    <a href="{{ route('adminProduct') }}">Все товары</a>
                 </li>
                 <li>
-                    <a href="#">Добавить один товар</a>
+                    <a href="{{ route('uploadProduct') }}">Добавить один товар</a>
                 </li>
                 <li>
-                    <a href="#">Добавить товары Excel</a>
+                    <a href="{{ route('uploadFileForm') }}">Добавить товары Excel</a>
                 </li>
             </ul>
         </dd>

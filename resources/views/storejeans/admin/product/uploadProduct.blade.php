@@ -5,11 +5,11 @@
         {{ session('status') }}
     </div>
 @endif
-    <h2 class="table-name">Добавить товары через Excel </h2>
-<form action="{{ route('readExcel') }}" autocomplete="off" method="post" enctype="multipart/form-data">
+    <h2 class="table-name">Добавить товар в ручную </h2>
+<form action="{{ route('saveProduct') }}" autocomplete="off" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
     <ul>
-            <label> Excel </label>
+            <label> 1 поле </label>
             <input type="file" class="town" name="excel">
         </li>
     </ul>
