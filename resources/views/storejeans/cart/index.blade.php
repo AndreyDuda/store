@@ -100,7 +100,7 @@ $total = 0;
                             <a href="#" class="cart-product-title">
                                 {{$product['title']}}
                             </a>
-                            <p class="cart-product-code"><span># </span> 76548 </p>
+
                         </div>
                     </div>
                 </td>
