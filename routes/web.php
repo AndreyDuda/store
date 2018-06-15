@@ -39,6 +39,8 @@ Route::post('/send_request/{send_request?}', 'CartController@sendRequest')->name
 Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
    /* Route::get('/test', 'Admin\AuthController@index')->name('adminProduct');*/
     Route::get('/', 'Admin\ProductController@index')->name('adminProduct');
+    Route::get('/upload', 'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
+    Route::post('/upload', 'Admin\ProductController@uploadExcelFile')->name('uploadFileSend');
 
     Route::get('/order', 'Admin\OrderController@index')->name('OrderIndex');
 

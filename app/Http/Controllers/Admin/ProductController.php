@@ -31,4 +31,19 @@ class ProductController extends AdminController
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
+
+    public function uploadExcelFile(Request $request)
+    {
+        if($request->isMethod('POST')){
+
+           dd($request->file('excel'));
+        }
+        $data = [
+
+        ];
+
+        $content    = view(env('THEME') . '.admin.product.uploadExcelFile')->with($data)->render();
+        $this->vars = array_add($this->vars, 'content', $content);
+        return $this->renderOutput();
+    }
 }
