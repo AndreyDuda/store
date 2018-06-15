@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use Config;
+use App\Http\Controllers\Admin\BackService\Excel\ExcelController;
 
 
 class ProductController extends AdminController
@@ -34,10 +35,7 @@ class ProductController extends AdminController
 
     public function uploadExcelFile(Request $request)
     {
-        if($request->isMethod('POST')){
 
-           dd($request->file('excel'));
-        }
         $data = [
 
         ];

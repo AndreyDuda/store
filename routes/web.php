@@ -31,7 +31,7 @@ Route::get('/cart', 'CartController@index')->name('cart');
 
 Route::post('/by/{id?}', 'CartController@by')->name('cartBy');
 Route::post('/search/{search?}', 'ProductController@search')->name('searchProduct');
-Route::post('/send_request/{send_request?}', 'CartController@sendRequest')->name('sendRequest');
+
 
 
 
@@ -40,7 +40,7 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
    /* Route::get('/test', 'Admin\AuthController@index')->name('adminProduct');*/
     Route::get('/', 'Admin\ProductController@index')->name('adminProduct');
     Route::get('/upload', 'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
-    Route::post('/upload', 'Admin\ProductController@uploadExcelFile')->name('uploadFileSend');
+
 
     Route::get('/order', 'Admin\OrderController@index')->name('OrderIndex');
 
@@ -48,7 +48,7 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::post('/edit', 'Admin/AuthController@store')->name('adminProductEdit');
     Route::post('/delate', 'Admin/AuthController@destroy')->name('adminProductDelate');
    /* Route::post('/ex', 'Admin\AuthController@ex')->name('ex');*/
-    Route::get('/parse', 'Admin\BackService\excel\ExcelController@parse')->name('readExcel');
+    Route::post('/parse', 'Admin\BackService\excel\ExcelController@parse')->name('readExcel');
     Route::get('/write', 'Admin\BackService\excel\ExcelController@write')->name('excelWrite');
 
 });

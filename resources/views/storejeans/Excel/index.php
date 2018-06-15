@@ -3,7 +3,7 @@
 require_once 'PHPExcel.php';
 include 'header.html';
 
-    $filepath = '../../products1.xlsx';
+//$filepath = '../../products1.xlsx';
     $inputFileType = PHPExcel_IOFactory::identify($filepath);
     $objReader = PHPExcel_IOFactory::createReader($inputFileType);
 

@@ -8,18 +8,23 @@ use Illuminate\Support\Facades\DB;
 
 class ExcelController extends Controller
 {
+
+
     public function parse(Request $request)
     {
-        $filepath = '../products1.xlsx';
+        $filepath = $request->file('excel');
 
-        $data =  view(env('THEME') .'\Excel\index')->render();
+        $data = [
+            'filepath' => $filepath
+        ];
+
+        $data =  view(env('THEME') .'\Excel\index')->with($data)->render();
         if($data){
             return redirect()->route('excelWrite');
         }else{
             $request->session()->flash('Error.excel', 'Ошибка работы парсера Excel');
             return redirect()->route('excelWrite');
         }
-
     }
 
     public function write(Request $request)
@@ -57,7 +62,7 @@ class ExcelController extends Controller
 
 
         }
-        dd($dbExcel[0]);
+       return redirect()->route('uploadFileForm')->with('status', 'Excel файл успешно обработан и загружен в базу');
 
     }
 
