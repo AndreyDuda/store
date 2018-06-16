@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\SettingRepository;
 use Config;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
@@ -9,17 +10,21 @@ use App\Repositories\ProductRepository;
 
 class ProductController extends SiteController
 {
-    public function __construct(ProductRepository $product_rep)
+    public function __construct(ProductRepository $product_rep, SettingRepository $setting_rep)
     {
         $this->template = env('THEME') . '.index';
         $this->product_rep = $product_rep;
+        $this->setting_rep = $setting_rep;
     }
 
     public function index(Request $request, $categories = false)
     {
-        $step     = Config::get( 'settings.paginateStep' );
-        $paginate = Config::get( 'settings.paginate' );
+        $step     = $this->setting_rep->getOne('PaginateCatalog');
+        $paginate = $this->setting_rep->getOne('CountProductCatalog');
+
         $count_p  = 8;
+
+
         $select   = ['product_id', 'title', 'price_many', 'photo', 'label'];
         $slider_p = ['product_id', 'title', 'price_many', 'photo', 'label'];
         $where    = false;

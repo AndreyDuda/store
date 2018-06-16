@@ -18,4 +18,11 @@ class SettingRepository extends Repository
     {
         $this->model = $setting;
     }
+
+    public function getOne($option)
+    {
+        $result = $this->model->where('option', $option)->first();
+
+        return $result->value;
+    }
 }
