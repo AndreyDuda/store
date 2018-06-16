@@ -12,6 +12,7 @@ class AdminController extends Controller
     protected $product_rep;
     protected $order_rep;
 
+
     protected $vars = array();
     protected $template;
 
