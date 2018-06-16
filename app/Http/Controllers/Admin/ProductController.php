@@ -25,7 +25,8 @@ class ProductController extends AdminController
         $order    = false;
         $products = $this->product_rep->getAll($select, $paginate, $where, $order);
         $data = [
-            'products' => $products
+            'products' => $products,
+            'step'     => $step
         ];
 
         $content    = view(env('THEME') . '.admin.product.index')->with($data)->render();
