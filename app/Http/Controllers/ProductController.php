@@ -95,7 +95,7 @@ class ProductController extends SiteController
                     }
                 }
             }
-        /*dd($where);*/
+       
         $products = $this->product_rep->getAll($select, $paginate, $where, $order);
 
         $slider_p = $this->product_rep->getAll($slider_p, false, 'sale = "1"', false, $count_p);
