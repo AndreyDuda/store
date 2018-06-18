@@ -12,12 +12,19 @@ class SiteController extends AdminController
     //
     public function __construct(SettingRepository $setting_rep)
     {
+        $this->template    = env('THEME') . '.admin.index';
         $this->setting_rep = $setting_rep;
     }
 
-    public function index()
+    public function settings()
     {
-        $setting = $this->setting_rep->getAll();
-        dd($setting);
+        $settings = $this->setting_rep->getAll();
+        $data = [
+            'settings' => $settings
+        ];
+
+        $content    = view(env('THEME') . '.admin.site.settings')->with($data)->render();
+        $this->vars = array_add($this->vars, 'content', $content);
+        return $this->renderOutput();
     }
 }

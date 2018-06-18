@@ -45,7 +45,7 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
 
     Route::get('/order',           'Admin\OrderController@index')->name('OrderIndex');
 
-    Route::get('/settings',        'Admin\SiteController@index');
+    Route::get('/settings',        'Admin\SiteController@settings')->name('settings');
 
     Route::post('/parse',          'Admin\BackService\excel\ExcelController@parse')->name('readExcel');
     Route::get('/write',           'Admin\BackService\excel\ExcelController@write')->name('excelWrite');
