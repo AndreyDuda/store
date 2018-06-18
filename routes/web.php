@@ -38,19 +38,26 @@ Route::post('/search/{search?}', 'ProductController@search')->name('searchProduc
 
 Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
    /* Route::get('/test', 'Admin\AuthController@index')->name('adminProduct');*/
-    Route::get('/', 'Admin\ProductController@index')->name('adminProduct');
-    Route::get('/upload/product', 'Admin\ProductController@uploadProductFile')->name('uploadProduct');
+    Route::get('/',                'Admin\ProductController@index')->name('adminProduct');
+    Route::get('/upload/product',  'Admin\ProductController@uploadProductFile')->name('uploadProduct');
     Route::post('/upload/product', 'Admin\ProductController@uploadProductFile')->name('saveProduct');
-    Route::get('/upload/excel', 'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
+    Route::get('/upload/excel',    'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
+
+    Route::get('/order',           'Admin\OrderController@index')->name('OrderIndex');
+
+    Route::get('/settings',        'Admin\SiteController@index');
+
+    Route::post('/parse',          'Admin\BackService\excel\ExcelController@parse')->name('readExcel');
+    Route::get('/write',           'Admin\BackService\excel\ExcelController@write')->name('excelWrite');
 
 
-    Route::get('/order', 'Admin\OrderController@index')->name('OrderIndex');
+
+
 
     Route::post('/product/{id}', 'Admin/AuthController@show')->name('adminProductOne');
     Route::post('/edit', 'Admin/AuthController@store')->name('adminProductEdit');
     Route::post('/delate', 'Admin/AuthController@destroy')->name('adminProductDelate');
    /* Route::post('/ex', 'Admin\AuthController@ex')->name('ex');*/
-    Route::post('/parse', 'Admin\BackService\excel\ExcelController@parse')->name('readExcel');
-    Route::get('/write', 'Admin\BackService\excel\ExcelController@write')->name('excelWrite');
+
 
 });
