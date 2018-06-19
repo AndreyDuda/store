@@ -27,7 +27,7 @@ Route::get('product/{id}', ['uses' => 'ProductController@show', 'as' => 'product
 Route::get('/contact', 'ContactController@index')->name('contacts');
 Route::get('/delivery', 'DeliveryController@index')->name('delivery');
 Route::get('/cart', 'CartController@index')->name('cart');
-
+Route::post('/send_request/', 'CartController@sendRequest')->name('sendRequest');
 
 Route::post('/by/{id?}', 'CartController@by')->name('cartBy');
 Route::post('/search/{search?}', 'ProductController@search')->name('searchProduct');
@@ -39,6 +39,7 @@ Route::post('/search/{search?}', 'ProductController@search')->name('searchProduc
 Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
    /* Route::get('/test', 'Admin\AuthController@index')->name('adminProduct');*/
     Route::get('/',                'Admin\ProductController@index')->name('adminProduct');
+    Route::get('/editProduct',                'Admin\ProductController@editProduct')->name('editProduct');
     Route::get('/upload/product',  'Admin\ProductController@uploadProductFile')->name('uploadProduct');
     Route::post('/upload/product', 'Admin\ProductController@uploadProductFile')->name('saveProduct');
     Route::get('/upload/excel',    'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');

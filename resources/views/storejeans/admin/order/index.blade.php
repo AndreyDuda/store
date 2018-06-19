@@ -61,14 +61,22 @@
                         @endforeach
                         {{$total}} <span> $</span>
                     </td>
-                    <td>
+                    <td title="{{ $item->comment }}">
                         {{ $item->comment }}
                     </td>
                     <td>
                         {{ $item->created_at }}
                     </td>
                     <td>
-                        Кнопки
+                        <a href="">
+                            <img src="{{ asset(env('THEME'))}}/img/read.png" alt="" class="edit-delete">
+                        </a>
+                        <a href="">
+                            <img src="{{ asset(env('THEME'))}}/img/success.png" alt="" class="edit-delete">
+                        </a>
+                        <a href="">
+                            <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="" class="edit-delete">
+                        </a>
                     </td>
                 </tr>
             @endforeach

@@ -1913,7 +1913,7 @@ label span{
 	float: left;
 	padding-top: 50px;
 	margin-top: 0;
-	min-height: 87vh;
+	min-height: 140vh;
 }
 .content{
 	float: right;
@@ -1925,6 +1925,10 @@ label span{
 .admin-table td{
 	border: 1px solid #000;
 	padding: 5px;
+    white-space: nowrap;
+    max-width: 120px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .table-text{
 	margin-left: 50px;
@@ -2066,10 +2070,69 @@ label span{
 }
 
 .filters-admin .filter-body{
-	display: none;
+	display: block;
 	padding-left: 20px;
 	text-transform: uppercase;
 }
 .filters-admin .filter-body a{
 	color: #fff;
 }
+
+
+.edit-delete{
+	width: 20px;
+	margin: 0 2px;
+}
+
+.edit-product{
+	padding: 30px;
+	padding-left: 25%;
+}
+.edit-product form .flex{
+	display: flex;
+	justify-content: center;
+}
+.edit-product form .fotos{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    
+}
+.edit-product form .fotos label{
+    width: 130px;
+    height: 130px;
+    display: block;
+    border: 1px solid #ccc;
+    position: relative;
+    background: url("../img/catalog/no-image.png");
+    background-size: 100%  ;
+}
+.left-form, .right-form{
+    width: 45%;
+}
+.edit-product form .fotos .delete-form-foto{
+    width: 20px;
+    height: 20px;
+    content: 'as';
+    display: block;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.edit-product form .fotos .delete-form-foto img{
+    width: 100%;
+}
+.edit-product form label,
+.edit-product form select{
+	margin-bottom: 20px;
+}
+.edit-product form textarea{
+    width: 80%;
+}
+.edit-product input[type="file"]{
+    margin-bottom: 10px;
+    width: 20%;
+    position: absolute;
+    bottom: -50px;
+}
+

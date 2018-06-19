@@ -16,6 +16,18 @@ class ProductController extends AdminController
         $this->product_rep = $product_rep;
     }
 
+    public function editProduct()
+    {
+        $data = [
+
+        ];
+
+        $content    = view(env('THEME') . '.admin.product.editProduct')->with($data)->render();
+        $this->vars = array_add($this->vars, 'content', $content);
+        return $this->renderOutput();
+    }
+
+
     public function index()
     {
         $step     = Config::get( 'settings.paginateStep' );

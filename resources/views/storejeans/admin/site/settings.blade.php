@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container-fluid" style="">
+    <div class="row">
 <form class="form-inline">
     <div class="form-group">
         <label for="inputPassword6">Password</label>
@@ -8,4 +9,5 @@
         </small>
     </div>
 </form>
+</div>
 </div>

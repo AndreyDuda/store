@@ -33,8 +33,13 @@
                 <td>
                     {{$product->size}}
                 </td>
-                <td>
-                    Быстрые настройки
+                <td >
+                    <a href="{{route('editProduct')}}">
+                        <img src="{{ asset(env('THEME'))}}/img/edit.png" alt="" class="edit-delete">
+                    </a>
+                    <a href="{{route('editProduct')}}">
+                        <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="" class="edit-delete">
+                    </a>
                 </td>
             </tr>
         @endforeach
