@@ -34,10 +34,10 @@
                     {{$product->desc}}
                 </td>
                 <td >
-                    <a title="Удалить товар" href="{{route('deleteProduct', ['id' => $product->id]) }}">
+                    <a title="Удалить товар" href="{{route('deleteProduct', ['id' => $product->product_id]) }}">
                         <img style="float: right;" src="{{ asset(env('THEME'))}}/img/delete.png" alt="" class="edit-delete">
                     </a>
-                    <a title="Редактировать товар" href="{{route('editProduct', ['id' =>  $product->id]) }}">
+                    <a title="Редактировать товар" href="{{route('editProduct', ['id' =>  $product->product_id]) }}">
                         <img  style="float: right;" src="{{ asset(env('THEME'))}}/img/edit.png" alt="" class="edit-delete">
                     </a>
                 </td>
