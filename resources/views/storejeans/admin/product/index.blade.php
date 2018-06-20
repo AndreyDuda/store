@@ -2,43 +2,43 @@
     <h2 class="table-name">Table name</h2>
     <table class="admin-table">
         <tr>
-            <td>
+            <td style="text-align: center; font-weight: 600; background: lightgrey; width:100px;">
                 Код товара
             </td>
-            <td>
+            <td style="text-align: center; font-weight: 600; background: lightgrey; width:100px;">
                 Фирма
             </td>
-            <td>
+            <td style="text-align: center; font-weight: 600; background: lightgrey; width: 400px;">
                 Title
             </td>
-            <td>
-                Размер
+            <td style="text-align: center; font-weight: 600; background: lightgrey;">
+                Описание
             </td>
-            <td>
-               Быстрые настройки
+            <td style="text-align: center; font-weight: 600; background: lightgrey; width: 100px;">
+               Управление
             </td>
         </tr>
 
         @foreach($products as $product)
             <tr>
-                <td>
+                <td title=" {{$product->code}}">
                     {{$product->code}}
                 </td>
-                <td>
+                <td title="{{$product->label}}">
                     {{$product->label}}
                 </td>
-                <td>
+                <td title="{{$product->title}}">
                     {{$product->title}}
                 </td>
-                <td>
-                    {{$product->size}}
+                <td title="{{$product->desc}}">
+                    {{$product->desc}}
                 </td>
                 <td >
-                    <a href="{{route('editProduct')}}">
-                        <img src="{{ asset(env('THEME'))}}/img/edit.png" alt="" class="edit-delete">
+                    <a title="Удалить товар" href="{{route('deleteProduct', ['id' => $product->id]) }}">
+                        <img style="float: right;" src="{{ asset(env('THEME'))}}/img/delete.png" alt="" class="edit-delete">
                     </a>
-                    <a href="{{route('editProduct')}}">
-                        <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="" class="edit-delete">
+                    <a title="Редактировать товар" href="{{route('editProduct', ['id' =>  $product->id]) }}">
+                        <img  style="float: right;" src="{{ asset(env('THEME'))}}/img/edit.png" alt="" class="edit-delete">
                     </a>
                 </td>
             </tr>
@@ -47,8 +47,7 @@
     @if($products)
         <div class="navigation">
             <?
-
-            $count_product = $products->lastPage();
+                $count_product = $products->lastPage();
             ?>
             @if($count_product > 1)
                 <ul>
@@ -73,6 +72,4 @@
             @endif
         </div>
     @endif
-    <span class="table-text">Общее количество - 1546 товаров</span>
-    <span class="table-text">Товаров на сумму - 23456789 грн. </span>
 </div>

@@ -16,12 +16,12 @@ class ProductController extends AdminController
         $this->product_rep = $product_rep;
     }
 
-    public function editProduct()
+    public function editProduct(Request $request)
     {
         $data = [
 
         ];
-
+dd($request->id);
         $content    = view(env('THEME') . '.admin.product.editProduct')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
