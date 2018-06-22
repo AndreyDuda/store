@@ -37,19 +37,20 @@ Route::post('/search/{search?}', 'ProductController@search')->name('searchProduc
 
 
 Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
-    Route::get('/',                    'Admin\ProductController@index')->name('adminProduct');
-    Route::get('/editProduct',         'Admin\ProductController@editProduct')->name('editProduct');
-    Route::post('/deleteProduct',      'Admin\ProductController@editProduct')->name('deleteProduct');
-    Route::get('/upload/product',      'Admin\ProductController@uploadProductFile')->name('uploadProduct');
-    Route::post('/upload/product',     'Admin\ProductController@uploadProductFile')->name('saveProduct');
-    Route::get('/upload/excel',        'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
+    Route::get('/',               'Admin\ProductController@index')->name('adminProduct');
+    Route::get('/editProduct',    'Admin\ProductController@editProduct')->name('editProduct');
+    Route::post('/deleteProduct', 'Admin\ProductController@editProduct')->name('deleteProduct');
+    Route::get('/add/product',    'Admin\ProductController@addProduct')->name('addProduct');
+    Route::post('/add/product',   'Admin\ProductController@addProduct')->name('saveProduct');
+    Route::post('/add/photo',     'Admin\ProductController@uploadPhoto')->name('uploadPhoto');
+    Route::get('/upload/excel',   'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
 
-    Route::get('/order',               'Admin\OrderController@index')->name('OrderIndex');
+    Route::get('/order',          'Admin\OrderController@index')->name('OrderIndex');
 
-    Route::get('/settings',            'Admin\SiteController@settings')->name('settings');
+    Route::get('/settings',       'Admin\SiteController@settings')->name('settings');
 
-    Route::post('/parse',              'Admin\BackService\excel\ExcelController@parse')->name('readExcel');
-    Route::get('/write',               'Admin\BackService\excel\ExcelController@write')->name('excelWrite');
+    Route::post('/parse',         'Admin\BackService\excel\ExcelController@parse')->name('readExcel');
+    Route::get('/write',          'Admin\BackService\excel\ExcelController@write')->name('excelWrite');
 
 
 

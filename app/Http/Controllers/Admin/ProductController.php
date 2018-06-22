@@ -56,8 +56,12 @@ class ProductController extends AdminController
         return $this->renderOutput();
     }
 
+    public function uplodPhoto(Request $request)
+    {
+        dd($request);
+    }
 
-    public function uploadProductFile(Request $request)
+    public function addProduct(Request $request)
     {
         $content    = view(env('THEME') . '.admin.product.uploadProduct')->render();
         $this->vars = array_add($this->vars, 'content', $content);

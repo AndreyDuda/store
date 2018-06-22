@@ -1,7 +1,9 @@
 {{ csrf_field() }}
+<input id="uploadPhoto" type="hidden" value="{{ route('uploadPhoto') }}">
 <div class="edit-product">
     <h1> Реадктирование товара</h1>
-
+    <div id="result">
+    </div>
     <form action="" enctype="multipart/form-data" method="POST">
         <div class="fotos">
             <label for="">

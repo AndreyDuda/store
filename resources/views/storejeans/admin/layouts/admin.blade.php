@@ -79,7 +79,7 @@
                     <a href="{{ route('adminProduct') }}">Все товары</a>
                 </li>
                 <li>
-                    <a href="{{ route('uploadProduct') }}">Добавить один товар</a>
+                    <a href="{{ route('addProduct') }}">Добавить один товар</a>
                 </li>
                 <li>
                     <a href="{{ route('uploadFileForm') }}">Добавить товары Excel</a>
