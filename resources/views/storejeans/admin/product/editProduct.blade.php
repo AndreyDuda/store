@@ -1,33 +1,37 @@
+{{ csrf_field() }}
 <div class="edit-product">
     <h1> Реадктирование товара</h1>
 
-    <form action="">
+    <form action="" enctype="multipart/form-data" method="POST">
         <div class="fotos">
             <label for="">
                 <span class="delete-form-foto">
                     <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
                 </span>
-                <input type="file">
+                <input type="file" class="imageProduct" id="image1" name="image[]" >
             </label>
             <label for="">
                 <span class="delete-form-foto">
                     <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
                 </span>
-                <input type="file">
+                <input type="file" class="imageProduct" id="image2" name="image[]" >
             </label>
             <label for="">
                 <span class="delete-form-foto">
                     <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
                 </span>
-                <input type="file">
+                <input type="file" class="imageProduct" id="image3" name="image[]" >
             </label>
             <label for="">
                 <span class="delete-form-foto">
                     <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
                 </span>
-                <input type="file">
+                <input type="file" class="imageProduct" id="image4" name="image[]" >
             </label>
         </div>
+    </form>
+
+    <form>
         <div class="flex">
             <div class="left-form">
                 <label for="form-name-product">

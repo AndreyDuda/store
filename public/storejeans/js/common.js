@@ -54,23 +54,7 @@ $(document).ready(function(){
             });
     });
 
-    /*$('.product-buy').on('click', function() {
-        var id  =  $(this).data('id');
-        var url =  $(this).data('url');
-        $.ajax({
-            type:'POST',
-            url:url,
-            headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
-            data:{id:id},
-            datatype:'JSON',
-            success: function(data) {
-                console.log(data);
-            },
-            error:function() {
-                console.log('ERROR');
-            }
-        });
-    });*/
+
 
     $('.search input').keydown(function () {
         var search = $('.search input').val();
@@ -360,3 +344,58 @@ function change_color_by_style(){
 }
 
 
+/*-----------------------Загрузка файлов --------------------*/
+$(document).ready(function () {
+
+    function readImage ( input ) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function printMessage(destination, msg) {
+
+        $(destination).removeClass();
+
+        if (msg == 'success') {
+            $(destination).addClass('alert alert-success').text('Файл успешно загружен.');
+        }
+
+        if (msg == 'error') {
+            $(destination).addClass('alert alert-danger').text('Произошла ошибка при загрузке файла.');
+        }
+
+    }
+
+    $('#imageProduct').change(function(){
+        readImage(this);
+    });
+
+    $('#upload-image').on('submit',(function(e) {
+        e.preventDefault();
+
+        var formData = new FormData(this);
+
+        $.ajax({
+            headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
+			type:'POST', // Тип запроса
+            url: 'handler.php', // Скрипт обработчика
+            data: formData, // Данные которые мы передаем
+            cache:false, // В запросах POST отключено по умолчанию, но перестрахуемся
+            contentType: false, // Тип кодирования данных мы задали в форме, это отключим
+            processData: false, // Отключаем, так как передаем файл
+            success:function(data){
+                printMessage('#result', data);
+            },
+            error:function(data){
+                console.log(data);
+            }
+        });
+    }));
+});

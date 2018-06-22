@@ -24,7 +24,7 @@ class ProductController extends AdminController
         $data = [
             'product' => $product
         ];
-        dd($product);
+
         $content    = view(env('THEME') . '.admin.product.editProduct')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
@@ -55,6 +55,7 @@ class ProductController extends AdminController
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
+
 
     public function uploadProductFile(Request $request)
     {
