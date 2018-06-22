@@ -3,40 +3,36 @@
 /*-----------------------Загрузка файлов --------------------*/
 $(document).ready(function () {
 
-    function readImage ( input ) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#preview').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]);
+    $('#upload').on('click', function() {
+        var url = $('#uploadPhoto').val();
+        var formData = new FormData(this);
+        console.log('ajax');
+        var file_data = $('#sortpicture').prop('files')[0];
+        var form_data = new FormData();
+        form_data.append('file', file_data);
+        alert(form_data);
+        $.ajax({
+        headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
+        type:'POST', // Тип запроса
+        url: url, // Скрипт обработчика
+        dataType: 'text',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function(php_script_response){
+            alert(php_script_response);
         }
-    }
-
-    function printMessage(destination, msg) {
-
-        $(destination).removeClass();
-
-        if (msg == 'success') {
-            $(destination).addClass('alert alert-success').text('Файл успешно загружен.');
-        }
-
-        if (msg == 'error') {
-            $(destination).addClass('alert alert-danger').text('Произошла ошибка при загрузке файла.');
-        }
-
-    }
-
-    $('#imageProduct').change(function(){
-        readImage(this);
+        });
     });
 
-    $('#upload-image').on('submit',(function(e) {
+
+    $('#upload-image').on('.submit',(function(e) {
         e.preventDefault();
-        var utl = $('#uploadPhoto').val();
+        var url = $('#uploadPhoto').val();
         var formData = new FormData(this);
+        console.log('ajax');
 
         $.ajax({
             headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
@@ -57,7 +53,7 @@ $(document).ready(function () {
     }));
 
 
-/*-------------END -----------------------*/
+
 
 
 

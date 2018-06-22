@@ -455,4 +455,4 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script><!-- JQuery -->
-<script src="{{  asset(env('THEME')) }}/js/common.js"></script><!-- My JS file -->
+<script src="{{  asset(env('THEME')) }}/js/admin.js"></script><!-- My JS file -->
