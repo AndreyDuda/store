@@ -1,45 +1,33 @@
-{{ csrf_field() }}
+<div class="edit-product">
+    <h1> Реадктирование товара</h1>
 
-
-<input id="sortpicture" type="file" name="sortpic" />
-
-<button id="upload">Upload</button>
-
-    {{--<form action="" id="upload-image" enctype="multipart/form-data" method="POST">
+    <form action="">
         <div class="fotos">
             <label for="">
                 <span class="delete-form-foto">
                     <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
                 </span>
-                <input type="file" class="imageProduct" id="image1" name="image[]" >
-
-            </label>
-            <input class="submit" type="button" value="KHIH">
-            <label for="">
-                <span class="delete-form-foto">
-                    <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
-                </span>
-                <input type="file" class="imageProduct" id="image2" name="image[]" >
-
+                <input type="file">
             </label>
             <label for="">
                 <span class="delete-form-foto">
                     <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
                 </span>
-                <input type="file" class="imageProduct" id="image3" name="image[]" >
-
+                <input type="file">
             </label>
             <label for="">
                 <span class="delete-form-foto">
                     <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
                 </span>
-                <input type="file" class="imageProduct" id="image4" name="image[]" >
-
+                <input type="file">
+            </label>
+            <label for="">
+                <span class="delete-form-foto">
+                    <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
+                </span>
+                <input type="file">
             </label>
         </div>
-    </form>--}}
-
-    <form>
         <div class="flex">
             <div class="left-form">
                 <label for="form-name-product">

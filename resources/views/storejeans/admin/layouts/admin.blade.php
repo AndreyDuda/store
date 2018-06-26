@@ -111,7 +111,7 @@
                     <a href="#">Редактировать</a>
                 </li>
                 <li>
-                    <a href="{{ route('addImage') }}">Добавить картинки</a>
+                    <a href="{{ route('uploadImage') }}">Добавить картинки</a>
                 </li>
                 <li>
                     <a href="#">Удалить картинки</a>
