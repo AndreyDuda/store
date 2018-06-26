@@ -42,7 +42,8 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::post('/deleteProduct', 'Admin\ProductController@editProduct')->name('deleteProduct');
     Route::get('/add/product',    'Admin\ProductController@addProduct')->name('addProduct');
     Route::post('/add/product',   'Admin\ProductController@addProduct')->name('saveProduct');
-    Route::post('/add/photo',     'Admin\ProductController@uploadPhoto')->name('uploadPhoto');
+    //Route::post('/add/photo',     'Admin\ImageController@uploadPhoto')->name('uploadPhoto');
+    Route::post('/add/image',     'Admin\ImageController@uploadPhoto')->name('addImage');
     Route::get('/upload/excel',   'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
 
     Route::get('/order',          'Admin\OrderController@index')->name('OrderIndex');
