@@ -12,6 +12,15 @@ class ImageController extends AdminController
         $this->template    = env('THEME') . '.admin.index';
     }
 
+    public function index(){
+        $data = [
+
+        ];
+        $content    = view(env('THEME') . '.admin.image.index')->with($data)->render();
+        $this->vars = array_add($this->vars, 'content', $content);
+        return $this->renderOutput();
+    }
+
     public function uploadImage(Request $request)
     {
         if($request->isMethod('post')){
