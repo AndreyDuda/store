@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends AdminController
 {
@@ -13,8 +14,11 @@ class ImageController extends AdminController
     }
 
     public function index(){
-        $data = [
 
+        $dir     = env('THEME').'/img/catalog';
+        $images     = scandir($dir);
+        $data = [
+            'images' => $images
         ];
         $content    = view(env('THEME') . '.admin.image.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
