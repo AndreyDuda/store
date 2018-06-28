@@ -1,32 +1,26 @@
 <div class="edit-product">
     <h1> Реадктирование товара</h1>
 
-    <form action="">
+    <form class="edit-product-form" action="">
         <div class="fotos">
-            <label for="">
+            <div class="foto">
                 <span class="delete-form-foto">
                     <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
                 </span>
-                <input type="file">
-            </label>
-            <label for="">
+            </div>
+            <div class="foto">
                 <span class="delete-form-foto">
                     <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
                 </span>
-                <input type="file">
-            </label>
-            <label for="">
+            </div><div class="foto">
                 <span class="delete-form-foto">
                     <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
                 </span>
-                <input type="file">
-            </label>
-            <label for="">
+            </div><div class="foto">
                 <span class="delete-form-foto">
                     <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
                 </span>
-                <input type="file">
-            </label>
+            </div>
         </div>
         <div class="flex">
             <div class="left-form">
@@ -77,4 +71,35 @@
         </div>
         <textarea name="" id=""  rows="10">Описание товара</textarea>
     </form>
+    <div class="modal-box modal-edit-product">
+        <span class="close">&times;</span>
+        <div class="order-contents order-modal";
+            <div class="content content-edit-product">
+                <div class="flex">
+                    <h2>
+                        Выберите фото
+                    </h2>
+                    <input type="text" placeholder="Поиск..." class="search-admin-edit search-admin">
+                </div>
+                @if($images)
+                    <div class="wrapper wrapper-admin">
+                        <div class="blocks-admin flex">
+                            @for($i=0;$i<10; $i++)
+                                @foreach($images as $image)
+                                    @if($image != '.' && $image != '..')
+                                        <div class="block-admin flex block-admin-edit">
+                                            <div class=" img-tovar-admin ">
+                                                <img src="{{asset('public/'.env('THEME')) . '/img/catalog/'.  $image }}" alt="">
+                                            </div>
+                                            <p class="brand">{{ $image }}</p>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            @endfor
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
 </div>

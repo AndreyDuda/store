@@ -18,11 +18,18 @@ class ProductController extends AdminController
 
     public function editProduct(Request $request)
     {
+        $dir        = env('THEME').'/img/catalog';
+        $images     = scandir($dir);
+
+
+
+
         $id = ($request->id)? $request->id:false;
         $product  = $this->product_rep->getOne($id);
 
         $data = [
-            'product' => $product
+            'product' => $product,
+            'images' => $images
         ];
 
         $content    = view(env('THEME') . '.admin.product.editProduct')->with($data)->render();

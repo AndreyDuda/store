@@ -45,7 +45,7 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     //Route::post('/add/photo',   'Admin\ImageController@uploadPhoto')->name('uploadPhoto');
     Route::get('/image',          'Admin\ImageController@index')->name('indexImage');
     Route::get('/unused/image',   'Admin\ImageController@unusedImage')->name('unusedImage');
-    Route::post('/unused/image',   'Admin\ImageController@unusedImage')->name('unusedImage');
+    Route::post('/unused/image',  'Admin\ImageController@unusedImage')->name('unusedImage');
     Route::get('/upload/image',   'Admin\ImageController@uploadImage')->name('uploadImage');
     Route::post('/upload/image',  'Admin\ImageController@uploadImage')->name('uploadImage');
     Route::get('/upload/excel',   'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
