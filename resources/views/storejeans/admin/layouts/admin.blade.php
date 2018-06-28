@@ -108,7 +108,10 @@
         <dd class="filter-body ">
             <ul>
                 <li>
-                    <a href="{{ route('indexImage') }}">Редактировать</a>
+                    <a href="{{ route('indexImage') }}">Все картинки</a>
+                </li>
+                <li>
+                    <a href="{{ route('unusedImage') }}">Неиспользуемые картинки</a>
                 </li>
                 <li>
                     <a href="{{ route('uploadImage') }}">Добавить картинки</a>
