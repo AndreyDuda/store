@@ -17,11 +17,19 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->integer('product_id');
             $table->string('code',255);
+            $table->string('new',255);
             $table->string('title', 255);
             $table->float('price_many');
+            $table->float('sale_many');
             $table->float('price_one');
+            $table->float('sale_one');
             $table->integer('count');
-            $table->string('photo', 255);
+            $table->string('end_sale', 255);
+            $table->string('photo_maine', 255);
+            $table->string('photo1', 255);
+            $table->string('photo2', 255);
+            $table->string('photo3', 255);
+            $table->string('photo4', 255);
             $table->string('females', 255);
             $table->string('categories', 255);
             $table->string('sesons', 255);
@@ -33,7 +41,6 @@ class CreateProductsTable extends Migration
             $table->text('meta_title');
             $table->text('meta_desc');
             $table->text('meta_key');
-            $table->integer('sale');
             $table->timestamps();
         });
     }

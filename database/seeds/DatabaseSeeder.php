@@ -19,5 +19,24 @@ class DatabaseSeeder extends Seeder
                     'password' => '$2y$10$UN/QeftQP5ONnnKoyfRxPui3hnyP5.8fIlgT1QBUsSjYWAHy0Uv0W'
                 ]
             ]);
+
+        DB::table('setting')->insert(
+            [
+                [
+                    'option' => 'PaginateCatalog',
+                    'name'   => 'Цыфры пагинации',
+                    'value'  => '4',
+                    'desc'   => 'Количество цыфр видимых для листания страниц с товаром (для клиента в магазине) '
+                ],
+
+                [
+                    'option' => 'CountProductCatalog',
+                    'name'   => 'Количество товаров',
+                    'value'  => '18',
+                    'desc'   => 'Количество выводимых товаров на странице'
+                ],
+
+
+            ]);
     }
 }

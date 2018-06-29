@@ -21,9 +21,6 @@ class ProductController extends AdminController
         $dir        = env('THEME').'/img/catalog';
         $images     = scandir($dir);
 
-
-
-
         $id = ($request->id)? $request->id:false;
         $product  = $this->product_rep->getOne($id);
 
