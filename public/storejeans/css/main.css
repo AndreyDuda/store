@@ -2109,7 +2109,7 @@ label span{
     display: block;
     border: 1px solid #ccc;
     position: relative;
-    background: url("../img/catalog/no-image.png");
+    background: url("../img/system/no-image.png");
     background-size: 100%  ;
     cursor: pointer;
 }

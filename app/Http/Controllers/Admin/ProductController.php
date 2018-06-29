@@ -39,7 +39,7 @@ class ProductController extends AdminController
     {
         $step     = Config::get( 'settings.paginateStep' );
         $paginate = Config::get( 'settings.paginate' );
-        $select   = ['product_id', 'code', 'title', 'price_many', 'photo', 'label'];
+        $select   = ['product_id', 'code', 'title', 'price_many', 'label'];
         $where    = false;
         $order    = false;
         $products = $this->product_rep->getAll($select, $paginate, $where, $order);

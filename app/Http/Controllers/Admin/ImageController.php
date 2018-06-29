@@ -30,7 +30,7 @@ class ImageController extends AdminController
 
     public function unusedImage(Request $request)
     {
-        $select     = ['photo'];
+        $select     = ['photo_maine', 'photo1', 'photo2', 'photo3', 'photo4'];
         $where      = false;
         $order      = false;
         $paginate   = false;
@@ -41,7 +41,15 @@ class ImageController extends AdminController
         foreach ($tempImages as $image){
             $copy = false;
             foreach ($products as $product){
-                if($product->photo.'.jpg' == 'catalog/' . $image){
+                if($product->photo_maine.'.jpg' == 'catalog/' . $image){
+                    $copy = true;
+                }elseif($product->photo1.'.jpg' == 'catalog/' . $image){
+                    $copy = true;
+                }elseif($product->photo2.'.jpg' == 'catalog/' . $image){
+                    $copy = true;
+                }elseif($product->photo3.'.jpg' == 'catalog/' . $image){
+                    $copy = true;
+                }elseif($product->photo4.'.jpg' == 'catalog/' . $image){
                     $copy = true;
                 }
             }
@@ -61,6 +69,7 @@ class ImageController extends AdminController
                 }
 
             }
+            $image = [];
         }
         $data       = [
             'images' => $images

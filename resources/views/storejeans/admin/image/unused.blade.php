@@ -1,21 +1,28 @@
 <div class="content">
-    <h1> Неиспользуемые картинок</h1>
-    <form action="{{route('unusedImage')}}" method="post">
-        {{ csrf_field() }}
-        <input type="submit" value="Удалить все картинки">
-    </form>
-
+    <div class="flex">
+        <h1>Неиспользуемые картинки</h1>
+        <form action="#" method="post">
+            <input class="search-admin search-admin-submit " type="submit" value="Удалить все">
+            <input type="text" placeholder="Поиск..." class="search-admin">
+        </form>
+    </div>
     @if($images)
-        <div class="wrapper">
+        <div class="wrapper wrapper-admin">
+            <div class="blocks-admin flex">
 
-            @foreach($images as $image)
-                @if($image != '.' && $image != '..')
-                    <div class="img-tovar">
-                        <img style="width: 150px" src="{{asset('public/'.env('THEME')) . '/img/catalog/'.  $image }}" alt="">
-                    </div>
-                    <div class="brand">{{ $image }}</div>
-                @endif
-            @endforeach
+                    @foreach($images as $image)
+                        @if($image != '.' && $image != '..')
+                            <div class="block-admin flex">
+                                <div class=" img-tovar-admin ">
+                                    <img src="{{asset('public/'.env('THEME')) . '/img/catalog/'.  $image }}" alt="">
+                                </div>
+                                <p class="brand">{{ $image }}</p>
+                                <img class="edit-delete edit-delete-foto" src="{{asset('public/'.env('THEME')) . '/img/system/delete.png' }}" alt="">
+                            </div>
+                        @endif
+                    @endforeach
+
+            </div>
         </div>
     @endif
 </div>

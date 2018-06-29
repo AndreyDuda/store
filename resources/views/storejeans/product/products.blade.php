@@ -13,7 +13,7 @@
                                     @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
                                         <img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                                     @else
-                                        <img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt"{{ $product->categories }}">
+                                        <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}">
                                     @endif
                                 </div>
                                 <div class="brand">{{ $product->label }}</div>
@@ -167,7 +167,7 @@
             @foreach($cat_prod as $category)
            <div class="new-category-item">
                 <p>{{$category->categories}}</p>
-               <a href="{{ route('productAll', ['catedories' => $category->categories]) }}"> <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt"{{ $product->categories }}"></a>
+               <a href="{{ route('productAll', ['catedories' => $category->categories]) }}"> <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt="{{ $product->categories }}"></a>
            </div>
             @endforeach
         </div>
@@ -208,7 +208,7 @@
                     @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r') )
                         <img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                     @else
-                        <img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt"{{ $product->categories }}">
+                        <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}">
                     @endif
                 </div>
                 <div class="brand" title="{{$product->label}}">{{ $product->label }}</div>
@@ -227,7 +227,6 @@
 @if($products)
 <div class="navigation">
     <?
-
         $count_product = $products->lastPage();
     ?>
     @if($count_product > 1)
@@ -268,7 +267,7 @@
                         @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
                             <img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                         @else
-                            <img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt"{{ $product->categories }}">
+                            <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt={{ $product->categories }}">
                         @endif
                     </div>
                     <div class="brand">{{ $product->label }}</div>

@@ -111,13 +111,10 @@
                     <a href="{{ route('indexImage') }}">Все картинки</a>
                 </li>
                 <li>
-                    <a href="{{ route('unusedImage') }}">Неиспользуемые картинки</a>
+                    <a href="{{ route('unusedImage') }}">Неиспользуемые</a>
                 </li>
                 <li>
                     <a href="{{ route('uploadImage') }}">Добавить картинки</a>
-                </li>
-                <li>
-                    <a href="#">Удалить картинки</a>
                 </li>
             </ul>
         </dd>

@@ -21,71 +21,71 @@
 <div class="wrapper flex-between">
     <div class="product-foto">
         <div class="slider-product-nav">
-            @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-            <div class="slider-nav_item"><img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt=""></div>
+            @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
+                <div class="slider-nav_item"><img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
             @else
-                <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt=""></div>
+                <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
             @endif
 
-                @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                    <div class="slider-nav_item"><img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt=""></div>
+                @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo1.'.jpg', 'r'))
+                    <div class="slider-nav_item"><img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo1}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
-                    <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt=""></div>
+                    <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                    <div class="slider-nav_item"><img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt=""></div>
+                @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo2.'.jpg', 'r'))
+                    <div class="slider-nav_item"><img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo2}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
-                    <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt=""></div>
+                    <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                    <div class="slider-nav_item"><img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt=""></div>
+                @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo3.'.jpg', 'r'))
+                    <div class="slider-nav_item"><img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo3}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
-                    <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt=""></div>
+                    <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                    <div class="slider-nav_item"><img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt=""></div>
+                @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo4.'.jpg', 'r'))
+                    <div class="slider-nav_item"><img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo4}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
-                    <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt=""></div>
+                    <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
         </div>
         <div class="slider-product">
-            @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                <div  class="slider_item"><img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt=""></div>
+            @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
+                <div  class="slider_item"><img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
             @else
-                <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt=""></div>
+                <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
             @endif
 
-                @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                    <div  class="slider_item"><img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt=""></div>
+                @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
+                    <div  class="slider_item"><img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
-                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt=""></div>
+                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                    <div  class="slider_item"><img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt=""></div>
+                @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
+                    <div  class="slider_item"><img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
-                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt=""></div>
+                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                    <div  class="slider_item"><img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt=""></div>
+                @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
+                    <div  class="slider_item"><img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
-                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt=""></div>
+                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                    <div  class="slider_item"><img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt=""></div>
+                @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
+                    <div  class="slider_item"><img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
-                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt=""></div>
+                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                    <div  class="slider_item"><img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt=""></div>
+                @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
+                    <div  class="slider_item"><img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
-                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt=""></div>
+                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
         </div>
     </div><!--product-foto-->
@@ -391,10 +391,10 @@
                 <div class="item">
                     <a href="product.php" class="item-tovar">
                         <div class="img-tovar">
-                            @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                                <img src="{{ asset(env('THEME')) }}/img/product/{{ $product->photo }}.jpg" alt="">
+                            @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
+                                <img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                             @else
-                                <img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt="">
+                                <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}">
                             @endif
                         </div>
                         <div class="brand">{{ $product->label }}</div>
