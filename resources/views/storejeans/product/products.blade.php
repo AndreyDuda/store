@@ -10,10 +10,10 @@
                         <div class="item">
                             <a href="{{ route('productOne', ['id' => $product->product_id ] )  }}" class="item-tovar">
                                 <div class="img-tovar">
-                                    @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                                        <img src="{{ asset(env('THEME'))}}/img/{{ $product->photo }}.jpg" alt="">
+                                    @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
+                                        <img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                                     @else
-                                        <img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt="">
+                                        <img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt"{{ $product->categories }}">
                                     @endif
                                 </div>
                                 <div class="brand">{{ $product->label }}</div>
@@ -167,7 +167,7 @@
             @foreach($cat_prod as $category)
            <div class="new-category-item">
                 <p>{{$category->categories}}</p>
-               <a href="{{ route('productAll', ['catedories' => $category->categories]) }}"> <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt=""></a>
+               <a href="{{ route('productAll', ['catedories' => $category->categories]) }}"> <img src="{{ asset(env('THEME'))}}/img/category-item.jpg" alt"{{ $product->categories }}"></a>
            </div>
             @endforeach
         </div>
@@ -201,19 +201,19 @@
 
 <?= file_exists( asset(env('THEME') . '/img/tovarl.jpg')) ?>
 @if($products)
-        <div class="wrapper">
+        <div class="wrapper"><?php clearstatcache(); ?>
 @foreach($products as $product)
             <a href="{{ route('productOne', ['id' => $product->product_id ] )  }}" class="item-tovar">
                 <div class="img-tovar">
-                    @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                        <img src="{{ asset(env('THEME'))}}/img/{{ $product->photo }}.jpg" alt="">
+                    @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r') )
+                        <img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                     @else
-                        <img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt="">
+                        <img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt"{{ $product->categories }}">
                     @endif
                 </div>
-                <div class="brand">{{ $product->label }}</div>
-                <div class="description">{{ $product->title }}</div>
-                <div class="price">{{ $product->price_many }}<i class="fa fa-usd" aria-hidden="true"></i></div>
+                <div class="brand" title="{{$product->label}}">{{ $product->label }}</div>
+                <div class="description" title="{{$product->title}}">{{ $product->title }}</div>
+                <div class="price" title="{{$product->price_many}}">{{ $product->price_many }}<i class="fa fa-usd" aria-hidden="true"></i></div>
             </a>
 @endforeach
         </div>
@@ -265,10 +265,10 @@
             <div class="item">
                 <a href="{{ route('productOne', ['id' => $product->product_id ] )  }}" class="item-tovar">
                     <div class="img-tovar">
-                        @if(file_exists( asset(env('THEME') . '/img/' . $product->photo  . '.jpg')))
-                            <img src="{{ asset(env('THEME'))}}/img/{{ $product->photo }}.jpg" alt="">
+                        @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
+                            <img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                         @else
-                            <img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt="">
+                            <img src="{{ asset(env('THEME'))}}/img/catalog/no-image.png" alt"{{ $product->categories }}">
                         @endif
                     </div>
                     <div class="brand">{{ $product->label }}</div>

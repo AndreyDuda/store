@@ -25,8 +25,8 @@ class ProductController extends SiteController
         $count_p  = 8;
 
 
-        $select   = ['product_id', 'title', 'price_many', 'photo', 'label'];
-        $slider_p = ['product_id', 'title', 'price_many', 'photo', 'label'];
+        $select   = ['product_id', 'title', 'price_many', 'photo_maine', 'photo1', 'photo2', 'photo3', 'photo4', 'label', 'categories'];
+        $slider_p = ['product_id', 'title', 'price_many', 'photo_maine', 'label', 'categories'];
         $where    = false;
         $input    = false;
         $order    = false;
@@ -98,7 +98,7 @@ class ProductController extends SiteController
        
         $products = $this->product_rep->getAll($select, $paginate, $where, $order);
 
-        $slider_p = $this->product_rep->getAll($slider_p, false, 'sale = "1"', false, $count_p);
+        $slider_p = $this->product_rep->getAll($slider_p, false, 'sale_many <> ""', false, $count_p);
 
         $data     = [
             'products' => $products,
@@ -126,7 +126,7 @@ class ProductController extends SiteController
     {
         $id       = $request->id;
         $count_p  = 8;
-        $products = ['product_id', 'title', 'price_many', 'photo', 'label', 'desc',];
+        $products = ['product_id', 'title', 'price_many', 'photo_maine', 'photo1', 'photo2', 'photo3', 'photo4', 'label', 'desc',];
         $product  = $this->product_rep->getOne($id);
 
         $products = $this->product_rep->getAll($products, false, 'label = "' . $product->label . '"', false, $count_p);
