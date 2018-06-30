@@ -3,6 +3,20 @@
 /*-----------------------Загрузка файлов --------------------*/
 $(document).ready(function () {
 
+    $('.content').on('keyup','.search-img',function(){
+        var search = $(this).val();
+        $('.img-for-product').hide();
+        if(search.length >0){
+            $('.img-for-product[title*="'+search+'"]').show();
+        }else{
+            $('.img-for-product').show();
+        }
+
+
+
+
+    });
+
     $('#upload').on('click', function() {
         var url = $('#uploadPhoto').val();
         var formData = new FormData(this);

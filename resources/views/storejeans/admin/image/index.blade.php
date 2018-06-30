@@ -2,8 +2,7 @@
     <div class="flex">
         <h1>Все картинки</h1>
         <form action="#" method="post">
-            <input class="search-admin search-admin-submit " type="submit" value="Удалить все">
-            <input type="text" placeholder="Поиск..." class="search-admin">
+            <input type="text" placeholder="Поиск..." class="search-admin search-img">
         </form>
     </div>
     @if($images)
@@ -12,7 +11,7 @@
 
                 @foreach($images as $image)
                     @if($image != '.' && $image != '..')
-                        <div class="block-admin flex">
+                        <div class="block-admin flex img-for-product" title="{{str_replace('.jpg','',$image)}}">
                             <div class=" img-tovar-admin ">
                                 <img src="{{asset('public/'.env('THEME')) . '/img/catalog/'.  $image }}" alt="">
                             </div>
