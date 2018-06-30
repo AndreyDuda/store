@@ -11,10 +11,30 @@ $(document).ready(function () {
         }else{
             $('.img-for-product').show();
         }
+    });
+
+    $('.content').on('click','.delete-for-img',function(){
+        var obj = $(this);
+        var del = obj.prev().text();
+
+        var url = $('#urlDelImg').val();		var id    =  $(this).data('id');
+
+        $.ajax({
+            type:'POST',
+            url:url,
+            headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
+            data:{del:del},
+            datatype:'JSON',
+            success: function(data) {
+                console.log(obj);
+                obj.parent().remove();
 
 
-
-
+            },
+            error:function() {
+                console.log('ERRORE');
+            }
+        });
     });
 
     $('#upload').on('click', function() {

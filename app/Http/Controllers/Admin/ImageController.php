@@ -30,6 +30,8 @@ class ImageController extends AdminController
 
     public function unusedImage(Request $request)
     {
+
+
         $select     = ['photo_maine', 'photo1', 'photo2', 'photo3', 'photo4'];
         $where      = false;
         $order      = false;
@@ -61,15 +63,16 @@ class ImageController extends AdminController
         $images = array_unique($images);
 
         if($request->isMethod('post')){
-
-            foreach ($images as $image){
-                if($image != '.' && $image != '..'){
-                    unlink($dir.$image);
-                    $image .= '1';
+            if($request->del){
+                unlink($dir .$request->del);
+            }else {
+                foreach ($images as $image) {
+                    if ($image != '.' && $image != '..') {
+                        unlink($dir . $image);
+                    }
                 }
-
             }
-            $image = [];
+            $image = scandir($dir);;
         }
         $data       = [
             'images' => $images

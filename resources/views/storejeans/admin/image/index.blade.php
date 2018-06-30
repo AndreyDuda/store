@@ -1,7 +1,9 @@
 <div class="content">
+    <input type="hidden" id="urlDelImg" value="{{route('unusedImage')}}">
     <div class="flex">
         <h1>Все картинки</h1>
         <form action="#" method="post">
+            {{ csrf_field() }}
             <input type="text" placeholder="Поиск..." class="search-admin search-img">
         </form>
     </div>
@@ -16,7 +18,7 @@
                                 <img src="{{asset('public/'.env('THEME')) . '/img/catalog/'.  $image }}" alt="">
                             </div>
                             <p class="brand">{{ $image }}</p>
-                            <img class="edit-delete edit-delete-foto" src="{{asset('public/'.env('THEME')) . '/img/system/delete.png' }}" alt="">
+                            <img class="edit-delete edit-delete-foto delete-for-img" src="{{asset('public/'.env('THEME')) . '/img/system/delete.png' }}" alt="">
                         </div>
                     @endif
                 @endforeach
