@@ -2,7 +2,33 @@
 
 /*-----------------------Загрузка файлов --------------------*/
 $(document).ready(function () {
+    $('.click_order').click(function () {
 
+        if (!confirm("Заказ обработан?")) {
+            return false;
+        } else {
+            var obj  = $(this);
+            var id   = obj.parent().parent().find('input').val();
+            var data = obj.data('order');
+            var url  = $('#url').val();
+            alert(data);
+            $.ajax({
+                type:'POST',
+                url:url,
+                headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
+                data:{id:id, data:data},
+                datatype:'JSON',
+                success: function(data) {
+                    console.log(obj);
+                    obj.parent().remove();
+                },
+                error:function() {
+                    console.log('ERRORE');
+                }
+            });
+        }
+
+    });
 
 
     $('.content, .edit-product').on('keyup','.search-img',function(){

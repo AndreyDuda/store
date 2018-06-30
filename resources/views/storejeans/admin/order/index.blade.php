@@ -1,5 +1,7 @@
-<div class="content" style="padding: 5; margin: 0;">
+<div class="content" style="padding: 5px; margin: 0;">
     <h2 class="table-name" style="text-align: center;">Заказы</h2>
+    {{ csrf_field() }}
+    <input type="hidden" id="url" value="{{route('successOrder')}}">
     <table class="admin-table">
         <tr>
             <td style="text-align: center; font-weight: 600; background: lightgrey;">
@@ -37,6 +39,7 @@
             @foreach($order as $item)
                 <?php $total=0; ?>
                 <tr style="background: {{($item->new == 1)? 'lightgreen':'white'}};">
+                    <input type="hidden" value="{{ $item->id }}">
                     <td title="{{ $item->fio }}">
                         {{ $item->fio }}
                     </td>
@@ -71,10 +74,10 @@
                         <a title="Подробней о заказе" href="">
                             <img src="{{ asset(env('THEME'))}}/img/read.png" alt="" class="edit-delete">
                         </a>
-                        <a title="Заказ обработан" href="#" onclick="return false;">
+                        <a title="Заказ обработан" data-order="success" class="click_order" href="#" onclick="return false;">
                             <img src="{{ asset(env('THEME'))}}/img/success.png" alt="" class="edit-delete">
                         </a>
-                        <a title="Заказ отменен" href="">
+                        <a title="Заказ отменен" data-order="delete" class="click_order" href="#" onclick="return false;">
                             <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="" class="edit-delete">
                         </a>
                     </td>

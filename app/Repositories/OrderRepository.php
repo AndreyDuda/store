@@ -19,6 +19,13 @@ class OrderRepository extends Repository
         $this->model = $order_rep;
     }
 
+    public function getOne($id)
+    {
+        $result = $this->model->where('id', $id)->first();
+
+        return $result;
+    }
+
     public function validator($input)
     {
         $validator = Validator::make($input, [
@@ -27,6 +34,12 @@ class OrderRepository extends Repository
         ]);
 
         return $validator;
+    }
+
+    public function update($new)
+    {
+        $this->new = $new;
+        $this->save();
     }
 
 }

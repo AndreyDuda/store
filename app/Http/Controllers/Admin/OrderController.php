@@ -21,7 +21,7 @@ class OrderController extends AdminController
         $step     = 3;
         $paginate = 125;
         $select   = '*';
-        $where    = 'new = 1';
+        $where    = false;
         $order    = false;
         $order    = $this->order_rep->getAll($select, $paginate, $where, $order);
         $data = [
@@ -32,4 +32,21 @@ class OrderController extends AdminController
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
+
+    public function successOrder(Request $request)
+    {
+        $id   = $request->id;
+        $data = $request->data;
+
+        if($id && $data){
+            $order  = $this->order_rep->getOne($id);
+            if($data == 'delete'){
+                $order->update(0);
+            }elseif($data == 'success'){
+                $order->update(2);
+            }
+        }
+            return false;
+    }
+
 }
