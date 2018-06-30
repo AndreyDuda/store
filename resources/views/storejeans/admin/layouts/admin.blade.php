@@ -92,14 +92,15 @@
         <dd class="filter-body ">
             <ul>
                 <li>
+                    <a href="{{ route('OrderIndex') }}">Все</a>
+                </li>
+                <li>
                     <a href="{{ route('OrderIndex') }}">Новые</a>
                 </li>
                 <li>
                     <a href="{{ route('OrderIndex') }}">Обработанные</a>
                 </li>
-                <li>
-                    <a href="{{ route('OrderIndex') }}">Все</a>
-                </li>
+
             </ul>
         </dd>
         <dt class="filter-header">

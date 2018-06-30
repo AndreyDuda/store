@@ -2197,7 +2197,7 @@ label span{
     margin-right: 0px;
 }
 .modal-edit-product{
-    display: block;
+    display: none;
 	height: 90%;
 	box-shadow: 0px 1px 20px 2px black;
 }
@@ -2227,4 +2227,20 @@ label span{
 .block-admin-edit{
 	cursor: pointer;
 	min-height: 150px;
+}
+.img-prod{
+	width: 130px;
+	height: 130px;
+	display: block;
+	border: 1px solid #ccc;
+	position: relative;
+	background-size: 100%;
+}
+.img-prod-img{
+    width: 130px;
+    height: 130px;
+    display: block;
+    border: 1px solid #ccc;
+    position: relative;
+    background-size: 100%;
 }

@@ -267,7 +267,7 @@
                         @if(@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
                             <img src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                         @else
-                            <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt={{ $product->categories }}">
+                            <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}">
                         @endif
                     </div>
                     <div class="brand">{{ $product->label }}</div>

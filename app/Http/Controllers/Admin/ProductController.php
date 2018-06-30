@@ -18,6 +18,14 @@ class ProductController extends AdminController
 
     public function editProduct(Request $request)
     {
+        $country  = $this->product_rep->uniqueValue('country');
+        $sesons   = $this->product_rep->uniqueValue('sesons');
+        $label    = $this->product_rep->uniqueValue('label');
+        $style    = $this->product_rep->uniqueValue('style');
+        $size     = $this->product_rep->uniqueValue('size');
+        $cat_prod = $this->product_rep->uniqueValue('categories');
+        $females = $this->product_rep->uniqueValue('females');
+
         $dir        = env('THEME').'/img/catalog';
         $images     = scandir($dir);
 
@@ -25,8 +33,15 @@ class ProductController extends AdminController
         $product  = $this->product_rep->getOne($id);
 
         $data = [
-            'product' => $product,
-            'images' => $images
+            'product'  => $product,
+            'images'   => $images,
+            'country'  => $country,
+            'sesons'   => $sesons,
+            'label'    => $label,
+            'style'    => $style,
+            'size'     => $size,
+            'cat_prod' => $cat_prod,
+            'females'  => $females
         ];
 
         $content    = view(env('THEME') . '.admin.product.editProduct')->with($data)->render();
@@ -60,10 +75,6 @@ class ProductController extends AdminController
         return $this->renderOutput();
     }
 
-    public function uplodPhoto(Request $request)
-    {
-        dd($request);
-    }
 
     public function addProduct(Request $request)
     {

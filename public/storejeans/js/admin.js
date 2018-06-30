@@ -3,7 +3,9 @@
 /*-----------------------Загрузка файлов --------------------*/
 $(document).ready(function () {
 
-    $('.content').on('keyup','.search-img',function(){
+
+
+    $('.content, .edit-product').on('keyup','.search-img',function(){
         var search = $(this).val();
         $('.img-for-product').hide();
         if(search.length >0){
@@ -13,11 +15,18 @@ $(document).ready(function () {
         }
     });
 
+    $('.edit-product .img-for-product').on('click','img',function(){
+
+       console.log($(this).parent().next().text());
+        $('.modal-edit-product').hide();
+    });
+
+
     $('.content').on('click','.delete-for-img',function(){
         var obj = $(this);
         var del = obj.prev().text();
 
-        var url = $('#urlDelImg').val();		var id    =  $(this).data('id');
+        var url = $('#urlDelImg').val();
 
         $.ajax({
             type:'POST',

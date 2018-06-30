@@ -72,7 +72,7 @@ class ImageController extends AdminController
                     }
                 }
             }
-            $image = scandir($dir);;
+            $images = [];
         }
         $data       = [
             'images' => $images
