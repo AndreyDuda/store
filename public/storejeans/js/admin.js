@@ -11,7 +11,7 @@ $(document).ready(function () {
             var id   = obj.parent().parent().find('input').val();
             var data = obj.data('order');
             var url  = $('#url').val();
-            alert(data);
+            alert(id);
             $.ajax({
                 type:'POST',
                 url:url,
@@ -19,8 +19,14 @@ $(document).ready(function () {
                 data:{id:id, data:data},
                 datatype:'JSON',
                 success: function(data) {
-                    console.log(obj);
-                    obj.parent().remove();
+                    if(obj.data('order') == 'success'){
+                        obj.parent().parent().css('background', 'white');
+                    }else{
+                        obj.parent().parent().css('background', 'red');
+                    }
+
+                    console.log(data);
+
                 },
                 error:function() {
                     console.log('ERRORE');

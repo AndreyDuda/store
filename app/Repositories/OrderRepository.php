@@ -36,12 +36,6 @@ class OrderRepository extends Repository
         return $validator;
     }
 
-    public function update($new)
-    {
-        $this->new = $new;
-        $this->save();
-    }
-
 }
 
 

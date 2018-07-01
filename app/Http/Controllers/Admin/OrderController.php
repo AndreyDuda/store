@@ -41,12 +41,14 @@ class OrderController extends AdminController
         if($id && $data){
             $order  = $this->order_rep->getOne($id);
             if($data == 'delete'){
-                $order->update(0);
+                $order->new = 0;
+                $order->save();
             }elseif($data == 'success'){
-                $order->update(2);
+                $order->new = 2;
+                $order->save();
             }
         }
-            return false;
+            return 'success';
     }
 
 }

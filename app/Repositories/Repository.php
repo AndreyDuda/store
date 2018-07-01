@@ -80,9 +80,12 @@ abstract class Repository
         return $model;
     }
 
+
+
     public function test()
     {
         return 'test';
     }
+
 
 }

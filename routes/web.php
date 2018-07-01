@@ -51,7 +51,7 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::get('/upload/excel',   'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
 
     Route::get('/order',          'Admin\OrderController@index')->name('OrderIndex');
-    Route::post('/order',          'Admin\OrderController@successOrder')->name('successOrder');
+    Route::post('/order/update',         'Admin\OrderController@successOrder')->name('successOrder');
 
     Route::get('/settings',       'Admin\SiteController@settings')->name('settings');
 

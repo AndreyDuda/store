@@ -38,7 +38,11 @@
         @if($order)
             @foreach($order as $item)
                 <?php $total=0; ?>
-                <tr style="background: {{($item->new == 1)? 'lightgreen':'white'}};">
+                @if($item->new == 0)
+                    <tr style="background: red">
+                @else
+                        <tr style="background: <?=($item->new == 1)? 'lightgreen': 'white' ?>;">
+                @endif
                     <input type="hidden" value="{{ $item->id }}">
                     <td title="{{ $item->fio }}">
                         {{ $item->fio }}
