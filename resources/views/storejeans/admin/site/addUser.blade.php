@@ -1,6 +1,7 @@
-<div id="app">
-<div class="container">
+<div id="app" class="app">
+    <h3>Добавить пользователя</h3>
     <div class="panel-body">
+
         <form class="form-horizontal" method="POST" action="{{ route('register') }}">
             {{ csrf_field() }}
 
@@ -56,12 +57,11 @@
 
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-success main-bg-color">
                         Добавить пользователя
                     </button>
                 </div>
             </div>
         </form>
     </div>
-</div>
 </div>

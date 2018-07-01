@@ -41,7 +41,7 @@
                 @if($item->new == 0)
                     <tr style="background: red">
                 @else
-                        <tr style="background: <?=($item->new == 1)? 'lightgreen': 'white' ?>;">
+                        <tr style="background: <?=($item->new == 1)? 'lightgreen': 'gray' ?>;">
                 @endif
                     <input type="hidden" value="{{ $item->id }}">
                     <td title="{{ $item->fio }}">
@@ -75,15 +75,17 @@
                         {{ $item->created_at->format('d.m.Y H:i') }}
                     </td>
                     <td>
-                        <a title="Подробней о заказе" href="">
+                        <a title="Подробней о заказе" href="{{route('OrderShow', ['id'=>$item->id])}}">
                             <img src="{{ asset('storejeans')}}/img/read.png" alt="" class="edit-delete">
                         </a>
+                        @if($item->new == 1)
                         <a title="Заказ обработан" data-order="success" class="click_order" href="#" onclick="return false;">
                             <img src="{{ asset('storejeans')}}/img/success.png" alt="" class="edit-delete">
                         </a>
                         <a title="Заказ отменен" data-order="delete" class="click_order" href="#" onclick="return false;">
                             <img src="{{ asset('storejeans')}}/img/delete.png" alt="" class="edit-delete">
                         </a>
+                        @endif
                     </td>
                 </tr>
             @endforeach

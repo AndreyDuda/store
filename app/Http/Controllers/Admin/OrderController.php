@@ -6,6 +6,7 @@ use App\Repositories\OrderRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Config;
+use Session;
 
 class OrderController extends AdminController
 {
@@ -49,6 +50,27 @@ class OrderController extends AdminController
             }
         }
             return 'success';
+    }
+
+    public function show(Request $request)
+    {
+        $id   = $request->id;
+        $order  = $this->order_rep->getOne($id);
+        $products =   json_decode($order->product);
+
+
+//dd($products);
+        $data = [
+            'order' => $order,
+            'products' => $products
+        ];
+
+
+        $content    = view('storejeans' . '.admin.order.show')->with($data)->render();
+        $this->vars = array_add($this->vars, 'content', $content);
+        return $this->renderOutput();
+
+
     }
 
 }

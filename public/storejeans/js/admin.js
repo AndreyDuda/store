@@ -2,6 +2,11 @@
 
 /*-----------------------Загрузка файлов --------------------*/
 $(document).ready(function () {
+    $('.all-foto').on('click','.foto', function () {
+       $('.modal-edit-product').show();
+    });
+
+
     $('.click_order').click(function () {
 
         if (!confirm("Заказ обработан?")) {
@@ -37,7 +42,7 @@ $(document).ready(function () {
     });
 
 
-    $('.content, .edit-product').on('keyup','.search-img',function(){
+    $('.content, .edit-product, .modal-edit-product').on('keyup','.search-img',function(){
         var search = $(this).val();
         $('.img-for-product').hide();
         if(search.length >0){
