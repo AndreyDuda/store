@@ -33,9 +33,6 @@ Route::post('/by/{id?}', 'CartController@by')->name('cartBy');
 Route::post('/search/{search?}', 'ProductController@search')->name('searchProduct');
 
 
-
-
-
 Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::get('/',               'Admin\ProductController@index')->name('adminProduct');
     Route::get('/editProduct',    'Admin\ProductController@editProduct')->name('editProduct');
@@ -51,9 +48,13 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::get('/upload/excel',   'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
 
     Route::get('/order',          'Admin\OrderController@index')->name('OrderIndex');
-    Route::post('/order/update',         'Admin\OrderController@successOrder')->name('successOrder');
+    Route::post('/order/update',  'Admin\OrderController@successOrder')->name('successOrder');
 
-    Route::get('/settings',       'Admin\SiteController@settings')->name('settings');
+    Route::get('/settings',       'Admin\SiteController@settings')->name('settingsSite');
+    Route::post('/settings',      'Admin\SiteController@settings')->name('settingsSite');
+    Route::get('/settings',       'Admin\SiteController@settings')->name('settingsSite');
+    Route::post('/user/add',      'Admin\SiteController@addUser')->name('addUser');
+    Route::get('/user/add',       'Admin\SiteController@addUser')->name('addUser');
 
     Route::post('/parse',         'Admin\BackService\excel\ExcelController@parse')->name('readExcel');
     Route::get('/write',          'Admin\BackService\excel\ExcelController@write')->name('excelWrite');

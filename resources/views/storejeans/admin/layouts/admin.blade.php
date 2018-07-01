@@ -117,8 +117,29 @@
                 <li>
                     <a href="{{ route('uploadImage') }}">Добавить картинки</a>
                 </li>
+                <li>
+                    <a href="{{ route('settingsSite') }}">Настройки сайта</a>
+                </li>
+                <li>
+                    <a href="{{ route('addUser') }}">Пользователи</a>
+                </li>
+                <li>
+                    <a href="{{ route('addUser') }}">Добавить пользователя</a>
+                </li>
+               {{-- <li><a href="{{ route('register') }}">Register</a></li>--}}
             </ul>
         </dd>
+        <dt class="filter-header">
+            <a href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                Выйти
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+        </dt>
 
     </dl>
 </aside>

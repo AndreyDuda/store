@@ -1,5 +1,5 @@
 <div class="content">
-    <h2 class="table-name">Table name</h2>
+    <h2 class="table-name">Заказы</h2>
     <table class="admin-table">
         <tr>
             <td style="text-align: center; font-weight: 600; background: lightgrey; width:100px;">
