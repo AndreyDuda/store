@@ -11,19 +11,19 @@ class ImageController extends AdminController
 {
     public function __construct(ProductRepository $product_rep)
     {
-        $this->template    = env('THEME') . '.admin.index';
+        $this->template    = 'storejeans' . '.admin.index';
         $this->product_rep = $product_rep;
     }
 
     public function index()
     {
-        $dir        = env('THEME').'/img/catalog';
+        $dir        = 'storejeans'.'/img/catalog';
         $images     = scandir($dir);
         $data       = [
             'images' => $images
         ];
 
-        $content    = view(env('THEME') . '.admin.image.index')->with($data)->render();
+        $content    = view('storejeans' . '.admin.image.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
@@ -38,7 +38,7 @@ class ImageController extends AdminController
         $paginate   = false;
         $images     = [];
         $products   = $this->product_rep->getAll($select, $paginate, $where, $order);
-        $dir        = env('THEME').'/img/catalog/';
+        $dir        = 'storejeans'.'/img/catalog/';
         $tempImages = scandir($dir);
         foreach ($tempImages as $image){
             $copy = false;
@@ -77,7 +77,7 @@ class ImageController extends AdminController
         $data       = [
             'images' => $images
         ];
-        $content    = view(env('THEME') . '.admin.image.unused')->with($data)->render();
+        $content    = view('storejeans' . '.admin.image.unused')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
@@ -87,7 +87,7 @@ class ImageController extends AdminController
         if($request->isMethod('post')){
             foreach ($request->file() as $file){
                 foreach ($file as $f){
-                    $f->move(env('THEME').'/img/catalog', $f->getClientOriginalName());
+                    $f->move('storejeans'.'/img/catalog', $f->getClientOriginalName());
                 }
             }
             dd($request->file('image'));
@@ -95,7 +95,7 @@ class ImageController extends AdminController
         $data = [
 
         ];
-        $content    = view(env('THEME') . '.admin.image.upload')->with($data)->render();
+        $content    = view('storejeans' . '.admin.image.upload')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }

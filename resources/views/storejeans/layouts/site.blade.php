@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Story Jeans</title>
-    <link rel="icon" href="{{  asset(env('THEME')) }}/img/favicon.ico">
-    <link rel="stylesheet" href="{{  asset(env('THEME')) }}/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{  asset(env('THEME')) }}/libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{  asset(env('THEME')) }}/libs/slick/css/slick.css">
-    <link rel="stylesheet" href="{{  asset(env('THEME')) }}/css/fonts.css">
+    <link rel="icon" href="{{  asset('storejeans') }}/img/favicon.ico">
+    <link rel="stylesheet" href="{{  asset('storejeans') }}/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{  asset('storejeans') }}/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{  asset('storejeans') }}/libs/slick/css/slick.css">
+    <link rel="stylesheet" href="{{  asset('storejeans') }}/css/fonts.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&amp;subset=latin-ext,vietnamese" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
-    <link rel="stylesheet" href="{{  asset(env('THEME')) }}/css/main.css">
-    <link rel="stylesheet" href="{{  asset(env('THEME')) }}/css/media.css">
+    <link rel="stylesheet" href="{{  asset('storejeans') }}/css/main.css">
+    <link rel="stylesheet" href="{{  asset('storejeans') }}/css/media.css">
 </head>
 <body>
 <header>
@@ -21,7 +21,7 @@
         <div class="logo">
 
             <a href="{{ route('index') }}">
-                <img src="{{  asset(env('THEME')) }}/img/logo.png" alt="" >
+                <img src="{{  asset('storejeans') }}/img/logo.png" alt="" >
             </a>
         </div>
         <div class="menu-left">
@@ -48,7 +48,7 @@
     <div class="header-mobile">
         <div class="menu-up">
             <a href="{{ route('index') }}" class="logo-mobile">
-                <img src="{{  asset(env('THEME')) }}/img/1_whitemini_logo.png" alt="">
+                <img src="{{  asset('storejeans') }}/img/1_whitemini_logo.png" alt="">
             </a>
             <a href="tel:0993783331" class="phone ">
                 099 378 33 31
@@ -131,9 +131,9 @@
     </div>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script><!-- JQuery -->
-<script src="{{  asset(env('THEME')) }}/libs/zoom/js/jquery.zoom.min.js"></script><!-- Zoom -->
-<script src="{{  asset(env('THEME')) }}/libs/slick/js/slick.min.js"></script><!-- Slick -->
-<script src="{{  asset(env('THEME')) }}/js/common.js"></script><!-- My JS file -->
+<script src="{{  asset('storejeans') }}/libs/zoom/js/jquery.zoom.min.js"></script><!-- Zoom -->
+<script src="{{  asset('storejeans') }}/libs/slick/js/slick.min.js"></script><!-- Slick -->
+<script src="{{  asset('storejeans') }}/js/common.js"></script><!-- My JS file -->
 
 <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
 <!-- LiveReload -->

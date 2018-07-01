@@ -12,7 +12,7 @@ class OrderController extends AdminController
     //
     public function __construct(OrderRepository $order_rep)
     {
-        $this->template  = env('THEME') . '.admin.index';
+        $this->template  = 'storejeans' . '.admin.index';
         $this->order_rep = $order_rep;
     }
 
@@ -28,7 +28,7 @@ class OrderController extends AdminController
             'order' => $order
         ];
 
-        $content    = view(env('THEME') . '.admin.order.index')->with($data)->render();
+        $content    = view('storejeans' . '.admin.order.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }

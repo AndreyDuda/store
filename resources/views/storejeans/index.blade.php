@@ -1,4 +1,4 @@
-@extends(env('THEME') . '.layouts.site')
+@extends('storejeans' . '.layouts.site')
 
 @section('content')
     {!! $content !!}

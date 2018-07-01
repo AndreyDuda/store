@@ -8,7 +8,7 @@ class DeliveryController extends SiteController
 {
     public function __construct()
     {
-        $this->template = env('THEME') . '.index';
+        $this->template = 'storejeans.index';
     }
 
     public function index()

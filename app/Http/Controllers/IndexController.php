@@ -13,14 +13,14 @@ class IndexController extends SiteController
     {
         $this->product_rep = $product_rep;
 
-        $this->template = env('THEME') . '.index';
+        $this->template = 'storejeans.index';
     }
 
     public function index()
     {
         $products = $this->product_rep->getAll();
-       /* $content = view(env('THEME') . '.content')->with('products', $products)->render();*/
-        $content = view(env('THEME') . '.index.main')->render();
+       /* $content = view('storejeans' . '.content')->with('products', $products)->render();*/
+        $content = view('storejeans' . '.index.main')->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }

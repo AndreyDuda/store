@@ -72,13 +72,13 @@
                     </td>
                     <td>
                         <a title="Подробней о заказе" href="">
-                            <img src="{{ asset(env('THEME'))}}/img/read.png" alt="" class="edit-delete">
+                            <img src="{{ asset('storejeans')}}/img/read.png" alt="" class="edit-delete">
                         </a>
                         <a title="Заказ обработан" data-order="success" class="click_order" href="#" onclick="return false;">
-                            <img src="{{ asset(env('THEME'))}}/img/success.png" alt="" class="edit-delete">
+                            <img src="{{ asset('storejeans')}}/img/success.png" alt="" class="edit-delete">
                         </a>
                         <a title="Заказ отменен" data-order="delete" class="click_order" href="#" onclick="return false;">
-                            <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="" class="edit-delete">
+                            <img src="{{ asset('storejeans')}}/img/delete.png" alt="" class="edit-delete">
                         </a>
                     </td>
                 </tr>

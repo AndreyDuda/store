@@ -21,7 +21,7 @@ class CartController extends SiteController
 
     public function __construct(ProductRepository $product_rep, OrderRepository $order_rep)
     {
-        $this->template = env('THEME') . '.index';
+        $this->template = 'storejeans.index';
         $this->product_rep = $product_rep;
         $this->order_rep = $order_rep;
 

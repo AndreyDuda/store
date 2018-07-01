@@ -12,7 +12,7 @@ class ProductController extends SiteController
 {
     public function __construct(ProductRepository $product_rep, SettingRepository $setting_rep)
     {
-        $this->template = env('THEME') . '.index';
+        $this->template = 'storejeans.index';
         $this->product_rep = $product_rep;
         $this->setting_rep = $setting_rep;
     }

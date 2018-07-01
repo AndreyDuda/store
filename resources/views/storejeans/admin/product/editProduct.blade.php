@@ -4,77 +4,77 @@
     <form class="edit-product-form" action="">
         <input type="hidden" name="id" value="{{$product->id}}">
 
-            @if(!@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo_maine.'.jpg', 'r'))
+            @if(!@fopen(asset('public/'.'storejeans').'/img/' . $product->photo_maine.'.jpg', 'r'))
                 <div class="img-prod">
-                    <img class="img-prod-img" src="{{asset('public/'.env('THEME')).'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
+                    <img class="img-prod-img" src="{{asset('public/'.'storejeans').'/img/' . $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                     <span class="delete-form-foto">
-                        <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
+                        <img src="{{ asset('storejeans')}}/img/delete.png" alt="">
                     </span>
                 </div>
             @else
                 <div class="foto">
                     <span class="delete-form-foto">
-                         <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
+                         <img src="{{ asset('storejeans')}}/img/delete.png" alt="">
                      </span>
                 </div>
             @endif
 
-        @if(!@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo1.'.jpg', 'r'))
+        @if(!@fopen(asset('public/'.'storejeans').'/img/' . $product->photo1.'.jpg', 'r'))
             <div class="img-prod">
-                <img class="img-prod-img" src="{{asset('public/'.env('THEME')).'/img/' . $product->photo1}}.jpg" alt="{{ $product->categories }}">
+                <img class="img-prod-img" src="{{asset('public/'.'storejeans').'/img/' . $product->photo1}}.jpg" alt="{{ $product->categories }}">
                 <span class="delete-form-foto">
-                        <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
+                        <img src="{{ asset('storejeans')}}/img/delete.png" alt="">
                     </span>
             </div>
         @else
             <div class="foto">
                     <span class="delete-form-foto">
-                         <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
+                         <img src="{{ asset('storejeans')}}/img/delete.png" alt="">
                      </span>
             </div>
         @endif
 
-        @if(!@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo2.'.jpg', 'r'))
+        @if(!@fopen(asset('public/'.'storejeans').'/img/' . $product->photo2.'.jpg', 'r'))
             <div class="img-prod">
-                <img class="img-prod-img" src="{{asset('public/'.env('THEME')).'/img/' . $product->photo2}}.jpg" alt="{{ $product->categories }}">
+                <img class="img-prod-img" src="{{asset('public/'.'storejeans').'/img/' . $product->photo2}}.jpg" alt="{{ $product->categories }}">
                 <span class="delete-form-foto">
-                        <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
+                        <img src="{{ asset('storejeans')}}/img/delete.png" alt="">
                     </span>
             </div>
         @else
             <div class="foto">
                     <span class="delete-form-foto">
-                         <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
+                         <img src="{{ asset('storejeans')}}/img/delete.png" alt="">
                      </span>
             </div>
         @endif
 
-        @if(!@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo3.'.jpg', 'r'))
+        @if(!@fopen(asset('public/'.'storejeans').'/img/' . $product->photo3.'.jpg', 'r'))
             <div class="img-prod">
-                <img class="img-prod-img" src="{{asset('public/'.env('THEME')).'/img/' . $product->photo3}}.jpg" alt="{{ $product->categories }}">
+                <img class="img-prod-img" src="{{asset('public/'.'storejeans').'/img/' . $product->photo3}}.jpg" alt="{{ $product->categories }}">
                 <span class="delete-form-foto">
-                        <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
+                        <img src="{{ asset('storejeans')}}/img/delete.png" alt="">
                     </span>
             </div>
         @else
             <div class="foto">
                     <span class="delete-form-foto">
-                         <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
+                         <img src="{{ asset('storejeans')}}/img/delete.png" alt="">
                      </span>
             </div>
         @endif
 
-        @if(!@fopen(asset('public/'.env('THEME')).'/img/' . $product->photo4.'.jpg', 'r'))
+        @if(!@fopen(asset('public/'.'storejeans').'/img/' . $product->photo4.'.jpg', 'r'))
             <div class="img-prod">
-                <img class="img-prod-img" src="{{asset('public/'.env('THEME')).'/img/' . $product->photo4}}.jpg" alt="{{ $product->categories }}">
+                <img class="img-prod-img" src="{{asset('public/'.'storejeans').'/img/' . $product->photo4}}.jpg" alt="{{ $product->categories }}">
                 <span class="delete-form-foto">
-                        <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
+                        <img src="{{ asset('storejeans')}}/img/delete.png" alt="">
                 </span>
             </div>
         @else
             <div class="foto">
                     <span class="delete-form-foto">
-                         <img src="{{ asset(env('THEME'))}}/img/delete.png" alt="">
+                         <img src="{{ asset('storejeans')}}/img/delete.png" alt="">
                      </span>
             </div>
         @endif
@@ -254,7 +254,7 @@
                                 @if($image != '.' && $image != '..')
                                     <div class="block-admin flex img-for-product" title="{{str_replace('.jpg','',$image)}}">
                                         <div class=" img-tovar-admin ">
-                                            <img src="{{asset('public/'.env('THEME')) . '/img/catalog/'.  $image }}" alt="{{$image}}">
+                                            <img src="{{asset('public/'.'storejeans') . '/img/catalog/'.  $image }}" alt="{{$image}}">
                                         </div>
                                         <p class="brand">{{ $image }}</p>
                                     </div>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Story Jeans</title>
-    <link rel="icon" href="{{  asset(env('THEME')) }}/img/favicon.ico">
-    <link rel="stylesheet" href="{{  asset(env('THEME')) }}/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="icon" href="{{  asset('storejeans') }}/img/favicon.ico">
+    <link rel="stylesheet" href="{{  asset('storejeans') }}/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{  asset(env('THEME')) }}/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{  asset(env('THEME')) }}/libs/slick/css/slick.css">
     <link rel="stylesheet" href="{{  asset(env('THEME')) }}/css/fonts.css">

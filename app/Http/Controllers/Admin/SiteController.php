@@ -12,7 +12,7 @@ class SiteController extends AdminController
     //
     public function __construct(SettingRepository $setting_rep)
     {
-        $this->template    = env('THEME') . '.admin.index';
+        $this->template    = 'storejeans' . '.admin.index';
         $this->setting_rep = $setting_rep;
     }
 
@@ -23,7 +23,7 @@ class SiteController extends AdminController
             'settings' => $settings
         ];
 
-        $content    = view(env('THEME') . '.admin.site.settings')->with($data)->render();
+        $content    = view('storejeans' . '.admin.site.settings')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }

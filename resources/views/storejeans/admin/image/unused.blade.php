@@ -14,10 +14,10 @@
                     @if($image != '.' && $image != '..')
                         <div class="block-admin flex img-for-product" title="{{str_replace('.jpg','',$image)}}">
                             <div class=" img-tovar-admin ">
-                                <img src="{{asset('public/'.env('THEME')) . '/img/catalog/'.  $image }}" alt="">
+                                <img src="{{asset('public/'.'storejeans') . '/img/catalog/'.  $image }}" alt="">
                             </div>
                             <p class="brand">{{ $image }}</p>
-                            <img class="edit-delete edit-delete-foto delete-for-img" src="{{asset('public/'.env('THEME')) . '/img/system/delete.png' }}" alt="">
+                            <img class="edit-delete edit-delete-foto delete-for-img" src="{{asset('public/'.'storejeans') . '/img/system/delete.png' }}" alt="">
                         </div>
                     @endif
                 @endforeach

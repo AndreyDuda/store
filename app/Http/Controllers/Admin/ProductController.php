@@ -12,7 +12,7 @@ class ProductController extends AdminController
 {
     public function __construct(ProductRepository $product_rep)
     {
-        $this->template    = env('THEME') . '.admin.index';
+        $this->template    = 'storejeans' . '.admin.index';
         $this->product_rep = $product_rep;
     }
 
@@ -26,7 +26,7 @@ class ProductController extends AdminController
         $cat_prod = $this->product_rep->uniqueValue('categories');
         $females = $this->product_rep->uniqueValue('females');
 
-        $dir        = env('THEME').'/img/catalog';
+        $dir        = 'storejeans'.'/img/catalog';
         $images     = scandir($dir);
 
         $id = ($request->id)? $request->id:false;
@@ -44,7 +44,7 @@ class ProductController extends AdminController
             'females'  => $females
         ];
 
-        $content    = view(env('THEME') . '.admin.product.editProduct')->with($data)->render();
+        $content    = view('storejeans' . '.admin.product.editProduct')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
@@ -63,14 +63,14 @@ class ProductController extends AdminController
             'step'     => $step
         ];
 
-        $content    = view(env('THEME') . '.admin.product.index')->with($data)->render();
+        $content    = view('storejeans' . '.admin.product.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
 
     public function uploadExcelFile()
     {
-        $content    = view(env('THEME') . '.admin.product.uploadExcelFile')->render();
+        $content    = view('storejeans' . '.admin.product.uploadExcelFile')->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
@@ -78,7 +78,7 @@ class ProductController extends AdminController
 
     public function addProduct(Request $request)
     {
-        $content    = view(env('THEME') . '.admin.product.uploadProduct')->render();
+        $content    = view('storejeans' . '.admin.product.uploadProduct')->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }

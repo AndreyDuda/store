@@ -48,7 +48,7 @@ class OrderShipped extends Mailable
                 'products' => $this->product
             ];
 
-            return $this->from('credonull@gmail.com', 'story jeans')->view(env('THEME') . '.mail.order')->with($data)->subject('StoryJeans');
+            return $this->from('credonull@gmail.com', 'story jeans')->view('storejeans' . '.mail.order')->with($data)->subject('StoryJeans');
 
     }
 
