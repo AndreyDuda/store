@@ -49,22 +49,27 @@ class ProductController extends AdminController
 
         $id = ($request->id)? $request->id:false;
         $product  = $this->product_rep->getOne($id);
+        if($request->id && $product) {
 
-        $data = [
-            'product'  => $product,
-            'images'   => $images,
-            'country'  => $country,
-            'sesons'   => $sesons,
-            'label'    => $label,
-            'style'    => $style,
-            'size'     => $size,
-            'cat_prod' => $cat_prod,
-            'females'  => $females
-        ];
+            $data = [
+                'product' => $product,
+                'images' => $images,
+                'country' => $country,
+                'sesons' => $sesons,
+                'label' => $label,
+                'style' => $style,
+                'size' => $size,
+                'cat_prod' => $cat_prod,
+                'females' => $females
+            ];
 
-        $content    = view('storejeans' . '.admin.product.editProduct')->with($data)->render();
-        $this->vars = array_add($this->vars, 'content', $content);
-        return $this->renderOutput();
+            $content = view('storejeans' . '.admin.product.editProduct')->with($data)->render();
+            $this->vars = array_add($this->vars, 'content', $content);
+            return $this->renderOutput();
+        }else{
+            abort('404');
+        }
+
     }
 
 

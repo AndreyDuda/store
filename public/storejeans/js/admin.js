@@ -19,7 +19,6 @@ $(document).ready(function () {
         $(this).parent().find('.change-image').hide();
         $(this).parent().addClass('change_photo');
         $('#'+photo).val();
-        console.log(photo);
 
     });
 
@@ -27,7 +26,8 @@ $(document).ready(function () {
         var img   = $(this).data('img').replace('.jpg','');
         var photo = $('#for_change').val();
         $('#'+photo).val('catalog/'+img);
-
+        console.log(photo);
+        console.log($('#'+photo).val());
         var url = $(this).attr('src').replace('no-image.png',img+'jpg');
         $('.'+photo+' .ch').attr('src', url);
         $('.'+photo+' span').show();

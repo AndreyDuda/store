@@ -21,7 +21,7 @@
                     </div>
              @endif
 
-         @if(!@fopen(asset('storejeans').'/img/' . $product->photo1.'.jpg', 'r'))
+                 @if(@fopen(asset('storejeans').'/img/' . $product->photo1.'.jpg', 'r'))
                      <div class="foto photo1" data-photo="photo1">
                          <p class="foto-text">Фото-1</p>
                          <img class="ch" src="{{asset('storejeans').'/img/' . $product->photo1.'.jpg'}}" alt="">
@@ -29,8 +29,8 @@
                             <img src="{{ asset(env('THEME'))}}/img/system/delete.png" alt="">
                         </span>
                      </div>
-         @else
-                     <div class="foto change_photo photo1" data-photo="photo1">
+                 @else
+                     <div class="foto change_photo photo1" data-photo="photo2">
                          <p class="foto-text">Фото-1</p>
                          <img class="ch" src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="">
                          <span class="change-image" style="display:none">
@@ -38,7 +38,7 @@
                         </span>
                      </div>
 
-         @endif
+                 @endif
 
          @if(@fopen(asset('storejeans').'/img/' . $product->photo2.'.jpg', 'r'))
                      <div class="foto photo2" data-photo="photo2">
