@@ -2,9 +2,37 @@
 
 /*-----------------------Загрузка файлов --------------------*/
 $(document).ready(function () {
-    $('.all-foto').on('click','.foto', function () {
+     $('.close').click(function(){
+         $('.modal-edit-product').hide();
+     });
+
+    $('.all-foto').on('click','.change_photo', function () {
+       var change = $(this).data('photo');
+       $('#for_change').val(change);
        $('.modal-edit-product').show();
     });
+
+    $('.all-foto').on('click', '.change-image', function(){
+        var no_img = $('#no_image').val();
+        var url = $(this).parent().find('.ch').attr('src', no_img);
+        console.log(url);
+    });
+
+    $('.modal-edit-product').on('click', 'img', function(){
+        var img   = $(this).data('img').replace('.jpg','');
+        var photo = $('#for_change').val();
+        $('#'+photo).val(img);
+
+        var url = $(this).attr('src').replace('no-image.png',img+'jpg');
+        $('.'+photo+' .ch').attr('src', url);
+        $('.'+photo+' span').show();
+        $('.'+photo).removeClass('change_photo');
+
+
+        $('.modal-edit-product').hide();
+
+    });
+
 
 
     $('.click_order').click(function () {

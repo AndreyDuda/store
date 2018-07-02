@@ -2372,3 +2372,7 @@ label span{
 .app h3{
 	padding-left: 20px;
 }
+
+.change_photo{
+	cursor: pointer;
+}
