@@ -14,14 +14,19 @@ $(document).ready(function () {
 
     $('.all-foto').on('click', '.change-image', function(){
         var no_img = $('#no_image').val();
-        var url = $(this).parent().find('.ch').attr('src', no_img);
-        console.log(url);
+        var photo = $(this).parent().data('photo');
+        $(this).parent().find('.ch').attr('src', no_img);
+        $(this).parent().find('.change-image').hide();
+        $(this).parent().addClass('change_photo');
+        $('#'+photo).val();
+        console.log(photo);
+
     });
 
     $('.modal-edit-product').on('click', 'img', function(){
         var img   = $(this).data('img').replace('.jpg','');
         var photo = $('#for_change').val();
-        $('#'+photo).val(img);
+        $('#'+photo).val('catalog/'+img);
 
         var url = $(this).attr('src').replace('no-image.png',img+'jpg');
         $('.'+photo+' .ch').attr('src', url);

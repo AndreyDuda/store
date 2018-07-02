@@ -16,8 +16,26 @@ class ProductController extends AdminController
         $this->product_rep = $product_rep;
     }
 
+    public function updateProduct(Request $request)
+    {
+        if($request->isMethod('post')){
+            $input = $request->input();
+            $request = $request->except('_token');
+            dd($request);
+        }
+
+        return redirect()->route('editProduct')->with('status', 'Заказ успешно отправлен');
+    }
+
     public function editProduct(Request $request)
     {
+        if($request->isMethod('post')){
+            $input = $request;
+            $input = $input->except('_token');
+            $product  = $this->product_rep->getOne($request->id);
+            $product->update($input);
+        }
+
         $country  = $this->product_rep->uniqueValue('country');
         $sesons   = $this->product_rep->uniqueValue('sesons');
         $label    = $this->product_rep->uniqueValue('label');

@@ -79,6 +79,15 @@ abstract class Repository
 
         return $model;
     }
+    public function update($input)
+    {
+        $model = $this->model;
+        $model->fill($input);
+        $model->save($input);
+    }
+
+
+
 
 
 

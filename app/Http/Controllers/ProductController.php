@@ -122,6 +122,8 @@ class ProductController extends SiteController
         return $this->renderOutput();
     }
 
+
+
     public function show(Request $request)
     {
         $id       = $request->id;

@@ -2,19 +2,17 @@
     <div class="edit-product">
         <h1> Реадктирование товара</h1>
 
-        <form class="edit-product-form" action="">
-            <input type="hidden" name="id" value="{{$product->id}}">
             <div class="all-foto flex">
-             @if(@fopen(asset('public/'.'storejeans').'/img/' . $product->photo_maine.'.jpg', 'r'))
-                    <div class="foto maine_photo" data-photo="maine_photo">
+             @if(@fopen(asset('storejeans').'/img/' . $product->photo_maine.'.jpg', 'r'))
+                    <div class="foto photo_maine" data-photo="photo_maine">
                         <p class="foto-text">Основное фото</p>
-                        <img class="ch" src="{{asset('public/'.'storejeans').'/img/' . $product->photo_maine.'.jpg'}}" alt="">
+                        <img class="ch" src="{{asset('storejeans').'/img/' . $product->photo_maine.'.jpg'}}" alt="">
                         <span  class="change-image">
                             <img src="{{ asset(env('THEME'))}}/img/system/delete.png" alt="">
                         </span>
                     </div>
              @else
-                    <div class="foto change_photo maine_photo"  data-photo="maine_photo">
+                    <div class="foto change_photo photo_maine"  data-photo="photo_maine">
                         <p class="foto-text">Основное фото</p>
                         <img class="ch" src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="">
                         <span class="change-image" style="display:none">
@@ -23,10 +21,10 @@
                     </div>
              @endif
 
-         @if(!@fopen(asset('public/'.'storejeans').'/img/' . $product->photo1.'.jpg', 'r'))
+         @if(!@fopen(asset('storejeans').'/img/' . $product->photo1.'.jpg', 'r'))
                      <div class="foto photo1" data-photo="photo1">
                          <p class="foto-text">Фото-1</p>
-                         <img class="ch" src="{{asset('public/'.'storejeans').'/img/' . $product->photo1.'.jpg'}}" alt="">
+                         <img class="ch" src="{{asset('storejeans').'/img/' . $product->photo1.'.jpg'}}" alt="">
                          <span class="change-image">
                             <img src="{{ asset(env('THEME'))}}/img/system/delete.png" alt="">
                         </span>
@@ -42,10 +40,10 @@
 
          @endif
 
-         @if(@fopen(asset('public/'.'storejeans').'/img/' . $product->photo2.'.jpg', 'r'))
+         @if(@fopen(asset('storejeans').'/img/' . $product->photo2.'.jpg', 'r'))
                      <div class="foto photo2" data-photo="photo2">
                          <p class="foto-text">Фото-2</p>
-                         <img class="ch" src="{{asset('public/'.'storejeans').'/img/' . $product->photo2.'.jpg'}}" alt="">
+                         <img class="ch" src="{{asset('storejeans').'/img/' . $product->photo2.'.jpg'}}" alt="">
                          <span class="change-image">
                             <img src="{{ asset(env('THEME'))}}/img/system/delete.png" alt="">
                         </span>
@@ -61,10 +59,10 @@
 
          @endif
 
-         @if(@fopen(asset('public/'.'storejeans').'/img/' . $product->photo3.'.jpg', 'r'))
+         @if(@fopen(asset('storejeans').'/img/' . $product->photo3.'.jpg', 'r'))
                      <div class="foto  photo3" data-photo="photo3">
                          <p class="foto-text">Фото-3</p>
-                         <img class="ch" src="{{asset('public/'.'storejeans').'/img/' . $product->photo3.'.jpg'}}" alt="">
+                         <img class="ch" src="{{asset('storejeans').'/img/' . $product->photo3.'.jpg'}}" alt="">
                          <span class="change-image">
                             <img src="{{ asset(env('THEME'))}}/img/system/delete.png" alt="">
                          </span>
@@ -80,10 +78,10 @@
 
          @endif
 
-         @if(@fopen(asset('public/'.'storejeans').'/img/' . $product->photo4.'.jpg', 'r'))
+         @if(@fopen(asset('storejeans').'/img/' . $product->photo4.'.jpg', 'r'))
                      <div class="foto photo4" data-photo="photo4">
                          <p class="foto-text">Фото-4</p>
-                         <img class="ch" src="{{asset('public/'.'storejeans').'/img/' . $product->photo4.'.jpg'}}" alt="">
+                         <img class="ch" src="{{asset('storejeans').'/img/' . $product->photo4.'.jpg'}}" alt="">
                          <span class="change-image">
                              <img src="{{ asset(env('THEME'))}}/img/system/delete.png" alt="">
                         </span>
@@ -98,18 +96,21 @@
                      </div>
 
          @endif
-                <input type="hidden" id="for_change" value="">
-                <input type="hidden" id="maine_photo" name="mine_photo" value="">
-                <input type="hidden" id="photo1" name="photo1" value="">
-                <input type="hidden" id="photo2" name="photo2" value="">
-                <input type="hidden" id="photo3" name="photo3" value="">
-                <input type="hidden" id="photo4" name="photo4" value="">
-                <input type="hidden" id="no_image" value="{{ asset(env('THEME'))}}/img/system/no-image.png">
+
 
     </div>
-    <form action="">
+    <form action="{{ route('updateProduct') }}" method="post">
+        {{ csrf_field() }}
         <div class="flex flex-start width100">
         <div class="left-form">
+            <input type="hidden" name="id" value="{{$product->product_id}}">
+            <input type="hidden" id="no_image" value="{{ asset(env('THEME'))}}/img/system/no-image.png">
+            <input type="hidden" id="for_change" value="">
+            <input type="hidden" id="photo_maine" name="photo_maine" value="{{ $product->photo_maine OR '' }}">
+            <input type="hidden" id="photo1" name="photo1" value="{{ $product->photo1 OR '' }}">
+            <input type="hidden" id="photo2" name="photo2" value="{{ $product->photo2 OR '' }}">
+            <input type="hidden" id="photo3" name="photo3" value="{{ $product->photo3 OR '' }}">
+            <input type="hidden" id="photo4" name="photo4" value="{{ $product->photo4 OR '' }}">
             <label for="form-id-product">
                 id_1c<br>
                 <input type="text" id="form-id-product" name="product_id" value="{{$product->product_id}}">
@@ -262,6 +263,13 @@
         </div>
             <textarea class="area-edit" name="desc" id="desc" rows="10" placeholder="Описание товара">{{trim($product->desc)}}</textarea>
     </div>
+        <div class="form-group">
+            <div class="col-md-6 col-md-offset-4">
+                <button type="submit" class="btn btn-success main-bg-color">
+                    Добавить товар
+                </button>
+            </div>
+        </div>
 
     </form>
 </div>
@@ -282,7 +290,7 @@
                                 @if($image != '.' && $image != '..')
                                     <div class="block-admin flex img-for-product" title="{{str_replace('.jpg','',$image)}}">
                                         <div class=" img-tovar-admin ">
-                                            <img data-img="{{$image}}" src="{{asset('public/'.'storejeans') . '/img/catalog/'.  $image }}" alt="{{$image}}">
+                                            <img data-img="{{$image}}" src="{{asset('storejeans') . '/img/catalog/'.  $image }}" alt="{{$image}}">
                                         </div>
                                         <p class="brand">{{ $image }}</p>
                                     </div>

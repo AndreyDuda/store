@@ -35,10 +35,13 @@ Route::post('/search/{search?}', 'ProductController@search')->name('searchProduc
 
 Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::get('/',               'Admin\ProductController@index')->name('adminProduct');
-    Route::get('/editProduct',    'Admin\ProductController@editProduct')->name('editProduct');
+    Route::get('/editProduct/{id?}',    'Admin\ProductController@editProduct')->name('editProduct');
+    Route::post('/editProduct',    'Admin\ProductController@editProduct')->name('updateProduct');
+    Route::post('/updateProduct',    'Admin\ProductController@updateProduct')->name('cupdateProduct');
     Route::post('/deleteProduct', 'Admin\ProductController@editProduct')->name('deleteProduct');
-    Route::get('/add/product',    'Admin\ProductController@addProduct')->name('addProduct');
-    Route::post('/add/product',   'Admin\ProductController@addProduct')->name('saveProduct');
+    Route::get('/add/product',    'Admin\ProductController@newProduct')->name('newProduct');
+    Route::post('/add/product',    'Admin\ProductController@newProduct')->name('newProduct');
+   /* Route::post('/add/product',   'Admin\ProductController@addProduct')->name('saveProduct');*/
     //Route::post('/add/photo',   'Admin\ImageController@uploadPhoto')->name('uploadPhoto');
     Route::get('/image',          'Admin\ImageController@index')->name('indexImage');
     Route::get('/unused/image',   'Admin\ImageController@unusedImage')->name('unusedImage');
