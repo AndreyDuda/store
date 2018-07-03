@@ -2,6 +2,12 @@
 
 /*-----------------------Загрузка файлов --------------------*/
 $(document).ready(function () {
+    $('.delete-product').click(function(){
+        if (!confirm("Удалить товар ?")) {
+            return false;
+        }
+    });
+
      $('.close').click(function(){
          $('.modal-edit-product').hide();
      });
@@ -26,8 +32,6 @@ $(document).ready(function () {
         var img   = $(this).data('img').replace('.jpg','');
         var photo = $('#for_change').val();
         $('#'+photo).val('catalog/'+img);
-        console.log(photo);
-        console.log($('#'+photo).val());
         var url = $(this).attr('src').replace('no-image.png',img+'jpg');
         $('.'+photo+' .ch').attr('src', url);
         $('.'+photo+' span').show();
@@ -87,7 +91,6 @@ $(document).ready(function () {
 
     $('.edit-product .img-for-product').on('click','img',function(){
 
-       console.log($(this).parent().next().text());
         $('.modal-edit-product').hide();
     });
 
@@ -105,7 +108,6 @@ $(document).ready(function () {
             data:{del:del},
             datatype:'JSON',
             success: function(data) {
-                console.log(obj);
                 obj.parent().remove();
 
 
@@ -119,7 +121,6 @@ $(document).ready(function () {
     $('#upload').on('click', function() {
         var url = $('#uploadPhoto').val();
         var formData = new FormData(this);
-        console.log('ajax');
         var file_data = $('#sortpicture').prop('files')[0];
         var form_data = new FormData();
         form_data.append('file', file_data);
@@ -145,7 +146,6 @@ $(document).ready(function () {
         e.preventDefault();
         var url = $('#uploadPhoto').val();
         var formData = new FormData(this);
-        console.log('ajax');
 
         $.ajax({
             headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
@@ -160,7 +160,7 @@ $(document).ready(function () {
 
             },
             error:function(data){
-                console.log(data);
+
             }
         });
     }));

@@ -39,7 +39,8 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::post('/editProduct',    'Admin\ProductController@editProduct')->name('updateProduct');
     Route::get('/newProduct',    'Admin\ProductController@newProduct')->name('newProduct');
     Route::post('/newProduct',    'Admin\ProductController@newProduct')->name('newProduct');
-    Route::post('/deleteProduct', 'Admin\ProductController@editProduct')->name('deleteProduct');
+    Route::get('/deleteProduct', 'Admin\ProductController@deleteProduct')->name('deleteProduct');
+    Route::POST('/deleteAllProduct', 'Admin\ProductController@deleteAllProduct')->name('deleteAllProduct');
     Route::get('/add/product',    'Admin\ProductController@newProduct')->name('newProduct');
     Route::post('/add/product',    'Admin\ProductController@newProduct')->name('newProduct');
    /* Route::post('/add/product',   'Admin\ProductController@addProduct')->name('saveProduct');*/

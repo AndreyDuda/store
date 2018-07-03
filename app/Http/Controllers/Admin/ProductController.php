@@ -8,6 +8,7 @@ use Config;
 use App\Http\Controllers\Admin\BackService\Excel\ExcelController;
 
 
+
 class ProductController extends AdminController
 {
     public function __construct(ProductRepository $product_rep)
@@ -21,10 +22,27 @@ class ProductController extends AdminController
         if($request->isMethod('post')){
             $input = $request->input();
             $request = $request->except('_token');
-            dd($request);
+
         }
 
         return redirect()->route('editProduct')->with('status', 'Заказ успешно отправлен');
+    }
+
+    public function deleteProduct(Request $request)
+    {
+        $id = $request->id;
+        $product = $this->product_rep->getOne($id);
+        $product->delete();
+        return redirect()->back();
+    }
+
+    public function deleteAllProduct(Request $request)
+    {
+        if($request->isMethod('post')){
+            $this->product_rep->deleteAll();
+        }
+
+        return redirect()->back()->with('status', 'Все товары удалены');
     }
 
     public function editProduct(Request $request)
@@ -143,8 +161,9 @@ class ProductController extends AdminController
 
     public function addProduct(Request $request)
     {
-        $content    = view('storejeans' . '.admin.product.uploadProduct')->render();
+        /*$content    = view('storejeans' . '.admin.product.uploadProduct')->render();
         $this->vars = array_add($this->vars, 'content', $content);
-        return $this->renderOutput();
+        return $this->renderOutput();*/
+        return abort(404);
     }
 }

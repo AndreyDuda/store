@@ -21,7 +21,16 @@ abstract class Repository
         return $result;
     }
 
-    public function getAll($select = '*', $pagination = false, $where = false, $order=false, $limit = false)
+    public function deleteAll(){
+        $this->model->select('*')->delete();
+    }
+
+    public function couunt()
+    {
+        return $this->model->select('*')->count();
+    }
+
+    public function getAll($select = '*', $pagination = false, $where = false, $order=true, $limit = false)
     {
         if($where){
             if($limit){

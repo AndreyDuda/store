@@ -16,4 +16,8 @@
     <input class="cart-submit" type="submit" value="Загрузить">
 </form>
 
+    <form action="{{route('deleteAllProduct')}}" method="post">
+        {{ csrf_field() }}
+        <input class="cart-submit" type="submit" value="Удалить все товары">
+    </form>
 </div>
