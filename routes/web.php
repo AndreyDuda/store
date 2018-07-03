@@ -37,7 +37,8 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::get('/',               'Admin\ProductController@index')->name('adminProduct');
     Route::get('/editProduct/{id?}',    'Admin\ProductController@editProduct')->name('editProduct');
     Route::post('/editProduct',    'Admin\ProductController@editProduct')->name('updateProduct');
-    Route::post('/updateProduct',    'Admin\ProductController@updateProduct')->name('cupdateProduct');
+    Route::get('/newProduct',    'Admin\ProductController@newProduct')->name('newProduct');
+    Route::post('/newProduct',    'Admin\ProductController@newProduct')->name('newProduct');
     Route::post('/deleteProduct', 'Admin\ProductController@editProduct')->name('deleteProduct');
     Route::get('/add/product',    'Admin\ProductController@newProduct')->name('newProduct');
     Route::post('/add/product',    'Admin\ProductController@newProduct')->name('newProduct');

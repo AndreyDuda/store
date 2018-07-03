@@ -72,6 +72,46 @@ class ProductController extends AdminController
 
     }
 
+    public function newProduct(Request $request)
+    {
+        if($request->isMethod('post')){
+            $input = $request;
+            $input = $input->except('_token');
+            $product  = $this->product_rep->getOne($request->id);
+            $product->add($input);
+        }
+
+        $country  = $this->product_rep->uniqueValue('country');
+        $sesons   = $this->product_rep->uniqueValue('sesons');
+        $label    = $this->product_rep->uniqueValue('label');
+        $style    = $this->product_rep->uniqueValue('style');
+        $size     = $this->product_rep->uniqueValue('size');
+        $cat_prod = $this->product_rep->uniqueValue('categories');
+        $females = $this->product_rep->uniqueValue('females');
+
+        $dir        = 'storejeans'.'/img/catalog';
+        $images     = scandir($dir);
+
+
+
+            $data = [
+                'images' => $images,
+                'country' => $country,
+                'sesons' => $sesons,
+                'label' => $label,
+                'style' => $style,
+                'size' => $size,
+                'cat_prod' => $cat_prod,
+                'females' => $females
+            ];
+
+            $content = view('storejeans' . '.admin.product.newProduct')->with($data)->render();
+            $this->vars = array_add($this->vars, 'content', $content);
+            return $this->renderOutput();
+
+
+    }
+
 
     public function index()
     {

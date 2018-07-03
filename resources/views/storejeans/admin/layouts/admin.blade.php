@@ -61,10 +61,8 @@
             </div>
         </div>
         <div class="menu-left-mobile">
-            <a href="index.php">На сайт</a>
-            <a href="№">Регистрация</a>
-            <a href="#">Заказы</a>
-            <a href="#">Настройки профиля</a>
+            <a href="{{ route('index') }}">На сайт</a>
+            <a href="{{route('order')}}">Заказы</a>
         </div>
     </div>
 </header>
@@ -80,7 +78,7 @@
                     <a href="{{ route('adminProduct') }}">Все товары</a>
                 </li>
                 <li>
-                    <a href="{{ route('editProduct') }}">Добавить товар</a>
+                    <a href="{{ route('newProduct') }}">Добавить товар</a>
                 </li>
                 <li>
                     <a href="{{ route('uploadFileForm') }}">Добавить товары Excel</a>
@@ -96,10 +94,13 @@
                     <a href="{{ route('OrderIndex') }}">Все</a>
                 </li>
                 <li>
-                    <a href="{{ route('OrderIndex') }}">Новые</a>
+                    <a href="{{ route('OrderNew') }}">Новые</a>
                 </li>
                 <li>
-                    <a href="{{ route('OrderIndex') }}">Обработанные</a>
+                    <a href="{{ route('OrderSuccess') }}">Обработанные</a>
+                </li>
+                <li>
+                    <a href="{{ route('OrderErr') }}">Обработанные</a>
                 </li>
 
             </ul>
