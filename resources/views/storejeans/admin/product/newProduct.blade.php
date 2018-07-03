@@ -12,13 +12,13 @@
                         </span>
                     </div>
 
-                     <div class="foto change_photo photo1" data-photo="photo2">
-                         <p class="foto-text">Фото-1</p>
-                         <img class="ch" src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="">
-                         <span class="change-image" style="display:none">
+                <div class="foto change_photo photo1" data-photo="photo1">
+                    <p class="foto-text">Фото-1</p>
+                    <img class="ch" src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="">
+                    <span class="change-image" style="display:none">
                             <img src="{{ asset(env('THEME'))}}/img/system/delete.png" alt="">
                         </span>
-                     </div>
+                </div>
 
 
                      <div class="foto change_photo photo2" data-photo="photo2">
@@ -81,7 +81,7 @@
 
             <label for="form-price_many-product">
                 Цена опт<br>
-                <input type="number" step="0.01" name="price_many" id="form-price_many-product" value="{{$product->price_many}}">
+                <input type="number" step="0.01" name="price_many" id="form-price_many-product" value="">
             </label>
 
             <label for="form-size-product">

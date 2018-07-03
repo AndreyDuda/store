@@ -52,8 +52,10 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::get('/upload/excel',   'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
 
     Route::get('/order',          'Admin\OrderController@index')->name('OrderIndex');
-    Route::get('/order/show/{id?}',     'Admin\OrderController@show')->name('OrderShow');
-    Route::post('/order/update',  'Admin\OrderController@successOrder')->name('successOrder');
+    Route::get('/order/new',     'Admin\OrderController@show')->name('OrderNew');
+    Route::get('/order/{id?}',     'Admin\OrderController@show')->name('OrderShow');
+    Route::get('/order/success',  'Admin\OrderController@successOrder')->name('OrderSuccess');
+    Route::get('/order/err',  'Admin\OrderController@successOrder')->name('OrderErr');
 
     Route::get('/settings',       'Admin\SiteController@settings')->name('settingsSite');
     Route::post('/settings',      'Admin\SiteController@settings')->name('settingsSite');

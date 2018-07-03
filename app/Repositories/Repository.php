@@ -15,8 +15,8 @@ abstract class Repository
 {
     protected $model = false;
 
-    public function getOne($one_c_id){
-        $result = $this->model->where('product_id', $one_c_id)->first();
+    public function getOne($id){
+        $result = $this->model->where('id', $id)->first();
 
         return $result;
     }

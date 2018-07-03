@@ -30,7 +30,7 @@
                         </span>
                      </div>
                  @else
-                     <div class="foto change_photo photo1" data-photo="photo2">
+                     <div class="foto change_photo photo1" data-photo="photo1">
                          <p class="foto-text">Фото-1</p>
                          <img class="ch" src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="">
                          <span class="change-image" style="display:none">
@@ -103,7 +103,7 @@
         {{ csrf_field() }}
         <div class="flex flex-start width100">
         <div class="left-form">
-            <input type="hidden" name="id" value="{{$product->product_id}}">
+            <input type="hidden" name="id" value="{{$product->id}}">
             <input type="hidden" id="no_image" value="{{ asset(env('THEME'))}}/img/system/no-image.png">
             <input type="hidden" id="for_change" value="">
             <input type="hidden" id="photo_maine" name="photo_maine" value="{{ $product->photo_maine OR '' }}">

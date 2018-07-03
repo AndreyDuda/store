@@ -8,7 +8,7 @@
                 <div class="multiple-item">
                     @foreach($slider_p as $product)
                         <div class="item">
-                            <a href="{{ route('productOne', ['id' => $product->product_id ] )  }}" class="item-tovar">
+                            <a href="{{ route('productOne', ['id' => $product->id ] )  }}" class="item-tovar">
                                 <div class="img-tovar">
                                     @if(@fopen(asset('public/storejeans/img/'). $product->photo_maine.'.jpg', 'r')))
                                         <img src="{{asset('public/storejeans/img/'). $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
@@ -203,7 +203,7 @@
 @if($products)
         <div class="wrapper"><?php clearstatcache(); ?>
 @foreach($products as $product)
-            <a href="{{ route('productOne', ['id' => $product->product_id ] )  }}" class="item-tovar">
+            <a href="{{ route('productOne', ['id' => $product->id ] )  }}" class="item-tovar">
                 <div class="img-tovar">
                     @if(@fopen(asset('public/storejeans/img/'). $product->photo_maine.'.jpg', 'r') )
                         <img src="{{asset('public/storejeans/img/'). $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
@@ -262,7 +262,7 @@
         <div class="multiple-item">
             @foreach($slider_p as $product)
             <div class="item">
-                <a href="{{ route('productOne', ['id' => $product->product_id ] )  }}" class="item-tovar">
+                <a href="{{ route('productOne', ['id' => $product->id ] )  }}" class="item-tovar">
                     <div class="img-tovar">
                         @if(@fopen(asset('public/storejeans/img/'). $product->photo_maine.'.jpg', 'r'))
                             <img src="{{asset('public/storejeans/img/'). $product->photo_maine}}.jpg" alt="{{ $product->categories }}">

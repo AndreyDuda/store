@@ -77,8 +77,10 @@ class ProductController extends AdminController
         if($request->isMethod('post')){
             $input = $request;
             $input = $input->except('_token');
-            $product  = $this->product_rep->getOne($request->id);
+            $product  = $this->product_rep;
             $product->add($input);
+
+            return redirect()->route('editProduct', ['id' => $product->id])->with('status', 'Заказ успешно отправлен');
         }
 
         $country  = $this->product_rep->uniqueValue('country');
@@ -117,7 +119,7 @@ class ProductController extends AdminController
     {
         $step     = Config::get( 'settings.paginateStep' );
         $paginate = Config::get( 'settings.paginate' );
-        $select   = ['product_id', 'code', 'title', 'price_many', 'label'];
+        $select   = ['id', 'product_id', 'code', 'title', 'price_many', 'label'];
         $where    = false;
         $order    = false;
         $products = $this->product_rep->getAll($select, $paginate, $where, $order);

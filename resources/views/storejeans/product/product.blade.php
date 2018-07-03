@@ -14,7 +14,7 @@
         <a href="{{ route('productAll', ['catedories' => $product->categories]) }}">{{ $product->categories }}</a>
     </li>
     <li class="current long-text">
-        <a href="{{ route('productOne', ['id' => $product->product_id ] )  }}">{{ $product->title }}</a>
+        <a href="{{ route('productOne', ['id' => $product->id ] )  }}">{{ $product->title }}</a>
     </li>
 </ol>
 <div class="clear"></div>
@@ -365,7 +365,7 @@
                         <img src="{{ asset(env('THEME')) }}/img/ruler-icon.png" alt="Таблица размеров">
                         <p >Таблица размеров</p>
                     </div>
-                    <div data-id="{{ $product->product_id }}" data-url="{{ route('cartBy') }}" class="product-buy">
+                    <div data-id="{{ $product->id }}" data-url="{{ route('cartBy') }}" class="product-buy">
                         Добавить в корзину
                         </div>
                 </div>

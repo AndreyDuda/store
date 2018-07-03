@@ -62,7 +62,7 @@
         </div>
         <div class="menu-left-mobile">
             <a href="{{ route('index') }}">На сайт</a>
-            <a href="{{route('order')}}">Заказы</a>
+            <a href="{{route('OrderIndex')}}">Заказы</a>
         </div>
     </div>
 </header>
@@ -100,7 +100,7 @@
                     <a href="{{ route('OrderSuccess') }}">Обработанные</a>
                 </li>
                 <li>
-                    <a href="{{ route('OrderErr') }}">Обработанные</a>
+                    <a href="{{ route('OrderErr') }}">Отмененные</a>
                 </li>
 
             </ul>

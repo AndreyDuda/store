@@ -25,8 +25,8 @@ class ProductController extends SiteController
         $count_p  = 8;
 
 
-        $select   = ['product_id', 'title', 'price_many', 'photo_maine', 'photo1', 'photo2', 'photo3', 'photo4', 'label', 'categories'];
-        $slider_p = ['product_id', 'title', 'price_many', 'photo_maine', 'label', 'categories'];
+        $select   = ['id', 'product_id', 'title', 'price_many', 'photo_maine', 'photo1', 'photo2', 'photo3', 'photo4', 'label', 'categories'];
+        $slider_p = ['id', 'product_id', 'title', 'price_many', 'photo_maine', 'label', 'categories'];
         $where    = false;
         $input    = false;
         $order    = false;
@@ -128,7 +128,7 @@ class ProductController extends SiteController
     {
         $id       = $request->id;
         $count_p  = 8;
-        $products = ['product_id', 'title', 'price_many', 'photo_maine', 'photo1', 'photo2', 'photo3', 'photo4', 'label', 'desc',];
+        $products = ['id', 'product_id', 'title', 'price_many', 'photo_maine', 'photo1', 'photo2', 'photo3', 'photo4', 'label', 'desc',];
         $product  = $this->product_rep->getOne($id);
 
         $products = $this->product_rep->getAll($products, false, 'label = "' . $product->label . '"', false, $count_p);

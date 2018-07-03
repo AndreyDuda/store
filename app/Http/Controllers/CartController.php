@@ -50,10 +50,10 @@ class CartController extends SiteController
             $cart = Session::get('cart', false);
             if ($cart) {
 
-                if (array_key_exists($product->product_id, $cart)) {
-                    $cart[$product->product_id]['count'] += 1;
+                if (array_key_exists($product->id, $cart)) {
+                    $cart[$product->id]['count'] += 1;
                 } else {
-                    $cart[$product->product_id] = [
+                    $cart[$product->id] = [
                         'code'  => $product->code,
                         'photo' => $product->photo,
                         'lable' => $product->label,
@@ -67,7 +67,7 @@ class CartController extends SiteController
             }
 
             } else {
-                $cart[$product->product_id] = [
+                $cart[$product->id] = [
                     'code'  => $product->code,
                     'photo' => $product->photo,
                     'lable' => $product->label,
