@@ -62,7 +62,7 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::post('/settings',      'Admin\SiteController@settings')->name('settingsSite');
     Route::get('/settings',       'Admin\SiteController@settings')->name('settingsSite');
     Route::post('/user/add',      'Admin\SiteController@addUser')->name('addUser');
-    Route::get('/user/add',       'Admin\SiteController@addUser')->name('addUser');
+    Route::get('/user',           'Admin\SiteController@userUser')->name('user');
 
     Route::post('/parse',         'Admin\BackService\excel\ExcelController@parse')->name('readExcel');
     Route::get('/write',          'Admin\BackService\excel\ExcelController@write')->name('excelWrite');

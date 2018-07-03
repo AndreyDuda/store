@@ -153,7 +153,11 @@ class ProductController extends AdminController
 
     public function uploadExcelFile()
     {
-        $content    = view('storejeans' . '.admin.product.uploadExcelFile')->render();
+        $count      = $this->product_rep->count();
+        $data = [
+            'count' => $count
+        ];
+        $content    = view('storejeans' . '.admin.product.uploadExcelFile')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }

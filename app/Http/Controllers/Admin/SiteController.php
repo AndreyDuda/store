@@ -63,4 +63,10 @@ class SiteController extends AdminController
         return $this->renderOutput();
 
     }
+
+    public function user()
+    {
+
+    }
+
 }

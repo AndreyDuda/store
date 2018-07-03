@@ -6,6 +6,8 @@
     </div>
 @endif
     <h2 class="table-name">Добавить товары через Excel </h2>
+
+    количество товаров на сайте {{ ($count)? $count:'0' }}
 <form action="{{ route('readExcel') }}" autocomplete="off" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
     <ul>

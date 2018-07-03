@@ -12,6 +12,9 @@ class ExcelController extends Controller
 
     public function parse(Request $request)
     {
+        if(!$request->hasFile('excel')){
+            return redirect()->back()->with('status', 'Проблемы при отправке Excel');
+        }
         $filepath = $request->file('excel');
 
         $data = [

@@ -25,7 +25,7 @@ abstract class Repository
         $this->model->select('*')->delete();
     }
 
-    public function couunt()
+    public function count()
     {
         return $this->model->select('*')->count();
     }
