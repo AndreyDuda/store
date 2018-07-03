@@ -24,6 +24,7 @@ $(document).ready(function(){
     $('.product-buy').on('click', function() {
 		var id    =  $(this).data('id');
 		var url = '/by';
+		var total = 0;
             $.ajax({
                 type:'POST',
                 url:url,
@@ -35,17 +36,21 @@ $(document).ready(function(){
                     console.log(data);
                     var tableHead = '<tr><th>Наименование товара</th><th>Цена за шт.</th><th class="coli">Кол-во</th><th>Общая стоимость</th></tr>';
                     var start = '';
+                    var urlImg = $('#url').val();
                     $('.ttt tbody').empty();
                     $('.ttt tbody').append(tableHead);
 
                     $.each(data, function(index, value){
-                        start += '<tr><td><div class="cart-product-info"><img src="img/' +  value.photo + '.jpg" ><div>' +
+                        start += '<tr><td><div class="cart-product-info"><img src="'+urlImg +  value.photo + '.jpg" ><div>' +
                         '<a href="#" class="cart-product-company">' + value.lable + '</a><br><a href="#" class="cart-product-title">' + value.title + '</a>' +
                         '<p class="cart-product-code"><span># </span> 76548 </p></div></div></td><td class="font-politica">' + value.price + '<span> $</span></td>' +
                         '<td class="cart-quantity"><span><i class="fa fa-minus-circle" aria-hidden="true"></i></span><p>' + value.count + ' шт.</p>'+
 						'<span><i class="fa fa-plus-circle" aria-hidden="true"></i></span></td><td class="font-politica">' + value.count*value.price + '<span> $</span></td></tr>';
+                        total += value.count*value.price;
                       });
                     $('.ttt tbody').append(start);
+                    $('.total span').append(total);
+                    console.log(total);
                     $('.modal-cart').css('display', 'block');
                 },
                 error:function() {

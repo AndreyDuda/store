@@ -67,8 +67,6 @@ $(document).ready(function () {
                         obj.parent().parent().css('background', 'red');
                     }
 
-                    console.log(data);
-
                 },
                 error:function() {
                     console.log('ERRORE');

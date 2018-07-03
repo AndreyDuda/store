@@ -1,8 +1,8 @@
 {{ csrf_field() }}
-
+<input type="hidden" id="url" value="{{asset(env('THEME')).'/img/'}}">
 <ol id="breadcrumb" class="breadcrumb-product">
     <li>
-        <a href="#">
+        <a href="{{ route('productAll') }}">
             <i class="fa fa-home" aria-hidden="true"></i>
             <span class="sr-only">Главная</span>
         </a>
@@ -21,69 +21,69 @@
 <div class="wrapper flex-between">
     <div class="product-foto">
         <div class="slider-product-nav">
-            @if(@fopen(asset('public/storejeans/img/'). $product->photo_maine.'.jpg', 'r'))
-                <div class="slider-nav_item"><img src="{{asset('public/storejeans/img/'). $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
+            @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r'))
+                <div class="slider-nav_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
             @else
                 <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
             @endif
 
-                @if(@fopen(asset('public/storejeans/img/'). $product->photo1.'.jpg', 'r'))
-                    <div class="slider-nav_item"><img src="{{asset('public/storejeans/img/'). $product->photo1}}.jpg" alt="{{ $product->categories }}"></div>
+                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo1.'.jpg', 'r'))
+                    <div class="slider-nav_item"><img src="{asset(env('THEME')).'/img/'. $product->photo1}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(@fopen(asset('public/storejeans/img/'). $product->photo2.'.jpg', 'r'))
-                    <div class="slider-nav_item"><img src="{{asset('public/storejeans/img/'). $product->photo2}}.jpg" alt="{{ $product->categories }}"></div>
+                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo2.'.jpg', 'r'))
+                    <div class="slider-nav_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo2}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(@fopen(asset('public/storejeans/img/'). $product->photo3.'.jpg', 'r'))
-                    <div class="slider-nav_item"><img src="{{asset('public/storejeans/img/'). $product->photo3}}.jpg" alt="{{ $product->categories }}"></div>
+                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo3.'.jpg', 'r'))
+                    <div class="slider-nav_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo3}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(@fopen(asset('public/storejeans/img/'). $product->photo4.'.jpg', 'r'))
-                    <div class="slider-nav_item"><img src="{{asset('public/storejeans/img/'). $product->photo4}}.jpg" alt="{{ $product->categories }}"></div>
+                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo4.'.jpg', 'r'))
+                    <div class="slider-nav_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo4}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
         </div>
         <div class="slider-product">
-            @if(@fopen(asset('public/storejeans/img/'). $product->photo_maine.'.jpg', 'r'))
-                <div  class="slider_item"><img src="{{asset('public/storejeans/img/'). $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
+            @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r'))
+                <div  class="slider_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
             @else
                 <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
             @endif
 
-                @if(@fopen(asset('public/storejeans/img/'). $product->photo_maine.'.jpg', 'r'))
-                    <div  class="slider_item"><img src="{{asset('public/storejeans/img/'). $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
+                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r'))
+                    <div  class="slider_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
+                @else
+                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
+                @endif
+
+                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r'))
+                    <div  class="slider_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
+                @else
+                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
+                @endif
+
+                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r'))
+                    <div  class="slider_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
                 @if(@fopen(asset('public/storejeans/img/'). $product->photo_maine.'.jpg', 'r'))
-                    <div  class="slider_item"><img src="{{asset('public/storejeans/img/'). $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
+                    <div  class="slider_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(@fopen(asset('public/storejeans/img/'). $product->photo_maine.'.jpg', 'r'))
-                    <div  class="slider_item"><img src="{{asset('public/storejeans/img/'). $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
-                @else
-                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
-                @endif
-
-                @if(@fopen(asset('public/storejeans/img/'). $product->photo_maine.'.jpg', 'r'))
-                    <div  class="slider_item"><img src="{{asset('public/storejeans/img/'). $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
-                @else
-                    <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
-                @endif
-
-                @if(@fopen(asset('public/storejeans/img/'). $product->photo_maine.'.jpg', 'r'))
-                    <div  class="slider_item"><img src="{{asset('public/storejeans/img/'). $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
+                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r'))
+                    <div  class="slider_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
@@ -111,37 +111,37 @@
                     <tr>
                         <td>Сезон</td>
                         <td>
-                            <a href="#" class="filter-link">{{ $product->sesons }}</a>
+                            <a href="{{ route('productAll', ['catedories' => $product->sesons]) }}" class="filter-link">{{ $product->sesons }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td>Размер</td>
                         <td>
-                            <a href="#" class="filter-link">{{ $product->size }}</a>
+                            <a href="#"  onclick="return false;" class="filter-link">{{ $product->size }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td>Стиль</td>
                         <td>
-                            <a href="#" class="filter-link">{{ $product->style }}</a>
+                            <a href="{{ route('productAll', ['catedories' => $product->style]) }}" class="filter-link">{{ $product->style }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td>Страна</td>
                         <td>
-                            <a href="#" class="filter-link">{{ $product->country }}</a>
+                            <a href="{{ route('productAll', ['catedories' => $product->country]) }}" class="filter-link">{{ $product->country }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td>Фирма</td>
                         <td>
-                            <a href="#" class="filter-link">{{ $product->label }}</a>
+                            <a href="{{ route('productAll', ['catedories' => $product->label]) }}" class="filter-link">{{ $product->label }}</a>
                         </td>
                     </tr>
                     <tr>
                         <td>Упаковка</td>
                         <td>
-                            <a href="#" class="filter-link">{{ $product->count }} шт.</a>
+                            <a href="#" onclick="return false;" class="filter-link">{{ $product->count }} шт.</a>
                         </td>
                     </tr>
                 </table>
@@ -377,7 +377,7 @@
         </div>
         <hr>
         <div class="product-description">
-{{$product->desc}}
+            {{$product->desc}}
         </div>
     </div>
     <div class="slider-catalog">
@@ -389,10 +389,10 @@
 
                 @foreach($products as $product)
                 <div class="item">
-                    <a href="product.php" class="item-tovar">
+                    <a href="{{ route('productOne', ['id' => $product->id ] )  }}" class="item-tovar">
                         <div class="img-tovar">
-                            @if(@fopen(asset('public/storejeans/img/'). $product->photo_maine.'.jpg', 'r'))
-                                <img src="{{asset('public/storejeans/img/'). $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
+                            @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r'))
+                                <img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                             @else
                                 <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}">
                             @endif
@@ -427,13 +427,13 @@
         </table>
         <div class="total">
             <h4 >
-                Итого к оплате  <span>1567.3</span>$
+                Итого к оплате  <span></span>$
             </h4>
             <div class="but">
-                <a href="#" class="but-cart exit">
+                <a href="#" onclick="$('.modal-cart').hide(); return false;" class="but-cart exit">
                     Продолжить покупки
                 </a>
-                <a href="cart.php" class="but-cart">
+                <a href="{{ route('cart') }}" class="but-cart">
                     Оформить заказ
                 </a>
             </div>

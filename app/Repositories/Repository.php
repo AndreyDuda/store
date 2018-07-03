@@ -30,7 +30,7 @@ abstract class Repository
         return $this->model->select('*')->count();
     }
 
-    public function getAll($select = '*', $pagination = false, $where = false, $order=true, $limit = false)
+    public function getAll($select = '*', $pagination = false, $where = false, $order=false, $limit = false)
     {
         if($where){
             if($limit){

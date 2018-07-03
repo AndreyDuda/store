@@ -1,7 +1,7 @@
 <div class="content" style="padding: 5px; margin: 0;">
     <h2 class="table-name" style="text-align: center;">Заказы</h2>
     {{ csrf_field() }}
-    <input type="hidden" id="url" value="{{route('successOrder')}}">
+    <input type="hidden" id="url" value="{{route('OrderSuccess')}}">
     <table class="admin-table">
         <tr>
             <td style="text-align: center; font-weight: 600; background: lightgrey;">

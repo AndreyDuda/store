@@ -55,14 +55,14 @@ class ProductController extends SiteController
                 $name_cat = 'Женская одежда';
                 break;
             case 'bestoffer':
-                $input['sale'][0] = '1';
+                $input['sale_many'][0] = '1';
                 $name_cat = 'Выгодные предложения';
                 break;
             case 'new':
-                $input['sale'][0] = '1';
+                $input['new'][0] = '1';
                 $name_cat = 'Новинки';
                 break;
-            case 'sale':
+            case 'sale_many':
                 $input['sale'][0] = '1';
                 $name_cat = 'Распродажа';
                 break;
@@ -72,6 +72,9 @@ class ProductController extends SiteController
             case '':
                 $name_cat = 'Весь каталог';
                 break;
+            case 'label':
+                $name_cat = $categories;
+                $input['label'][0] = $categories;
             default:
                 $input['categories'][0] = $categories;
                 $name_cat = $categories;

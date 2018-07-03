@@ -66,6 +66,14 @@ class SiteController extends AdminController
 
     public function user()
     {
+        $users = $this->user_rep->getAll('*');
+
+        $data = [
+            'users' => $users
+        ];
+        $content    = view('storejeans' . '.admin.site.user')->with($data)->render();
+        $this->vars = array_add($this->vars, 'content', $content);
+        return $this->renderOutput();
 
     }
 

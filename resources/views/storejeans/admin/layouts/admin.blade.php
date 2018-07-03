@@ -19,19 +19,19 @@
     <div class="header-desktop" >
         <div class="logo">
 
-            <a href="index.php">
+            <a href="{{ route('index') }}">
                 <img src="{{  asset(env('THEME')) }}/img/logo.png" alt="" >
             </a>
+
         </div>
         <div class="menu-left">
-            <a href="index.php">На сайт</a>
-            <a href="№">Регистрация</a>
-            <a href="#">Заказы</a>
-            <a href="#">Настройки профиля</a>
+           {{-- <a href="{{ route('index') }}">На сайт</a>--}}
+
+
         </div>
-        <div class="input-wrapper search" data-text="">
+        {{--<div class="input-wrapper search" data-text="">
             <input type="text" placeholder="Поиск  по сайту…">
-        </div>
+        </div>--}}
         <!-- <div class="menu-right"> -->
 
         <div class="contacts-wrap">
@@ -123,7 +123,7 @@
                     <a href="{{ route('settingsSite') }}">Настройки сайта</a>
                 </li>
                 <li>
-                    <a href="{{ route('addUser') }}">Пользователи</a>
+                    <a href="{{ route('user') }}">Пользователи</a>
                 </li>
                 <li>
                     <a href="{{ route('addUser') }}">Добавить пользователя</a>
