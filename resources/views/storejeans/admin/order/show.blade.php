@@ -1,7 +1,7 @@
 <div class="show-order">
     <div class="header-text">
-        <input type="hidden" id="url" value="{{route('successOrder')}}">
-        @if($order->new ==2)
+        <input type="hidden" id="url" value="{{route('OrderSuccess')}}">
+        @if($order->new ==1)
             <h4 style="background:lightgreen;">
                 Статус заказа: НЕ ОБРАБОТАН
                 <div class="block-position">
@@ -9,7 +9,7 @@
                     <div class="order-false click_order"  data-order="delete">Заказ отменен</div>
                 </div>
             </h4>
-        @elseif($order->new == 1)
+        @elseif($order->new == 2)
             <h4 style="background:lightgray;">
                 Статус заказа: ОБРАБОТАН
                 <div class="block-position">
@@ -80,7 +80,7 @@
                     <tr>
                         <td>
                             <div class="cart-product-info">
-                                <img src="img/{{$product->photo}}.jpg">
+                                <img src="{{asset('storejeans').'/img/' .$product->photo}}.jpg">
                                 <div>
                                     <a href="#" class="cart-product-company">{{$product->lable}}</a>
                                     <br>

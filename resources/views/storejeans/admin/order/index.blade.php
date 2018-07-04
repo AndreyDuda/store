@@ -79,10 +79,10 @@
                             <img src="{{ asset('storejeans')}}/img/read.png" alt="" class="edit-delete">
                         </a>
                         @if($item->new == 1)
-                        <a title="Заказ обработан" data-order="success" class="click_order" href="#" onclick="return false;">
+                        <a title="Заказ обработан" data-order="success" class="click_order" href="#" >
                             <img src="{{ asset('storejeans')}}/img/success.png" alt="" class="edit-delete">
                         </a>
-                        <a title="Заказ отменен" data-order="delete" class="click_order" href="#" onclick="return false;">
+                        <a title="Заказ отменен" data-order="delete" class="click_order" href="#" >
                             <img src="{{ asset('storejeans')}}/img/delete.png" alt="" class="edit-delete">
                         </a>
                         @endif
@@ -92,33 +92,8 @@
         @endif
 
     </table>
-    @if($order)
-        <div class="navigation">
-            <?
-            $count_order = $order->lastPage();
-            ?>
-            @if($count_order > 1)
-                <ul>
-                    @if($order->currentPage() != 1)
-                        <a href="{{ $order->url( 1 ) }}" class="selected"> <span class="page">1<i class="fa fa-arrow-left" aria-hidden="true"></i></span></a>
-                    @endif
 
-                    @for($i = 1; $i <= $count_order; $i++)
-                        @if($order->currentPage() > $i && $order->currentPage()-$i < $step && $order->currentPage() != $count_order - 1)
-                            <a href="{{  $order->url($i) }}" class="selected"><li class="page">{{ $i }}</li></a>
-                        @elseif($order->currentPage() == $i)
-                            <a href="{{  $order->url($i) }}" class="selected"><li class="current page">{{ $i }}</li></a>
-                        @elseif($order->currentPage() < $i && $i - $order->currentPage() < $step && $order->currentPage() != $count_order - 1)
-                            <a href="{{  $order->url($i) }}" class="selected"><li class="page">{{ $i }}</li></a>
-                        @endif
-                    @endfor
-                    {{--<li class="not-hover"> ... </li>--}}
-                    @if($order->currentPage() != $count_order)
-                        <a href="{{  $order->url($count_order) }}" class="selected"><span><i class="fa fa-arrow-right page" aria-hidden="true">{{$count_order}}</i></span></a>
-                    @endif
-                </ul>
-            @endif
-        </div>
-    @endif
+
+
 
 </div>

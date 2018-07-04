@@ -34,38 +34,39 @@ Route::post('/search/{search?}', 'ProductController@search')->name('searchProduc
 
 
 Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
-    Route::get('/',               'Admin\ProductController@index')->name('adminProduct');
-    Route::get('/editProduct/{id?}',    'Admin\ProductController@editProduct')->name('editProduct');
-    Route::post('/editProduct',    'Admin\ProductController@editProduct')->name('updateProduct');
-    Route::get('/newProduct',    'Admin\ProductController@newProduct')->name('newProduct');
-    Route::post('/newProduct',    'Admin\ProductController@newProduct')->name('newProduct');
-    Route::get('/deleteProduct', 'Admin\ProductController@deleteProduct')->name('deleteProduct');
+    Route::get('/',                  'Admin\ProductController@index')->name('adminProduct');
+    Route::get('/editProduct/{id?}', 'Admin\ProductController@editProduct')->name('editProduct');
+    Route::post('/editProduct',      'Admin\ProductController@editProduct')->name('updateProduct');
+    Route::get('/newProduct',        'Admin\ProductController@newProduct')->name('newProduct');
+    Route::post('/newProduct',       'Admin\ProductController@newProduct')->name('newProduct');
+    Route::get('/deleteProduct',     'Admin\ProductController@deleteProduct')->name('deleteProduct');
     Route::POST('/deleteAllProduct', 'Admin\ProductController@deleteAllProduct')->name('deleteAllProduct');
-    Route::get('/add/product',    'Admin\ProductController@newProduct')->name('newProduct');
-    Route::post('/add/product',    'Admin\ProductController@newProduct')->name('newProduct');
-   /* Route::post('/add/product',   'Admin\ProductController@addProduct')->name('saveProduct');*/
-    //Route::post('/add/photo',   'Admin\ImageController@uploadPhoto')->name('uploadPhoto');
-    Route::get('/image',          'Admin\ImageController@index')->name('indexImage');
-    Route::get('/unused/image',   'Admin\ImageController@unusedImage')->name('unusedImage');
-    Route::post('/unused/image',  'Admin\ImageController@unusedImage')->name('unusedImage');
-    Route::get('/upload/image',   'Admin\ImageController@uploadImage')->name('uploadImage');
-    Route::post('/upload/image',  'Admin\ImageController@uploadImage')->name('uploadImage');
-    Route::get('/upload/excel',   'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
+    Route::get('/add/product',       'Admin\ProductController@newProduct')->name('newProduct');
+    Route::post('/add/product',      'Admin\ProductController@newProduct')->name('newProduct');
+   /* Route::post('/add/product',    'Admin\ProductController@addProduct')->name('saveProduct');*/
+    //Route::post('/add/photo',      'Admin\ImageController@uploadPhoto')->name('uploadPhoto');
+    Route::get('/image',             'Admin\ImageController@index')->name('indexImage');
+    Route::get('/unused/image',      'Admin\ImageController@unusedImage')->name('unusedImage');
+    Route::post('/unused/image',     'Admin\ImageController@unusedImage')->name('unusedImage');
+    Route::get('/upload/image',      'Admin\ImageController@uploadImage')->name('uploadImage');
+    Route::post('/upload/image',     'Admin\ImageController@uploadImage')->name('uploadImage');
+    Route::get('/upload/excel',      'Admin\ProductController@uploadExcelFile')->name('uploadFileForm');
 
-    Route::get('/order',          'Admin\OrderController@index')->name('OrderIndex');
-    Route::get('/order/new',     'Admin\OrderController@show')->name('OrderNew');
-    Route::get('/order/{id?}',     'Admin\OrderController@show')->name('OrderShow');
-    Route::get('/order/success',  'Admin\OrderController@successOrder')->name('OrderSuccess');
-    Route::get('/order/err',  'Admin\OrderController@successOrder')->name('OrderErr');
+    Route::get('/order',             'Admin\OrderController@index')->name('OrderIndex');
+    Route::get('/order/new',         'Admin\OrderController@newOrder')->name('OrderNew');
+    Route::get('/order/show/{id?}',   'Admin\OrderController@show')->name('OrderShow');
+    Route::post('/order/success',    'Admin\OrderController@successOrder')->name('OrderSuccess');
+    Route::get('/order/success',     'Admin\OrderController@successOrder')->name('OrderSuccess');
+    Route::get('/order/err',         'Admin\OrderController@errOrder')->name('OrderErr');
 
-    Route::get('/settings',       'Admin\SiteController@settings')->name('settingsSite');
-    Route::post('/settings',      'Admin\SiteController@settings')->name('settingsSite');
-    Route::get('/settings',       'Admin\SiteController@settings')->name('settingsSite');
-    Route::post('/user/add',      'Admin\SiteController@addUser')->name('addUser');
-    Route::get('/user',           'Admin\SiteController@user')->name('user');
+    Route::get('/settings',          'Admin\SiteController@settings')->name('settingsSite');
+    Route::post('/settings',         'Admin\SiteController@settings')->name('settingsSite');
+    Route::get('/settings',          'Admin\SiteController@settings')->name('settingsSite');
+    Route::post('/user/add',         'Admin\SiteController@addUser')->name('addUser');
+    Route::get('/user',              'Admin\SiteController@user')->name('user');
 
-    Route::post('/parse',         'Admin\BackService\excel\ExcelController@parse')->name('readExcel');
-    Route::get('/write',          'Admin\BackService\excel\ExcelController@write')->name('excelWrite');
+    Route::post('/parse',            'Admin\BackService\excel\ExcelController@parse')->name('readExcel');
+    Route::get('/write',             'Admin\BackService\excel\ExcelController@write')->name('excelWrite');
 
 
 

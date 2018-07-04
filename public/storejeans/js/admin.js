@@ -53,7 +53,8 @@ $(document).ready(function () {
             var id   = obj.parent().parent().find('input').val();
             var data = obj.data('order');
             var url  = $('#url').val();
-            alert(id);
+            /*alert(id);*/
+            console.log(url);
             $.ajax({
                 type:'POST',
                 url:url,

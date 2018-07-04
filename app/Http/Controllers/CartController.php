@@ -70,12 +70,14 @@ class CartController extends SiteController
 
             } else {
                 $cart[$product->id] = [
+                    'id'    => $product->id,
                     'code'  => $product->code,
-                    'photo' => $product->photo,
+                    'photo' => $product->photo_maine,
                     'lable' => $product->label,
                     'title' => $product->title,
                     'price' => $product->price_many,
-                    'count' => 1
+                    'count' => 1,
+                    'url'   => route('cartBy')
                 ];
 
                 Session::put('cart', $cart);
