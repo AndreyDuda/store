@@ -51,12 +51,21 @@ class CartController extends SiteController
             if ($cart) {
 
                 if (array_key_exists($product->id, $cart)) {
-                    $cart[$product->id]['count'] += 1;
+                    if($request->minus)
+                    {
+                        $cart[$product->id]['count'] -= 1;
+                    }else{
+                        $cart[$product->id]['count'] += 1;
+                    }
                 } else {
+                    $photo_cart = 'system/no-image';
+                    if(@fopen(asset('storejeans').'/img/'. $product->photo_maine.'.jpg', 'r')){
+                        $photo_cart = $product->photo_maine;
+                    }
                     $cart[$product->id] = [
                         'id'    => $product->id,
                         'code'  => $product->code,
-                        'photo' => $product->photo_maine,
+                        'photo' => $photo_cart,
                         'lable' => $product->label,
                         'title' => $product->title,
                         'price' => $product->price_many,
@@ -69,10 +78,14 @@ class CartController extends SiteController
             }
 
             } else {
+                $photo_cart = 'no-image.png';
+                if(@fopen(asset('storejeans').'/img/'. $product->photo_maine.'.jpg', 'r')){
+                    $photo_cart = $product->photo_maine;
+                }
                 $cart[$product->id] = [
                     'id'    => $product->id,
                     'code'  => $product->code,
-                    'photo' => $product->photo_maine,
+                    'photo' => $photo_cart,
                     'lable' => $product->label,
                     'title' => $product->title,
                     'price' => $product->price_many,

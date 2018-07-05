@@ -42,7 +42,8 @@
 			</ul>
 		</div>
 	</footer>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script><!-- JQuery -->
+    <script src="js/jquery-3.3.js"></script>
+<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>-->
 	<script src="libs/zoom/js/jquery.zoom.min.js"></script><!-- Zoom -->
 	<script src="libs/slick/js/slick.min.js"></script><!-- Slick -->
 	<script src="js/common.js"></script><!-- My JS file -->

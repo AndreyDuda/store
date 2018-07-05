@@ -51,7 +51,7 @@
             </a>
             <a href="cart.php" class="cart">
                 <i class="fa fa-shopping-cart " aria-hidden="true"></i>
-                <span>0</span>
+                <span id="count-cart">0</span>
             </a>
             <div class="burger">
                 <input type="checkbox" id="burger_check" class="burger_checkbox">

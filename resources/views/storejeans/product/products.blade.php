@@ -10,8 +10,8 @@
                         <div class="item">
                             <a href="{{ route('productOne', ['id' => $product->id ] )  }}" class="item-tovar">
                                 <div class="img-tovar">
-                                    @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r')))
-                                        <img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
+                                    @if(@fopen(asset('storejeans').'/img/'. $product->photo_maine.'.jpg', 'r'))
+                                        <img src="{{asset('storejeans').'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                                     @else
                                         <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}">
                                     @endif
@@ -264,10 +264,10 @@
             <div class="item">
                 <a href="{{ route('productOne', ['id' => $product->id ] )  }}" class="item-tovar">
                     <div class="img-tovar">
-                        @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r'))
-                            <img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
+                        @if(@fopen(asset('storejeans').'/img/'. $product->photo_maine.'.jpg', 'r'))
+                            <img src="{{asset('storejeans').'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                         @else
-                            <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}">
+                            <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="{{ $product->categories }}">
                         @endif
                     </div>
                     <div class="brand">{{ $product->label }}</div>

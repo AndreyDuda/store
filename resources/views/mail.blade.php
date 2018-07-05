@@ -50,7 +50,7 @@
                                     <a href="#" class="cart-product-title">
                                         {{$product['title']}}
                                     </a>
-                                    <p class="cart-product-code"><span># </span> 76548 </p>
+                                    <p class="cart-product-code"><span># </span> </p>
                                 </div>
                             </div>
                         </td>

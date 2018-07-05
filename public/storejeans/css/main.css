@@ -1943,7 +1943,7 @@ label span{
 	float: right;
 }
 .table-name{
-	margin-top: 0;
+	margin-top: 30px;
 }
 /*CSS for admin END*/
 
@@ -2094,6 +2094,7 @@ label span{
 
 .edit-product{
 	width: 100%;
+	padding-bottom: 50px;
 }
 .edit-product form .flex{
 	display: flex;
@@ -2185,11 +2186,12 @@ label span{
     margin-top: 10px;
 }
 .blocks-admin{
+	display: flex;
+	width: 100%;
+	align-items: flex-start;
     padding-top: 10px;
     overflow-y: auto;
-    align-items: flex-end;
     justify-content: flex-start;
-    /*flex-direction: row;*/
     flex-wrap: wrap;
 
 }
@@ -2331,7 +2333,7 @@ label span{
 	background: #00aa00;
 }
 .order-false{
-	background: #888888;
+	background: red;
 }
 .show-order .header-text h3{
     text-transform: uppercase;
@@ -2376,3 +2378,90 @@ label span{
 .change_photo{
 	cursor: pointer;
 }
+.users-table{
+
+	border: 2px solid #000;
+	width: 50%;
+}
+.users-table td,
+.users-table th{
+	padding: 10px;
+	border: 1px solid #000;
+}
+.users-table th{
+	background: #A3D80E;
+}
+.users-table tr:nth-child(odd){
+	background: #eee;
+}
+.add-excel {
+	padding: 10px 30px;
+	display: table;
+	border: 3px solid #A3D80E;
+}
+.add-excel ul label,
+.add-excel ul{
+	display: inline-block;
+}
+.add-excel .cart-submit{
+	background: #A3D80E;
+	border: 0;
+	padding: 5px 15px;
+	cursor: pointer;
+	font-weight: 500;
+	border-radius: 5px;
+}
+.delete-excel{
+	padding: 10px 30px;
+	display: table;
+	border: 3px solid red;
+}
+.delete-excel p{
+	font-weight: 700;
+	display: inline;
+	margin-right: 20px;
+}
+.delete-excel .cart-submit{
+	background: red;
+	border: 0;
+	padding: 5px 15px;
+	cursor: pointer;
+	font-weight: 500;
+	border-radius: 5px;
+	color: #fff;
+}
+.settings{
+	width: 100%;
+	padding: 0 50px;
+}
+.form-inline, .form-group {
+	width: 100%;
+}
+.form-inline .form-group{
+	margin: 30px 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.form-group div{
+	width: 45%;
+	margin-bottom: 30px;
+}
+.form-group div small{
+	color: #000;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+.settings-submit{
+	padding: 10px 40px;
+	text-align: center;
+	margin: 0 50% 50px auto;
+	background: #A3D80E;
+	border: 1px solid #A3D80E;
+	font-weight: 700;
+	border-radius: 10px;
+	float: right;
+}
+
+

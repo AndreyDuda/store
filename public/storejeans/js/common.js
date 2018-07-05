@@ -21,15 +21,33 @@ $(document).ready(function(){
         $('#send').click();
     });
 
-    $('.product-buy').on('click', function() {
+    //$('.product-buy, .pruduct-plust').on('click', function() {
+	$('main').on('click','.product-buy, .pruduct-plust, .product-minus', function() {
 		var id    =  $(this).data('id');
-		var url = '/by';
+        var minus =  $(this).data('minus');
+        var count_product = 0;
+        var count =  parseInt($('.product-count'+id).text());
+        var jpg = '';
+
+
+        if(minus == '1'){
+        	if(count > 0){
+                minus = true;
+			}else{
+        		return false;
+			}
+
+		}else{
+        	minua = false;
+		}
+
+		var url   = '/by';
 		var total = 0;
             $.ajax({
                 type:'POST',
                 url:url,
                 headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
-				data:{id:id},
+				data:{id:id, minus:minus},
                 datatype:'JSON',
                 success: function(data) {
 
@@ -41,16 +59,20 @@ $(document).ready(function(){
                     $('.ttt tbody').append(tableHead);
 
                     $.each(data, function(index, value){
-                        start += '<tr><td><div class="cart-product-info"><img src="'+urlImg +  value.photo + '.jpg" ><div>' +
+                    	jpg = (value.photo == 'system/no-image')? '.png':'.jpg';
+                        start += '<tr><td><div class="cart-product-info"><img src="'+urlImg +  (value.photo) + jpg+'" ><div>' +
                         '<a href="#" class="cart-product-company">' + value.lable + '</a><br><a href="#" class="cart-product-title">' + value.title + '</a>' +
-                        '<p class="cart-product-code"><span># </span> 76548 </p></div></div></td><td class="font-politica">' + value.price + '<span> $</span></td>' +
-                        '<td class="cart-quantity"><span><i class="fa fa-minus-circle" aria-hidden="true"></i></span><p>' + value.count + ' шт.</p>'+
-						'<span><i class="fa fa-plus-circle" aria-hidden="true"></i></span></td><td class="font-politica">' + value.count*value.price + '<span> $</span></td></tr>';
+                        '<p class="cart-product-code"><span># </span> </p></div></div></td><td class="font-politica">' + value.price + '<span> $</span></td>' +
+                        '<td class="cart-quantity"><span><i data-minus="1" data-id="'+value.id+'" data-url="'+value.url+'" class="fa fa-minus-circle product-minus" aria-hidden="true"></i></span><p class="product-count'+value.id+'">' + value.count + ' шт.</p>'+
+						'<span><i  data-id="'+value.id+'" data-url="'+value.url+'"  class="fa fa-plus-circle pruduct-plust" aria-hidden="true"></i></span></td><td class="font-politica">' + value.count*value.price + '<span> $</span></td></tr>';
                         total += value.count*value.price;
+                        count_product += 1;
                       });
                     $('.ttt tbody').append(start);
+                    $('.total span').empty();
                     $('.total span').append(total);
-                    console.log(total);
+                    $('#count-cart').empty();
+                    $('#count-cart').text(count_product);
                     $('.modal-cart').css('display', 'block');
                 },
                 error:function() {

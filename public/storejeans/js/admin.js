@@ -46,7 +46,7 @@ $(document).ready(function () {
 
     $('.click_order').click(function () {
 
-        if (!confirm("Заказ обработан?")) {
+        if (!confirm("Заказ обработали?")) {
             return false;
         } else {
             var obj  = $(this);
@@ -54,7 +54,8 @@ $(document).ready(function () {
             var data = obj.data('order');
             var url  = $('#url').val();
             /*alert(id);*/
-            console.log(url);
+
+            console.log(id);
             $.ajax({
                 type:'POST',
                 url:url,
@@ -63,11 +64,12 @@ $(document).ready(function () {
                 datatype:'JSON',
                 success: function(data) {
                     if(obj.data('order') == 'success'){
-                        obj.parent().parent().css('background', 'white');
+                        obj.parent().parent().css('background', 'grey');
+                        /*$('.haeder-text').css('background', 'white');*/
                     }else{
                         obj.parent().parent().css('background', 'red');
                     }
-
+                    $('.click_order').hide();
                 },
                 error:function() {
                     console.log('ERRORE');

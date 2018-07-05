@@ -15,16 +15,16 @@ class CreateRequestTable extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('telephone');
-            $table->char('email',255);
-            $table->string('fio',255);
-            $table->string('country',255);
-            $table->string('city',255);
-            $table->string('oplata', 255);
-            $table->string('delivery', 255);
-            $table->text('product');
-            $table->text('comment');
-            $table->integer('new');
+            $table->integer('telephone')->nullable();
+            $table->char('email',255)->nullable();
+            $table->string('fio',255)->nullable();
+            $table->string('country',255)->nullable();
+            $table->string('city',255)->nullable();
+            $table->string('oplata', 255)->nullable();
+            $table->string('delivery', 255)->nullable();
+            $table->text('product')->nullable();
+            $table->text('comment')->nullable();
+            $table->integer('new')->nullable();
             $table->timestamps();
         });
     }

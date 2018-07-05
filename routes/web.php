@@ -54,7 +54,7 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
 
     Route::get('/order',             'Admin\OrderController@index')->name('OrderIndex');
     Route::get('/order/new',         'Admin\OrderController@newOrder')->name('OrderNew');
-    Route::get('/order/show/{id?}',   'Admin\OrderController@show')->name('OrderShow');
+    Route::get('/order/show/{id?}',  'Admin\OrderController@show')->name('OrderShow');
     Route::post('/order/success',    'Admin\OrderController@successOrder')->name('OrderSuccess');
     Route::get('/order/success',     'Admin\OrderController@successOrder')->name('OrderSuccess');
     Route::get('/order/err',         'Admin\OrderController@errOrder')->name('OrderErr');
@@ -63,6 +63,7 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::post('/settings',         'Admin\SiteController@settings')->name('settingsSite');
     Route::get('/settings',          'Admin\SiteController@settings')->name('settingsSite');
     Route::post('/user/add',         'Admin\SiteController@addUser')->name('addUser');
+    Route::get('/user/add',          'Admin\SiteController@addUser')->name('addUser');
     Route::get('/user',              'Admin\SiteController@user')->name('user');
 
     Route::post('/parse',            'Admin\BackService\excel\ExcelController@parse')->name('readExcel');

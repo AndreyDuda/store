@@ -93,8 +93,12 @@ $total = 0;
             <tr>
                 <td>
                     <div class="cart-product-info">
-                        <img src="img/{{$product['photo']}}.jpg">
-                        <div>
+                        @if(@fopen(asset('storejeans').'/img/'. $product['photo'].'.jpg', 'r'))
+                            <img src="{{asset('storejeans').'/img/'. $product['photo'].'.jpg'}}" alt="{{$product['lable']}}">
+                        @else
+                            <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="{{$product['lable']}}">
+                        @endif
+                            <div>
                             <a href="#" class="cart-product-company">{{$product['lable']}}</a>
                             <br>
                             <a href="#" class="cart-product-title">

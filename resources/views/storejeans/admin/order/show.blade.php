@@ -1,8 +1,10 @@
 <div class="show-order">
     <div class="header-text">
         <input type="hidden" id="url" value="{{route('OrderSuccess')}}">
+
         @if($order->new ==1)
             <h4 style="background:lightgreen;">
+                <input type="hidden" value="{{$order->id}}">
                 Статус заказа: НЕ ОБРАБОТАН
                 <div class="block-position">
                     <div class="order-true click_order" data-order="success">Обработать заказ</div>
@@ -80,7 +82,12 @@
                     <tr>
                         <td>
                             <div class="cart-product-info">
-                                <img src="{{asset('storejeans').'/img/' .$product->photo}}.jpg">
+                                @if(@fopen(asset('storejeans').'/img/'. $product->photo.'.jpg', 'r'))
+                                    <img src="{{asset('storejeans').'/img/'. $product->photo.'.jpg'}}" alt="{{$product->lable}}">
+                                @else
+                                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="{{$product->lable}}">
+                                @endif
+
                                 <div>
                                     <a href="#" class="cart-product-company">{{$product->lable}}</a>
                                     <br>

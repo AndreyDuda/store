@@ -9,8 +9,8 @@
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="libs/slick/css/slick.css">
 	<link rel="stylesheet" href="css/fonts.css">
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&amp;subset=latin-ext,vietnamese" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">
+<!--	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&amp;subset=latin-ext,vietnamese" rel="stylesheet">-->
+<!--	<link href="https://fonts.googleapis.com/css?family=Gentium+Basic" rel="stylesheet">-->
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/media.css">
 </head>
@@ -37,7 +37,7 @@
 				
 				<a href="cart.php" class="cart">
 					<i class="fa fa-shopping-cart " aria-hidden="true"></i>
-					<span>0</span>
+					<span id="count-cart">0</span>
 				</a>
 				<div class="contacts-wrap">
 					<div class="phones phones-header">

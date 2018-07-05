@@ -22,6 +22,7 @@ class SiteController extends Controller
 
     public function renderOutput()
     {
+
         return view($this->template)->with($this->vars);
     }
 }

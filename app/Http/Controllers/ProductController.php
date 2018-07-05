@@ -120,7 +120,7 @@ class ProductController extends SiteController
         ];
 
 
-        $content    = view(env('THEME') . '.product.products')->with($data)->render();
+        $content    = view('storejeans' . '.product.products')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         return $this->renderOutput();
     }
@@ -141,8 +141,12 @@ class ProductController extends SiteController
             'product'  => $product,
             'products' => $products
         ];
-        $content    = view(env('THEME') . '.product.product')->with($data)->render();
+        $content    = view('storejeans' . '.product.product')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+        $this->vars = array_add($this->vars, 'metaKey', $product->mets_key);
+        $this->vars = array_add($this->vars, 'metaDesc', $product->mets_desc);
+        $this->vars = array_add($this->vars, 'metatitle', $product->mets_desc);
+
         return $this->renderOutput();
     }
 

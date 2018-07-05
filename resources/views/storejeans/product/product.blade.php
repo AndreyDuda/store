@@ -1,5 +1,5 @@
 {{ csrf_field() }}
-<input type="hidden" id="url" value="{{asset(env('THEME')).'/img/'}}">
+<input type="hidden" id="url" value="{{asset('public/storejeans/img').'/' }}">
 <ol id="breadcrumb" class="breadcrumb-product">
     <li>
         <a href="{{ route('productAll') }}">
