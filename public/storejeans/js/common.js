@@ -83,9 +83,12 @@ $(document).ready(function(){
 
 
 
-    $('.search input').keydown(function () {
+    $('.search input').keyup(function () {
         var search = $('.search input').val();
         var url = '/search';
+        var urlImg = $('#url_maine').val();
+        var prod = '';
+        var jpg = '';
         $.ajax({
             type:'POST',
             url:url,
@@ -97,10 +100,13 @@ $(document).ready(function(){
                 $('.search ul:first').show();
                 /*console.log(data.eq(i));*/
 				data = jQuery.parseJSON(data);
-				console.log(data);
                 for(var i=0;i<data.length; i++){
-                	/*console.log(data.eq(i));*/
+                    jpg = (data[i].photo == 'system/no-image')? '.png':'.jpg';
+                    prod += '<li class="flex"><a><img src="'+urlImg +  (data[i].photo) + jpg+'"><p>'+data[i].label+'</p></a></li>'
 				}
+                $('.search ul:first').empty();
+                $('.search ul:first').append(prod);
+
 
             },
             error:function() {

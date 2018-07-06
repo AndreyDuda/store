@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{  asset('storejeans') }}/css/media.css">
 </head>
 <body>
+<input type="hidden" id="url_maine" value="{{asset('public/storejeans/img').'/' }}">
 <header>
 
     <div class="header-desktop" >
@@ -38,7 +39,7 @@
         <div class="search">
             <input type="text" placeholder="Поиск....">
             <ul>
-                <li class="flex">
+              {{--  <li class="flex">
                     <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
                     <p>Lorem ipsum dolor sit amet. sit amet.</p>
                 </li>
@@ -63,7 +64,7 @@
                 </li><li class="flex">
                     <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
                     <p>Lorem ipsum dolor sit amet. sit amet.</p>
-                </li>
+                </li>--}}
             </ul>
         </div>
         <!-- <div class="menu-right"> -->

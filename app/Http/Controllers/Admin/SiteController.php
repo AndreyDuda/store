@@ -28,7 +28,7 @@ class SiteController extends AdminController
 
 
             foreach ($setting as $k=>$item){
-                $model = $this->setting_rep->getOne($k);
+                $model = $this->setting_rep->getOneForSeve($k);
                /* dd($model);*/
                 $model->value = ($item)? $item:'';
                 $model->save();
@@ -42,6 +42,8 @@ class SiteController extends AdminController
 
         $content    = view('storejeans' . '.admin.site.settings')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+        $metatitle = $this->setting_rep->getOne('title');
+        $this->vars = array_add($this->vars, 'title', $metatitle);
         return $this->renderOutput();
     }
 

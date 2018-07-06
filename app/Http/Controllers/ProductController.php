@@ -173,9 +173,22 @@ class ProductController extends SiteController
         $search = $request->search;
         $where = "LOWER(label) like '%$search%' OR LOWER(title) like '%$search%' OR code like '%$search%' OR LOWER(categories) like '%$search%'";
         $count_search = 10;
-        $products = $this->product_rep->getAll('*', false, $where, false, $count_search);
-
-        return json_encode($products);
+        $select   = ['id', 'title', 'photo_maine', 'label'];
+        $products = $this->product_rep->getAll($select, false, $where, false, $count_search);
+        $data = array();
+        $k=0;
+        foreach ($products as $product){
+            $data[$k]['id'] = $product->id;
+            $data[$k]['label'] = $product->label;
+            if(@fopen(asset('storejeans').'/img/'. $product->photo_maine.'.jpg', 'r')){
+                $data[$k]['photo'] = $product->photo_maine;
+            }
+            else{
+                $data[$k]['photo'] = 'system/no-image';
+            }
+            $k++;
+        }
+        return json_encode($data);
         //return json_encode($products);
     }
 
