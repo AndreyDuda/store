@@ -4,47 +4,29 @@
             <input type="hidden">
             <h2>Настройки сайта</h2>
             <div class="form-group flex">
-
                 @foreach($settings as $setting)
-                    <div>
-                        <label for="input{{ $setting->id }}">{{ $setting->name }}</label>
-                        <input  id="input{{ $setting->id }}" name="{{$setting->option}}" class="form-control mx-sm-3" value="{{$setting->value}}">
-                        <small id="passwordHelpInline" class="text-muted">
-                            {{ $setting->desc }}
-                        </small>
-                    </div>
-                    <div>
-                        <label for="input{{ $setting->id }}">{{ $setting->name }}</label>
-                        <input  id="input{{ $setting->id }}" name="{{$setting->option}}" class="form-control mx-sm-3" value="{{$setting->value}}">
-                        <small id="passwordHelpInline" class="text-muted">
-                            {{ $setting->desc }}
-                        </small>
-                    </div>
-                    <div>
-                        <label for="input{{ $setting->id }}">{{ $setting->name }}</label>
-                        <input  id="input{{ $setting->id }}" name="{{$setting->option}}" class="form-control mx-sm-3" value="{{$setting->value}}">
-                        <small id="passwordHelpInline" class="text-muted">
-                            {{ $setting->desc }}
-                        </small>
-                    </div>
+                    @if($setting->type == 'input')
+                        <div>
+                            <label for="input{{ $setting->id }}">{{ $setting->name }}</label>
+                            <input  id="input{{ $setting->id }}" name="{{$setting->option}}" class="form-control mx-sm-3" value="{{$setting->value}}">
+                            <small id="" class="text-muted">
+                                {{ $setting->desc }}
+                            </small>
+                        </div>
+                    @endif
                 @endforeach
             </div>
-            <h4>META - теги для сайта</h4>
             <div>
-                <h5>Главная страница</h5>
                 <div class="flex meta-main">
-                    <div>
-                        <p>Title</p>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </div>
-                    <div>
-                        <p>mata - description</p>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </div>
-                    <div>
-                        <p>meta - keywords</p>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </div>
+                    @foreach($settings as $setting)
+                        @if($setting->type != 'input')
+                                    <div>
+                                        <p class="bold">{{ $setting->name }}</p>
+                                        <textarea name="{{$setting->option}}" id="" cols="30" rows="10" value="">{{$setting->value}}</textarea>
+                                        <p> {{ $setting->desc }} </p>
+                                    </div>
+                        @endif
+                    @endforeach
                 </div>
             </div>
             <input type="submit" value="Сохранить" class="settings-submit">

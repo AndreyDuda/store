@@ -23,6 +23,12 @@ class SettingRepository extends Repository
     {
         $result = $this->model->where('option', $option)->first();
 
-        return $result->value;
+        return $result;
+    }
+    public function getAllSet()
+    {
+        $builder = $this->model->select('*');
+        $builder->orderBy('type', 'ASC');
+        return $builder->get();
     }
 }

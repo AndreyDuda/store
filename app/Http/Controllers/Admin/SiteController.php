@@ -24,17 +24,18 @@ class SiteController extends AdminController
     {
         if($request->isMethod('post')){
             //$request = $request->except('_token');
-            $setting = $request->all();
-            unset($setting['_token']);
+            $setting = $request->except('_token');;
 
-            foreach ($setting as $item){
-                $model = $this->setting_rep->getOne(key($item));
-                $model->value = $item;
+
+            foreach ($setting as $k=>$item){
+                $model = $this->setting_rep->getOne($k);
+               /* dd($model);*/
+                $model->value = ($item)? $item:'';
                 $model->save();
             }
         }
 
-        $settings = $this->setting_rep->getAll();
+        $settings = $this->setting_rep->getAllSet();
         $data = [
             'settings' => $settings
         ];
