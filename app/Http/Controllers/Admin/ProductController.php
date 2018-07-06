@@ -6,15 +6,18 @@ use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use Config;
 use App\Http\Controllers\Admin\BackService\Excel\ExcelController;
+use App\Repositories\SettingRepository;
+
 
 
 
 class ProductController extends AdminController
 {
-    public function __construct(ProductRepository $product_rep)
+    public function __construct(ProductRepository $product_rep, SettingRepository $setting_rep)
     {
         $this->template    = 'storejeans' . '.admin.index';
         $this->product_rep = $product_rep;
+        $this->setting_rep = $setting_rep;
     }
 
     public function updateProduct(Request $request)
@@ -83,6 +86,8 @@ class ProductController extends AdminController
 
             $content = view('storejeans' . '.admin.product.editProduct')->with($data)->render();
             $this->vars = array_add($this->vars, 'content', $content);
+            $metatitle = $this->setting_rep->getOne('title');
+            $this->vars = array_add($this->vars, 'title', $metatitle);
             return $this->renderOutput();
         }else{
             abort('404');
@@ -127,6 +132,8 @@ class ProductController extends AdminController
 
             $content = view('storejeans' . '.admin.product.newProduct')->with($data)->render();
             $this->vars = array_add($this->vars, 'content', $content);
+        $metatitle = $this->setting_rep->getOne('title');
+        $this->vars = array_add($this->vars, 'title', $metatitle);
             return $this->renderOutput();
 
 
@@ -148,6 +155,8 @@ class ProductController extends AdminController
 
         $content    = view('storejeans' . '.admin.product.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+        $metatitle = $this->setting_rep->getOne('title');
+        $this->vars = array_add($this->vars, 'title', $metatitle);
         return $this->renderOutput();
     }
 
@@ -159,6 +168,8 @@ class ProductController extends AdminController
         ];
         $content    = view('storejeans' . '.admin.product.uploadExcelFile')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+        $metatitle = $this->setting_rep->getOne('title');
+        $this->vars = array_add($this->vars, 'title', $metatitle);
         return $this->renderOutput();
     }
 

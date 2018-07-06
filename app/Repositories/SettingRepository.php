@@ -23,12 +23,18 @@ class SettingRepository extends Repository
     {
         $result = $this->model->where('option', $option)->first();
 
+        return $result->value;
+    }
+    public function getOneForSeve($option)
+    {
+        $result = $this->model->where('option', $option)->first();
+
         return $result;
     }
     public function getAllSet()
     {
         $builder = $this->model->select('*');
-        $builder->orderBy('type', 'ASC');
+        $builder->orderBy('id', 'ASC');
         return $builder->get();
     }
 }

@@ -19,11 +19,12 @@ use Session;
 class CartController extends SiteController
 {
 
-    public function __construct(ProductRepository $product_rep, OrderRepository $order_rep)
+    public function __construct(ProductRepository $product_rep, OrderRepository $order_rep, SettingRepository $setting_rep)
     {
         $this->template = 'storejeans.index';
         $this->product_rep = $product_rep;
         $this->order_rep = $order_rep;
+        $this->setting_rep = $setting_rep;
 
     }
 
@@ -36,6 +37,19 @@ class CartController extends SiteController
         ];
         $content    = view(env('THEME') . '.cart.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+
+        $metaKey = $this->setting_rep->getOne('MetaKeySite');
+        $metaDesc = $this->setting_rep->getOne('MetaDescSite');
+        $metatitle = $this->setting_rep->getOne('TitleSite');
+        $telephoneMTC = $this->setting_rep->getOne('telephoneLife');
+        $telephoneKiev = $this->setting_rep->getOne('telephoneKiev');
+        $metatitle = $this->setting_rep->getOne('title');
+
+        $this->vars = array_add($this->vars, 'telephoneMTC', $metaDesc);
+        $this->vars = array_add($this->vars, 'telephoneKiev', $telephoneKiev);
+        $this->vars = array_add($this->vars, 'metaKey', $metaKey);
+        $this->vars = array_add($this->vars, 'metaDesc', $metaDesc);
+        $this->vars = array_add($this->vars, 'title', $metatitle);
 
         return $this->renderOutput();
     }

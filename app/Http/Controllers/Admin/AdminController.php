@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\ProductRepository;
 use App\Repositories\OrderRepository;
+use App\Repositories\SettingRepository;
 
 class AdminController extends Controller
 {

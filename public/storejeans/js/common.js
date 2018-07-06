@@ -93,14 +93,26 @@ $(document).ready(function(){
             data:{search:search},
             datatype:'JSON',
             success: function(data) {
-                console.log(data);
-                alert(data);
+                /*console.log(data);*/
+                $('.search ul:first').show();
+                /*console.log(data.eq(i));*/
+				data = jQuery.parseJSON(data);
+				console.log(data);
+                for(var i=0;i<data.length; i++){
+                	/*console.log(data.eq(i));*/
+				}
+
             },
             error:function() {
-                alert('error');
-                alert($('input[name="_token"]').val());
+
             }
         });
+
+        $('body').click(function () {
+            $('.search ul:first').hide();
+        })
+
+
     });
 
 

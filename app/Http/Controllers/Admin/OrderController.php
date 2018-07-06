@@ -67,6 +67,8 @@ class OrderController extends AdminController
 
             $content    = view('storejeans' . '.admin.order.index')->with($data)->render();
             $this->vars = array_add($this->vars, 'content', $content);
+            $metatitle = $this->setting_rep->getOne('title');
+            $this->vars = array_add($this->vars, 'title', $metatitle);
             return $this->renderOutput();
         }
 
@@ -86,6 +88,8 @@ class OrderController extends AdminController
 
         $content    = view('storejeans' . '.admin.order.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+        $metatitle = $this->setting_rep->getOne('title');
+        $this->vars = array_add($this->vars, 'title', $metatitle);
         return $this->renderOutput();
     }
 
@@ -103,6 +107,8 @@ class OrderController extends AdminController
 
         $content    = view('storejeans' . '.admin.order.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+        $metatitle = $this->setting_rep->getOne('title');
+        $this->vars = array_add($this->vars, 'title', $metatitle);
         return $this->renderOutput();
 
     }
@@ -123,6 +129,8 @@ class OrderController extends AdminController
 
         $content    = view('storejeans' . '.admin.order.show')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+        $metatitle = $this->setting_rep->getOne('title');
+        $this->vars = array_add($this->vars, 'title', $metatitle);
         return $this->renderOutput();
 
     }

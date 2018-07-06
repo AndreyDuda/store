@@ -122,6 +122,18 @@ class ProductController extends SiteController
 
         $content    = view('storejeans' . '.product.products')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+
+        $metaKey = $this->setting_rep->getOne('MetaKeySite');
+        $metaDesc = $this->setting_rep->getOne('MetaDescSite');
+        $metatitle = $this->setting_rep->getOne('title');
+        $telephoneMTC = $this->setting_rep->getOne('telephoneLife');
+        $telephoneKiev = $this->setting_rep->getOne('telephoneKiev');
+
+        $this->vars = array_add($this->vars, 'telephoneMTC', $telephoneMTC);
+        $this->vars = array_add($this->vars, 'telephoneKiev', $telephoneKiev);
+        $this->vars = array_add($this->vars, 'metaKey', $metaKey);
+        $this->vars = array_add($this->vars, 'metaDesc', $metaDesc);
+        $this->vars = array_add($this->vars, 'title', $metatitle);
         return $this->renderOutput();
     }
 
@@ -142,10 +154,16 @@ class ProductController extends SiteController
             'products' => $products
         ];
         $content    = view('storejeans' . '.product.product')->with($data)->render();
+        $telephoneMTC = $this->setting_rep->getOne('telephoneLife');
+        $telephoneKiev = $this->setting_rep->getOne('telephoneKiev');
+        $this->vars = array_add($this->vars, 'telephoneMTC', $metaDesc);
+        $this->vars = array_add($this->vars, 'telephoneKiev', $telephoneKiev);
+        $metatitle = $this->setting_rep->getOne('title');
         $this->vars = array_add($this->vars, 'content', $content);
         $this->vars = array_add($this->vars, 'metaKey', $product->mets_key);
         $this->vars = array_add($this->vars, 'metaDesc', $product->mets_desc);
         $this->vars = array_add($this->vars, 'metatitle', $product->mets_desc);
+        $this->vars = array_add($this->vars, 'title', $metatitle);
 
         return $this->renderOutput();
     }
@@ -157,7 +175,7 @@ class ProductController extends SiteController
         $count_search = 10;
         $products = $this->product_rep->getAll('*', false, $where, false, $count_search);
 
-        return $products;
+        return json_encode($products);
         //return json_encode($products);
     }
 

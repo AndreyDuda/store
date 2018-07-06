@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Repositories\SettingRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -9,10 +10,11 @@ use App\Repositories\ProductRepository;
 
 class ImageController extends AdminController
 {
-    public function __construct(ProductRepository $product_rep)
+    public function __construct(ProductRepository $product_rep, SettingRepository $setting_rep)
     {
         $this->template    = 'storejeans' . '.admin.index';
         $this->product_rep = $product_rep;
+        $this->setting_rep = $setting_rep;
     }
 
     public function index()
@@ -79,6 +81,8 @@ class ImageController extends AdminController
         ];
         $content    = view('storejeans' . '.admin.image.unused')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+        $metatitle = $this->setting_rep->getOne('title');
+        $this->vars = array_add($this->vars, 'title', $metatitle);
         return $this->renderOutput();
     }
 
@@ -97,6 +101,8 @@ class ImageController extends AdminController
         ];
         $content    = view('storejeans' . '.admin.image.upload')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+        $metatitle = $this->setting_rep->getOne('title');
+        $this->vars = array_add($this->vars, 'title', $metatitle);
         return $this->renderOutput();
     }
 }

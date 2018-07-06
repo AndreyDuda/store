@@ -162,7 +162,7 @@
             <p>{{ $name_cat }}</p>
         </div>
 
-        @if($cat_prod)
+        {{--@if($cat_prod)
         <div class="new-category">
             @foreach($cat_prod as $category)
            <div class="new-category-item">
@@ -171,7 +171,7 @@
            </div>
             @endforeach
         </div>
-        @endif
+        @endif--}}
 
 
         <form action="#">

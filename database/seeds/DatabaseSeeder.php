@@ -23,6 +23,14 @@ class DatabaseSeeder extends Seeder
         DB::table('setting')->insert(
             [
                 [
+                    'option' => 'title',
+                    'name'   => 'Тайтл сайта',
+                    'value'  => 'KLEVER',
+                    'desc'   => 'Название сайта',
+                    'type'   => 'input'
+                ],
+
+                [
                     'option' => 'PaginateCatalog',
                     'name'   => 'Цифры пагинации',
                     'value'  => '4',
@@ -62,6 +70,37 @@ class DatabaseSeeder extends Seeder
                     'desc'   => 'Телефон Киевстара сайта',
                     'type'   => 'input'
                 ],
+                [
+                    'option' => 'DescMenCategory',
+                    'name'   => 'Описание категории Мужская одежда',
+                    'value'  => 'Описание категории на главной странице Мужская одежда',
+                    'desc'   => 'Описание категории на главной странице Мужская одежда',
+                    'type'   => 'textaria'
+                ],
+
+                [
+                    'option' => 'DescWoomenCategory',
+                    'name'   => 'Описание категории Женская одежда',
+                    'value'  => 'Описание категории на главной странице Женская одежда',
+                    'desc'   => 'Описание категории на главной странице Женская одежда',
+                    'type'   => 'textaria'
+                ],
+
+                [
+                    'option' => 'DescNewCategory',
+                    'name'   => 'Описание категории Новинки',
+                    'value'  => 'Описание категории на главной странице Новинки',
+                    'desc'   => 'Описание категории на главной странице Новинки',
+                    'type'   => 'textaria'
+                ],
+
+                [
+                    'option' => 'DescSaleCategory',
+                    'name'   => 'Описание категории Выгодное предложие',
+                    'value'  => 'Описание категории на главной странице Выгодное предложие',
+                    'desc'   => 'Описание категории на главной странице Выгодное предложие',
+                    'type'   => 'textaria'
+                ],
 
                 [
                     'option' => 'MetaKeySite',
@@ -79,13 +118,6 @@ class DatabaseSeeder extends Seeder
                     'type'   => 'textaria'
                 ],
 
-                [
-                    'option' => 'TitleSite',
-                    'name'   => 'Тайтл сайта',
-                    'value'  => '',
-                    'desc'   => 'Тайтл сайта на главной странице',
-                    'type'   => 'input'
-                ],
 
                 [
                     'option' => 'MetaKeyContact',
@@ -103,13 +135,7 @@ class DatabaseSeeder extends Seeder
                     'type'   => 'textaria'
                 ],
 
-                [
-                    'option' => 'TitleContact',
-                    'name'   => 'Тайтл контактов',
-                    'value'  => '',
-                    'desc'   => 'Тайтл сайта траницы контактов',
-                    'type'   => 'input'
-                ],
+
 
                 [
                     'option' => 'MetaKeyDelivery',
@@ -127,13 +153,6 @@ class DatabaseSeeder extends Seeder
                     'type'   => 'textaria'
                 ],
 
-                [
-                    'option' => 'TitleDelivery',
-                    'name'   => 'Тайтл доставки',
-                    'value'  => '',
-                    'desc'   => 'Тайтл сайта траницы доставки',
-                    'type'   => 'input'
-                ]
 
 
 

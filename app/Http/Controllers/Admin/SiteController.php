@@ -51,7 +51,7 @@ class SiteController extends AdminController
 
         if($request->isMethod('post')){
             $id = $request->id;
-            $user = $this->user_rep->getOne($id);
+            $user = $this->user_rep->getOneForSeve($id);
         }else{
             $user = $this->user_rep->getAll(['name']);
         }
@@ -61,6 +61,7 @@ class SiteController extends AdminController
 
         $content    = view('storejeans' . '.admin.site.addUser')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+
         return $this->renderOutput();
 
     }
@@ -74,6 +75,8 @@ class SiteController extends AdminController
         ];
         $content    = view('storejeans' . '.admin.site.user')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
+        $metatitle = $this->setting_rep->getOne('title');
+        $this->vars = array_add($this->vars, 'title', $metatitle);
         return $this->renderOutput();
 
     }
