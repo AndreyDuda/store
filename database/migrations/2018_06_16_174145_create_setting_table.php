@@ -19,6 +19,7 @@ class CreateSettingTable extends Migration
             $table->string('name', 255);
             $table->string('value', 255);
             $table->text('desc');
+            $table->string('type',255);
             $table->timestamps();
         });
     }

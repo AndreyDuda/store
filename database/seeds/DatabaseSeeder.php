@@ -24,25 +24,121 @@ class DatabaseSeeder extends Seeder
             [
                 [
                     'option' => 'PaginateCatalog',
-                    'name'   => 'Цыфры пагинации',
+                    'name'   => 'Цифры пагинации',
                     'value'  => '4',
-                    'desc'   => 'Количество цыфр видимых для листания страниц'
+                    'desc'   => 'Количество цифр видимых для листания страниц',
+                    'type'   => 'input'
                 ],
 
                 [
                     'option' => 'CountProductCatalog',
                     'name'   => 'Количество товаров',
                     'value'  => '18',
-                    'desc'   => 'Количество выводимых товаров на странице'
+                    'desc'   => 'Количество выводимых товаров на странице',
+                    'type'   => 'input'
                 ],
 
                 [
                     'option' => 'CountOrder',
                     'name'   => 'Количество заказов',
                     'value'  => '25',
-                    'desc'   => 'Количество выводимых заказов в таблице на странице заказов от клиентов'
+                    'desc'   => 'Количество выводимых заказов в таблице на странице заказов от клиентов',
+                    'type'   => 'input'
 
+                ],
+
+                [
+                    'option' => 'telephoneLife',
+                    'name'   => 'Телефон МТС',
+                    'value'  => '099 378 33 31',
+                    'desc'   => 'Телефон МТС сайта',
+                    'type'   => 'input'
+                ],
+
+                [
+                    'option' => 'telephoneKiev',
+                    'name'   => 'Телефон Киевстара',
+                    'value'  => '099 378 33 31',
+                    'desc'   => 'Телефон Киевстара сайта',
+                    'type'   => 'input'
+                ],
+
+                [
+                    'option' => 'MetaKeySite',
+                    'name'   => 'Meta keywords категорий',
+                    'value'  => '096 002 65 69',
+                    'desc'   => 'Meta keywords категорий/сайта на главной странице',
+                    'type'   => 'textaria'
+                ],
+
+                [
+                    'option' => 'MetaDescSite',
+                    'name'   => 'Meta desc категорий',
+                    'value'  => '096 002 65 69',
+                    'desc'   => 'Meta desc категорий/сайта на главной странице',
+                    'type'   => 'textaria'
+                ],
+
+                [
+                    'option' => 'TitleSite',
+                    'name'   => 'Тайтл сайта',
+                    'value'  => '096 002 65 69',
+                    'desc'   => 'Тайтл сайта на главной странице',
+                    'type'   => 'input'
+                ],
+
+                [
+                    'option' => 'MetaKeyContact',
+                    'name'   => 'Meta keywords контактов',
+                    'value'  => '096 002 65 69',
+                    'desc'   => 'Meta keywords страницы контактов',
+                    'type'   => 'textaria'
+                ],
+
+                [
+                    'option' => 'MetaDescContact',
+                    'name'   => 'Meta desc категорий',
+                    'value'  => '096 002 65 69',
+                    'desc'   => 'Meta desc страницы контактов',
+                    'type'   => 'textaria'
+                ],
+
+                [
+                    'option' => 'TitleContact',
+                    'name'   => 'Тайтл контактов',
+                    'value'  => '096 002 65 69',
+                    'desc'   => 'Тайтл сайта траницы контактов',
+                    'type'   => 'input'
+                ],
+
+                [
+                    'option' => 'MetaKeyDelivery',
+                    'name'   => 'Meta keywords контактов',
+                    'value'  => '096 002 65 69',
+                    'desc'   => 'Meta keywords страницы доставки',
+                    'type'   => 'textaria'
+                ],
+
+                [
+                    'option' => 'MetaDescDelivery',
+                    'name'   => 'Meta desc категорий',
+                    'value'  => '096 002 65 69',
+                    'desc'   => 'Meta desc страницы доставки',
+                    'type'   => 'textaria'
+                ],
+
+                [
+                    'option' => 'TitleDelivery',
+                    'name'   => 'Тайтл доставки',
+                    'value'  => '096 002 65 69',
+                    'desc'   => 'Тайтл сайта траницы доставки',
+                    'type'   => 'input'
                 ]
+
+
+
+
+
 
 
             ]);
