@@ -126,7 +126,7 @@ class ProductController extends SiteController
         $metaKey = $this->setting_rep->getOne('MetaKeySite');
         $metaDesc = $this->setting_rep->getOne('MetaDescSite');
         $metatitle = $this->setting_rep->getOne('title');
-        $telephoneMTC = $this->setting_rep->getOne('telephoneLife');
+        $telephoneMTC = $this->setting_rep->getOne('telephoneMTC');
         $telephoneKiev = $this->setting_rep->getOne('telephoneKiev');
 
         $this->vars = array_add($this->vars, 'telephoneMTC', $telephoneMTC);
@@ -154,9 +154,9 @@ class ProductController extends SiteController
             'products' => $products
         ];
         $content    = view('storejeans' . '.product.product')->with($data)->render();
-        $telephoneMTC = $this->setting_rep->getOne('telephoneLife');
+        $telephoneMTC = $this->setting_rep->getOne('telephoneMTC');
         $telephoneKiev = $this->setting_rep->getOne('telephoneKiev');
-        $this->vars = array_add($this->vars, 'telephoneMTC', $metaDesc);
+        $this->vars = array_add($this->vars, 'telephoneMTC',  $telephoneMTC);
         $this->vars = array_add($this->vars, 'telephoneKiev', $telephoneKiev);
         $metatitle = $this->setting_rep->getOne('title');
         $this->vars = array_add($this->vars, 'content', $content);

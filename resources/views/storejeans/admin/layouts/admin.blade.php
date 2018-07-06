@@ -38,8 +38,8 @@
 
         <div class="contacts-wrap">
             <div class="phones phones-header">
-                <p class="icon mtc"> 099 378 33 31</p>
-                <p class="icon kievstar"> 096 002 65 69</p>
+                <p class="icon mtc">{{$telephoneMTC OR ''}}</p>
+                <p class="icon kievstar"> {{$telephoneKiev OR ''}}</p>
             </div>
         </div>
     </div>
@@ -48,8 +48,8 @@
             <a href="index.php" class="logo-mobile">
                 <img src="{{  asset(env('THEME')) }}/img/1_whitemini_logo.png" alt="">
             </a>
-            <a href="tel:0993783331" class="phone ">
-                099 378 33 31
+            <a href="tel:{{$telephoneMTC OR ''}}" class="phone ">
+                {{$telephoneMTC OR ''}}
             </a>
             <a href="cart.php" class="cart">
                 <i class="fa fa-shopping-cart " aria-hidden="true"></i>

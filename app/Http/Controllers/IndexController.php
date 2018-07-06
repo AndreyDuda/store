@@ -38,12 +38,12 @@ class IndexController extends SiteController
         $metaKey = $this->setting_rep->getOne('MetaKeySite');
         $metaDesc = $this->setting_rep->getOne('MetaDescSite');
         $metatitle = $this->setting_rep->getOne('title');
-        $telephoneMTC = $this->setting_rep->getOne('telephoneLife');
+        $telephoneMTC = $this->setting_rep->getOne('telephoneMTC');
         $telephoneKiev = $this->setting_rep->getOne('telephoneKiev');
 
 
 
-        $this->vars = array_add($this->vars, 'metaKey', $metaDesc);
+        $this->vars = array_add($this->vars, 'metaKey', $telephoneMTC);
         $this->vars = array_add($this->vars, 'metaKey', $telephoneKiev);
         $this->vars = array_add($this->vars, 'metaKey', $metaKey);
         $this->vars = array_add($this->vars, 'metaDesc', $metaDesc);

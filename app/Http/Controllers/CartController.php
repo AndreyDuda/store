@@ -41,11 +41,11 @@ class CartController extends SiteController
         $metaKey = $this->setting_rep->getOne('MetaKeySite');
         $metaDesc = $this->setting_rep->getOne('MetaDescSite');
         $metatitle = $this->setting_rep->getOne('TitleSite');
-        $telephoneMTC = $this->setting_rep->getOne('telephoneLife');
+        $telephoneMTC = $this->setting_rep->getOne('telephoneMTC');
         $telephoneKiev = $this->setting_rep->getOne('telephoneKiev');
         $metatitle = $this->setting_rep->getOne('title');
 
-        $this->vars = array_add($this->vars, 'telephoneMTC', $metaDesc);
+        $this->vars = array_add($this->vars, 'telephoneMTC', $telephoneMTC);
         $this->vars = array_add($this->vars, 'telephoneKiev', $telephoneKiev);
         $this->vars = array_add($this->vars, 'metaKey', $metaKey);
         $this->vars = array_add($this->vars, 'metaDesc', $metaDesc);

@@ -39,32 +39,7 @@
         <div class="search">
             <input type="text" placeholder="Поиск....">
             <ul>
-              {{--  <li class="flex">
-                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
-                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
-                </li>
-                <li class="flex">
-                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
-                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
-                </li><li class="flex">
-                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
-                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
-                </li><li class="flex">
-                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
-                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
-                </li><li class="flex">
-                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
-                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
-                </li><li class="flex">
-                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
-                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
-                </li><li class="flex">
-                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
-                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
-                </li><li class="flex">
-                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
-                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
-                </li>--}}
+
             </ul>
         </div>
         <!-- <div class="menu-right"> -->
@@ -85,8 +60,8 @@
             <a href="{{ route('index') }}" class="logo-mobile">
                 <img src="{{  asset('storejeans') }}/img/1_whitemini_logo.png" alt="">
             </a>
-            <a href="tel:0993783331" class="phone ">
-                099 378 33 31
+            <a href="tel:{{$telephoneMTC OR ''}}" class="phone ">
+                {{$telephoneMTC OR ''}}
             </a>
             <a href="{{ route('cart') }}" class="cart">
                 <i class="fa fa-shopping-cart " aria-hidden="true"></i>

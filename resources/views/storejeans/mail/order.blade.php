@@ -12,8 +12,8 @@
     <h1 style="width: 100%; text-align: center">Уважаемый {{$name}}</h1>
     <p>Ваш заказ принят в обработку. Ближайшее время с Вами свяжется наш менеджер для уточнени заказа.</p>
     <p>С Ув. магази storeJeans</p>
-    <p>тел. 099 378 33 31</p>
-    <p>тел. 096 002 65 69</p>
+    <p>тел.{{$telephoneMTC OR ''}}</p>
+    <p>тел. {{$telephoneKiev OR ''}}</p>
     <p>mail. {{$email}}</p>
 @else
     <h1 style="width: 100%; text-align: center">Уважаемый Админ</h1>

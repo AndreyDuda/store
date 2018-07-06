@@ -15,8 +15,8 @@
 <div class="contacts-wrap">
     <div class="phones">
         <h3>Контактные телефоны</h3>
-        <p class="icon mtc"> 099 378 33 31</p>
-        <p class="icon kievstar"> 096 002 65 69</p>
+        <p class="icon mtc"> {{$telephoneMTC OR ''}}</p>
+        <p class="icon kievstar">{{$telephoneKiev OR ''}}</p>
     </div>
     <div class="schedule">
         <h3>График работы</h3>

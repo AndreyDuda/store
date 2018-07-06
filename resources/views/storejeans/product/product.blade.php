@@ -366,7 +366,7 @@
                 </div>
                 <div class="product-number">
                     <p>Звоните по телефону для обсуждения всех подробностей</p>
-                    <a href="tel:08004567890" class="phone"> 096 002 65 69 </a>
+                    <a href="tel:{{$telephoneKiev OR ''}}" class="phone"> {{$telephoneKiev OR ''}} </a>
                 </div>
             </div>
         </div>

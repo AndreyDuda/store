@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
                 ],
 
                 [
-                    'option' => 'telephoneLife',
+                    'option' => 'telephoneMTC',
                     'name'   => 'Телефон МТС',
                     'value'  => '099 378 33 31',
                     'desc'   => 'Телефон МТС сайта',

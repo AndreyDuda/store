@@ -10,8 +10,8 @@
 <h4 style="width: 100%; text-align: center">Уважаемый {{$name}}</h4>
 <p>Ваш заказ принят в обработку. Ближайшее время с Вами свяжется наш менеджер для уточнени покупки.</p>
 <p>С Ув. магази storyJeans</p>
-<p>тел. 099 378 33 31</p>
-<p>тел. 096 002 65 69</p>
+<p>тел.{{$telephoneMTC OR ''}}</p>
+<p>тел.{{$telephoneKiev OR ''}}</p>
 <p>mail. {{$email}}</p>
 @else
     <h4 style="width: 100%; text-align: center">Уважаемый Админ</h4>

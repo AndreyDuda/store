@@ -26,10 +26,10 @@ class ContactController extends SiteController
         $metaKey = $this->setting_rep->getOne('MetaKeyContact');
         $metaDesc = $this->setting_rep->getOne('MetaDescContact');
         $metatitle = $this->setting_rep->getOne('title');
-        $telephoneMTC = $this->setting_rep->getOne('telephoneLife');
+        $telephoneMTC = $this->setting_rep->getOne('telephoneMTC');
         $telephoneKiev = $this->setting_rep->getOne('telephoneKiev');
 
-        $this->vars = array_add($this->vars, 'telephoneMTC', $metaDesc);
+        $this->vars = array_add($this->vars, 'telephoneMTC', $telephoneMTC);
         $this->vars = array_add($this->vars, 'telephoneKiev', $telephoneKiev);
         $this->vars = array_add($this->vars, 'metaKey', $metaKey);
         $this->vars = array_add($this->vars, 'metaDesc', $metaDesc);
