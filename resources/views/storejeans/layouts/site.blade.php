@@ -33,8 +33,39 @@
             <a href="{{ route('delivery') }}">Доставка и Оплата</a>
             <a href="{{ route('productAll') }}">Каталог</a>
         </div>
-        <div class="input-wrapper search" data-text="">
-            <input type="text" placeholder="Поиск  по сайту…">
+        {{--<div class="input-wrapper search" data-text="">--}}
+            {{--<input type="text" placeholder="Поиск  по сайту…">--}}
+        {{--</div>--}}
+        <div class="search">
+            <input type="text" placeholder="Поиск....">
+            <ul>
+                <li class="flex">
+                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
+                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
+                </li>
+                <li class="flex">
+                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
+                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
+                </li><li class="flex">
+                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
+                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
+                </li><li class="flex">
+                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
+                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
+                </li><li class="flex">
+                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
+                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
+                </li><li class="flex">
+                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
+                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
+                </li><li class="flex">
+                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
+                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
+                </li><li class="flex">
+                    <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="">
+                    <p>Lorem ipsum dolor sit amet. sit amet.</p>
+                </li>
+            </ul>
         </div>
         <!-- <div class="menu-right"> -->
 
