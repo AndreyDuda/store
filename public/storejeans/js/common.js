@@ -89,6 +89,7 @@ $(document).ready(function(){
         var urlImg = $('#url_maine').val();
         var prod = '';
         var jpg = '';
+        var img_product = $('#url_product').val();
         $.ajax({
             type:'POST',
             url:url,
@@ -102,7 +103,7 @@ $(document).ready(function(){
 				data = jQuery.parseJSON(data);
                 for(var i=0;i<data.length; i++){
                     jpg = (data[i].photo == 'system/no-image')? '.png':'.jpg';
-                    prod += '<li class="flex"><a><img src="'+urlImg +  (data[i].photo) + jpg+'"><p>'+data[i].label+'</p></a></li>'
+                    prod += '<li class="flex"><a href="'+img_product+'/'+data[i].id+'"><img src="'+urlImg +  (data[i].photo) + jpg+'"><p>'+data[i].label+'</p></a></li>'
 				}
                 $('.search ul:first').empty();
                 $('.search ul:first').append(prod);
@@ -114,7 +115,7 @@ $(document).ready(function(){
             }
         });
 
-        $('body').click(function () {
+        $('main').click(function () {
             $('.search ul:first').hide();
         })
 

@@ -16,7 +16,14 @@ class ContactController extends SiteController
 
     public function index()
     {
+        $telephoneMTC = $this->setting_rep->getOne('telephoneMTC');
+        $telephoneKiev = $this->setting_rep->getOne('telephoneKiev');
+
+        $this->vars = array_add($this->vars, 'telephoneMTC', $telephoneMTC);
+        $this->vars = array_add($this->vars, 'telephoneKiev', $telephoneKiev);
         $data       = [
+            'telephoneKiev' => $telephoneKiev,
+            'telephoneMTC' => $telephoneMTC
 
         ];
 
