@@ -19,8 +19,8 @@
 </head>
 <body>
 <input type="hidden" id="url_maine" value="{{asset('public/storejeans/img').'/' }}">
-<input type="hidden" id="url_product" value="{{ route('productOne')}}">
-<header>
+    <input type="hidden" id="url_product" value="{{ route('productOne')}}">
+    <header>
 
     <div class="header-desktop" >
         <div class="logo">

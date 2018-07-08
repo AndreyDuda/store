@@ -43,8 +43,8 @@ class IndexController extends SiteController
 
 
 
-        $this->vars = array_add($this->vars, 'metaKey', $telephoneMTC);
-        $this->vars = array_add($this->vars, 'metaKey', $telephoneKiev);
+        $this->vars = array_add($this->vars, 'telephoneMTC', $telephoneMTC);
+        $this->vars = array_add($this->vars, 'telephoneKiev', $telephoneKiev);
         $this->vars = array_add($this->vars, 'metaKey', $metaKey);
         $this->vars = array_add($this->vars, 'metaDesc', $metaDesc);
         $this->vars = array_add($this->vars, 'title', $metatitle);
