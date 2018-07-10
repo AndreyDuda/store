@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\BackService\Excel;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,12 +16,11 @@ class ExcelController extends Controller
             return redirect()->back()->with('status', 'Проблемы при отправке Excel');
         }
         $filepath = $request->file('excel');
-
         $data = [
             'filepath' => $filepath
         ];
 
-        $data =  view(env('THEME') .'\Excel\index')->with($data)->render();
+        $data =  view(env('THEME') .'.Excel.index')->with($data)->render();
         if($data){
             return redirect()->route('excelWrite');
         }else{

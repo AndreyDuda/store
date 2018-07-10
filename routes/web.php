@@ -66,8 +66,8 @@ Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
     Route::get('/user/add',          'Admin\SiteController@addUser')->name('addUser');
     Route::get('/user',              'Admin\SiteController@user')->name('user');
 
-    Route::post('/parse',            'Admin\BackService\excel\ExcelController@parse')->name('readExcel');
-    Route::get('/write',             'Admin\BackService\excel\ExcelController@write')->name('excelWrite');
+    Route::post('/parse',            'Admin\ExcelController@parse')->name('readExcel');
+    Route::get('/write',             'Admin\ExcelController@write')->name('excelWrite');
 
 
 

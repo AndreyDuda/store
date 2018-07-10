@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use Config;
-use App\Http\Controllers\Admin\BackService\Excel\ExcelController;
+use App\Http\Controllers\Admin\ExcelController;
 use App\Repositories\SettingRepository;
 
 

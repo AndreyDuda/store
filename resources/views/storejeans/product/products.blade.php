@@ -226,7 +226,7 @@
 </div>--}}
 @if($products)
 <div class="navigation">
-    <?
+    <?php
         $count_product = $products->lastPage();
     ?>
     @if($count_product > 1)
