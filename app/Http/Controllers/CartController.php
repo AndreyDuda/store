@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use App\Repositories\OrderRepository;
+use App\Repositories\SettingRepository;
 
 
 
@@ -40,7 +41,7 @@ class CartController extends SiteController
 
         $metaKey = $this->setting_rep->getOne('MetaKeySite');
         $metaDesc = $this->setting_rep->getOne('MetaDescSite');
-        $metatitle = $this->setting_rep->getOne('TitleSite');
+
         $telephoneMTC = $this->setting_rep->getOne('telephoneMTC');
         $telephoneKiev = $this->setting_rep->getOne('telephoneKiev');
         $metatitle = $this->setting_rep->getOne('title');
