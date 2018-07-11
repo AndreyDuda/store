@@ -59,7 +59,7 @@
     <div class="header-mobile">
         <div class="menu-up">
             <a href="{{ route('index') }}" class="logo-mobile">
-                <img src="{{  asset('storejeans') }}/img/1_whitemini_logo.png" alt="">
+                <img  src="{{  asset('storejeans') }}/img/logo.png" alt="">
             </a>
             <a href="tel:{{$telephoneMTC OR ''}}" class="phone ">
                 {{$telephoneMTC OR ''}}
