@@ -33,8 +33,11 @@ class CartController extends SiteController
     {
 
         $products = Session::get('cart', false);
+        $dir      = 'storejeans'.'/img/catalog';
+        $images   = scandir($dir);
         $data       = [
-            'products' => $products
+            'products' => $products,
+            'images'   => $images
         ];
         $content    = view(env('THEME') . '.cart.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
@@ -66,52 +69,55 @@ class CartController extends SiteController
             if ($cart) {
 
                 if (array_key_exists($product->id, $cart)) {
-                    if($request->minus)
-                    {
+                    if ($request->minus) {
                         $cart[$product->id]['count'] -= 1;
-                    }else{
+                    } else {
                         $cart[$product->id]['count'] += 1;
                     }
                 } else {
                     $photo_cart = 'system/no-image';
-                    if(@fopen(asset('storejeans').'/img/'. $product->photo_maine.'.jpg', 'r')){
+                    $dir = 'storejeans' . '/img/catalog';
+                    $images = scandir($dir);
+                    if (in_array(str_replace('catalog/', '', $product->photo_maine . '.jpg'), $images)) {
                         $photo_cart = $product->photo_maine;
                     }
                     $cart[$product->id] = [
-                        'id'    => $product->id,
-                        'code'  => $product->code,
+                        'id' => $product->id,
+                        'code' => $product->code,
                         'photo' => $photo_cart,
                         'lable' => $product->label,
                         'title' => $product->title,
                         'price' => $product->price_many,
                         'count' => 1,
-                        'url'   => route('cartBy')
+                        'url' => route('cartBy')
                     ];
 
                 }
                 Session::put('cart', $cart);
             }
 
-            } else {
-                $photo_cart = 'no-image.png';
-                if(@fopen(asset('storejeans').'/img/'. $product->photo_maine.'.jpg', 'r')){
-                    $photo_cart = $product->photo_maine;
-                }
-                $cart[$product->id] = [
-                    'id'    => $product->id,
-                    'code'  => $product->code,
-                    'photo' => $photo_cart,
-                    'lable' => $product->label,
-                    'title' => $product->title,
-                    'price' => $product->price_many,
-                    'count' => 1,
-                    'url'   => route('cartBy')
-                ];
-
-                Session::put('cart', $cart);
-
+        } else {
+            $photo_cart = 'no-image.png';
+            $dir = 'storejeans' . '/img/catalog';
+            $images = scandir($dir);
+            if (in_array(str_replace('catalog/', '', $product->photo_maine . '.jpg'), $images)) {
+                $photo_cart = $product->photo_maine;
             }
-            return Session::get('cart', false);
+            $cart[$product->id] = [
+                'id' => $product->id,
+                'code' => $product->code,
+                'photo' => $photo_cart,
+                'lable' => $product->label,
+                'title' => $product->title,
+                'price' => $product->price_many,
+                'count' => 1,
+                'url' => route('cartBy')
+            ];
+
+            Session::put('cart', $cart);
+
+        }
+        return Session::get('cart', false);
     }
 
     public function sendRequest(Request $request)
@@ -119,33 +125,38 @@ class CartController extends SiteController
         $product = array();
         $i = 0;
         $input = $request->input();
+        $message = 'Заказ успешно отправлен';
+
         unset($input['_token']);
         $input['new'] = 1;
         $cart = Session::get('cart', false);
-        foreach ($cart as $item){
-            $i++;
-            $product[$i]['code']  = $item['code'];
-            $product[$i]['count'] = $item['count'];
+        if($cart) {
+            foreach ($cart as $item) {
+                $i++;
+                $product[$i]['code'] = $item['code'];
+                $product[$i]['count'] = $item['count'];
+            }
+            $input['product'] = json_encode(Session::get('cart', false));
+
+            $this->order_rep->add($input);
+
+
+            $name = ($input['fio']) ? $input['fio'] : 'Клиент';
+            $user = ($input['email']) ? $input['email'] : false;
+            $tel = $input['telephone'];
+            $email = 'credonull@gmail.com';
+
+            if ($user) {
+                Mail::to($user)->send(new OrderShipped($name, $tel, $email, $user, false));
+            }
+            Mail::to('credonull@gmail.com')->send(new OrderShipped($name, $tel, $email, $user, Session::get('cart', false)));
+
+            /* dd($this->order_rep);*/
+            /*return redirect()->route('cart')->with('Ваш заказ отправлен в обрабатываетку');*/
+            $request->session()->forget('cart');
         }
-        $input['product'] = json_encode(Session::get('cart', false));
-
-        $this->order_rep->add($input);
-
-
-       $name = ($input['fio'])? $input['fio']:'Клиент';
-       $user = ($input['email'])? $input['email']:false;
-       $tel  = $input['telephone'];
-       $email = 'credonull@gmail.com';
-
-       if($user){
-           Mail::to($user)->send(new OrderShipped($name, $tel, $email, $user, false));
-       }
-       Mail::to('credonull@gmail.com')->send(new OrderShipped($name, $tel, $email, $user, Session::get('cart', false)));
-
-       /* dd($this->order_rep);*/
-        /*return redirect()->route('cart')->with('Ваш заказ отправлен в обрабатываетку');*/
-        $request->session()->forget('cart');
-        return redirect()->route('cart')->with('status', 'Заказ успешно отправлен');
+        $message = 'Заказ не обработан';
+        return redirect()->route('cart')->with('status', $message);
     }
 
 }

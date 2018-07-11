@@ -10,7 +10,7 @@
                         <div class="item">
                             <a href="{{ route('productOne', ['id' => $product->id ] )  }}" class="item-tovar">
                                 <div class="img-tovar">
-                                    @if(@fopen(asset('storejeans').'/img/'. $product->photo_maine.'.jpg', 'r'))
+                                    @if(in_array(str_replace('catalog/', '' ,$product->photo_maine.'.jpg' ), $images ))
                                         <img src="{{asset('storejeans').'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                                     @else
                                         <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}">
@@ -205,7 +205,7 @@
 @foreach($products as $product)
             <a href="{{ route('productOne', ['id' => $product->id ] )  }}" class="item-tovar">
                 <div class="img-tovar">
-                    @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r') )
+                    @if(in_array(str_replace('catalog/', '' ,$product->photo_maine.'.jpg' ), $images ))
                         <img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                     @else
                         <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}">
@@ -264,7 +264,7 @@
             <div class="item">
                 <a href="{{ route('productOne', ['id' => $product->id ] )  }}" class="item-tovar">
                     <div class="img-tovar">
-                        @if(@fopen(asset('storejeans').'/img/'. $product->photo_maine.'.jpg', 'r'))
+                        @if(in_array(str_replace('catalog/', '' ,$product->photo_maine.'.jpg' ), $images ))
                             <img src="{{asset('storejeans').'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                         @else
                             <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="{{ $product->categories }}">

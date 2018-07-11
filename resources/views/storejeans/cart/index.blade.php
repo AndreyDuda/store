@@ -1,4 +1,4 @@
-<?
+<?php
 $total = 0;
 ?>
 @if (session('status'))
@@ -93,7 +93,7 @@ $total = 0;
             <tr>
                 <td>
                     <div class="cart-product-info">
-                        @if(@fopen(asset('storejeans').'/img/'. $product['photo'].'.jpg', 'r'))
+                        @if(in_array(str_replace('catalog/', '' ,$product->photo_maine.'.jpg' ), $images ))
                             <img src="{{asset('storejeans').'/img/'. $product['photo'].'.jpg'}}" alt="{{$product['lable']}}">
                         @else
                             <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="{{$product['lable']}}">
@@ -118,7 +118,7 @@ $total = 0;
 						<i class="fa fa-plus-circle" aria-hidden="true"></i>
 					</span>
                 </td>
-<?
+<?php
 $total += $product['price'] * $product['count'];
 ?>
                 <td class="font-politica">{{$product['price'] * $product['count']}} <span> $</span></td>

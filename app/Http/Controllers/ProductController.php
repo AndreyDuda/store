@@ -24,13 +24,13 @@ class ProductController extends SiteController
 
         $count_p  = 8;
 
-
         $select   = ['id', 'product_id', 'title', 'price_many', 'photo_maine', 'photo1', 'photo2', 'photo3', 'photo4', 'label', 'categories'];
         $slider_p = ['id', 'product_id', 'title', 'price_many', 'photo_maine', 'label', 'categories'];
         $where    = false;
         $input    = false;
         $order    = false;
         $name_cat = false;
+
 
         $country  = $this->product_rep->uniqueValue('country');
         $sesons   = $this->product_rep->uniqueValue('sesons');
@@ -102,6 +102,8 @@ class ProductController extends SiteController
         $products = $this->product_rep->getAll($select, $paginate, $where, $order);
 
         $slider_p = $this->product_rep->getAll($slider_p, false, 'sale_many <> ""', false, $count_p);
+        $dir      = 'storejeans'.'/img/catalog';
+        $images   = scandir($dir);
 
         $data     = [
             'products' => $products,
@@ -116,7 +118,8 @@ class ProductController extends SiteController
             'order'    => $order,
             'category' => $categories,
             'name_cat' => $name_cat,
-            'cat_prod' => $cat_prod
+            'cat_prod' => $cat_prod,
+            'images'   => $images
         ];
 
 
@@ -148,10 +151,12 @@ class ProductController extends SiteController
 
         $products = $this->product_rep->getAll($products, false, 'label = "' . $product->label . '"', false, $count_p);
        // $products = $this->product_rep->getLabel($product->label);
-
+        $dir      = 'storejeans'.'/img/catalog';
+        $images   = scandir($dir);
         $data     = [
             'product'  => $product,
-            'products' => $products
+            'products' => $products,
+            'images'   => $images
         ];
         $content    = view('storejeans' . '.product.product')->with($data)->render();
         $telephoneMTC = $this->setting_rep->getOne('telephoneMTC');
@@ -180,7 +185,9 @@ class ProductController extends SiteController
         foreach ($products as $product){
             $data[$k]['id'] = $product->id;
             $data[$k]['label'] = $product->label;
-            if(@fopen(asset('storejeans').'/img/'. $product->photo_maine.'.jpg', 'r')){
+            $dir      = 'storejeans'.'/img/catalog';
+            $images   = scandir($dir);
+            if(in_array(str_replace('catalog/', '' ,$product->photo_maine.'.jpg' ), $images )){
                 $data[$k]['photo'] = $product->photo_maine;
             }
             else{

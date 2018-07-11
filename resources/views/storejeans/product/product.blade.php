@@ -21,31 +21,31 @@
 <div class="wrapper flex-between">
     <div class="product-foto">
         <div class="slider-product-nav">
-            @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r'))
+            @if(in_array(str_replace('catalog/', '' ,$product->photo_maine.'.jpg' ), $images ))
                 <div class="slider-nav_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
             @else
                 <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
             @endif
 
-                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo1.'.jpg', 'r'))
+                @if(in_array(str_replace('catalog/', '' ,$product->photo1.'.jpg' ), $images ))
                     <div class="slider-nav_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo1}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo2.'.jpg', 'r'))
+                @if(in_array(str_replace('catalog/', '' ,$product->photo2.'.jpg' ), $images ))
                     <div class="slider-nav_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo2}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo3.'.jpg', 'r'))
+                @if(in_array(str_replace('catalog/', '' ,$product->photo3.'.jpg' ), $images ))
                     <div class="slider-nav_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo3}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div class="slider-nav_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo4.'.jpg', 'r'))
+                @if(in_array(str_replace('catalog/', '' ,$product->photo4.'.jpg' ), $images ))
                     <div class="slider-nav_item "><img src="{{asset(env('THEME')).'/img/'. $product->photo4}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div class="slider-nav_item "><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
@@ -53,31 +53,31 @@
         </div>
 
         <div class="slider-product">
-            @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r'))
+            @if(in_array(str_replace('catalog/', '' ,$product->photo_maine.'.jpg' ), $images ))
                 <div  class="slider_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}"></div>
             @else
                 <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
             @endif
 
-                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo1.'.jpg', 'r'))
+                @if(in_array(str_replace('catalog/', '' ,$product->photo1.'.jpg' ), $images ))
                     <div  class="slider_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo1}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo2.'.jpg', 'r'))
+                @if(in_array(str_replace('catalog/', '' ,$product->photo2.'.jpg' ), $images ))
                     <div  class="slider_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo2}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo3.'.jpg', 'r'))
+                @if(in_array(str_replace('catalog/', '' ,$product->photo3.'.jpg' ), $images ))
                     <div  class="slider_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo3}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
                 @endif
 
-                @if(@fopen(asset(env('THEME')).'/img/'. $product->photo4.'.jpg', 'r'))
+                @if(in_array(str_replace('catalog/', '' ,$product->photo4.'.jpg' ), $images ))
                     <div  class="slider_item"><img src="{{asset(env('THEME')).'/img/'. $product->photo4}}.jpg" alt="{{ $product->categories }}"></div>
                 @else
                     <div  class="slider_item"><img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}"></div>
@@ -386,7 +386,7 @@
                 <div class="item">
                     <a href="{{ route('productOne', ['id' => $product->id ] )  }}" class="item-tovar">
                         <div class="img-tovar">
-                            @if(@fopen(asset(env('THEME')).'/img/'. $product->photo_maine.'.jpg', 'r'))
+                            @if(in_array(str_replace('catalog/', '' ,$product->photo_maine.'.jpg' ), $images ))
                                 <img src="{{asset(env('THEME')).'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                             @else
                                 <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}">

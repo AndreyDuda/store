@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use Config;
-use App\Http\Controllers\Admin\ExcelController;
+use App\Http\Controllers\Admin\BackService\Excel\ExcelController;
 use App\Repositories\SettingRepository;
 
 
@@ -81,7 +81,8 @@ class ProductController extends AdminController
                 'style' => $style,
                 'size' => $size,
                 'cat_prod' => $cat_prod,
-                'females' => $females
+                'females' => $females,
+                'imagrs' => $images
             ];
 
             $content = view('storejeans' . '.admin.product.editProduct')->with($data)->render();
