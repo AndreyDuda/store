@@ -93,7 +93,7 @@ $total = 0;
             <tr>
                 <td>
                     <div class="cart-product-info">
-                        @if(in_array(str_replace('catalog/', '' ,$product->photo_maine.'.jpg' ), $images ))
+                        @if(in_array(str_replace('catalog/', '' , $product['photo'].'.jpg' ), $images ))
                             <img src="{{asset('storejeans').'/img/'. $product['photo'].'.jpg'}}" alt="{{$product['lable']}}">
                         @else
                             <img src="{{ asset('storejeans')}}/img/system/no-image.png" alt="{{$product['lable']}}">

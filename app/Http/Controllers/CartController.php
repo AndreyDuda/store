@@ -146,8 +146,12 @@ class CartController extends SiteController
             $tel = $input['telephone'];
             $email = 'credonull@gmail.com';
 
+            $telephoneMTC = $this->setting_rep->getOne('telephoneMTC');
+            $telephoneKiev = $this->setting_rep->getOne('telephoneKiev');
+            $this->vars = array_add($this->vars, 'telephoneMTC',  $telephoneMTC);
+            $this->vars = array_add($this->vars, 'telephoneKiev', $telephoneKiev);
             if ($user) {
-                Mail::to($user)->send(new OrderShipped($name, $tel, $email, $user, false));
+                Mail::to($user)->send(new OrderShipped($name, $telephoneKiev, $email, $user, false));
             }
             Mail::to('credonull@gmail.com')->send(new OrderShipped($name, $tel, $email, $user, Session::get('cart', false)));
 
