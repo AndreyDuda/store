@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{  asset('storejeans') }}/css/media.css">
 </head>
 <body>
-<input type="hidden" id="url_maine" value="{{asset('public/storejeans/img').'/' }}">
+<input type="hidden" id="url_maine" value="{{asset('storejeans/img').'/' }}">
     <input type="hidden" id="url_product" value="{{ route('productOne')}}">
     <header>
 
@@ -59,7 +59,7 @@
     <div class="header-mobile">
         <div class="menu-up">
             <a href="{{ route('index') }}" class="logo-mobile">
-                <img  src="{{  asset('storejeans') }}/img/logo.png" alt="">
+                <img src="{{  asset('storejeans') }}/img/logo.png" alt="">
             </a>
             <a href="tel:{{$telephoneMTC OR ''}}" class="phone ">
                 {{$telephoneMTC OR ''}}
