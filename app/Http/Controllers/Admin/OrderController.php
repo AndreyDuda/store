@@ -119,11 +119,13 @@ class OrderController extends AdminController
         $order    = $this->order_rep->getOne($id);
         $products =   json_decode($order->product);
 
-
-
+       /* dd($products);*/
+        $dir        = 'storejeans'.'/img/catalog';
+        $images     = scandir($dir);
         $data = [
             'order' => $order,
-            'products' => $products
+            'products' => $products,
+            'images'   => $images
         ];
 
 

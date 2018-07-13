@@ -70,7 +70,7 @@
             </h2>
 
         @else
-            <? $total =0;?>
+            <?php $total =0;?>
             <table>
                 <tr>
                     <th>Наименование товара</th>
@@ -106,7 +106,7 @@
                             <span>
 					</span>
                         </td>
-                        <?
+                        <?php
                             $total += $product->price * $product->count;
                         ?>
                         <td class="font-politica">{{$product->price * $product->count}} <span> $</span></td>
