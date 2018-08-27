@@ -136,7 +136,7 @@
                     <tr>
                         <td>Упаковка</td>
                         <td>
-                            <a href="#" onclick="return false;" class="filter-link">{{ $product->count }} шт.</a>
+                            <a href="#" onclick="return false;" class="filter-link">{{ $product->count }} уп.</a>
                         </td>
                     </tr>
                 </table>

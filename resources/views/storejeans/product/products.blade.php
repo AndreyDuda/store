@@ -2,6 +2,7 @@
     @if($slider_p)
         <div class="slider-catalog">
             <div class="title-carousel">
+                <p></p>
                 <p>Выгодные предложения</p>
             </div>
             <div class="slider-catalog">
@@ -16,7 +17,7 @@
                                         <img src="{{ asset(env('THEME'))}}/img/system/no-image.png" alt="{{ $product->categories }}">
                                     @endif
                                 </div>
-                                <div class="brand">{{ $product->label }}</div>
+                                <div class="brand">{{ $product->label }} </div>
                                 <div class="description">{{ $product->title }}</div>
                                 <div class="price">{{$product->price_many}}<i class="fa fa-usd" aria-hidden="true"></i></div>
                             </a>

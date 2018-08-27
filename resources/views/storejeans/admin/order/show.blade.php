@@ -74,7 +74,7 @@
             <table>
                 <tr>
                     <th>Наименование товара</th>
-                    <th>Цена за шт.</th>
+                    <th>Цена за уп.</th>
                     <th>Кол-во</th>
                     <th>Общая стоимость</th>
                 </tr>
@@ -102,7 +102,7 @@
                         <td class="cart-quantity">
 					<span>
 					</span>
-                            <p>{{ $product->count }} шт.</p>
+                            <p>{{ $product->count }} уп.</p>
                             <span>
 					</span>
                         </td>

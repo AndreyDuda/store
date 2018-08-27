@@ -37,7 +37,7 @@
                 <tr>
                     <th>Наименование</th>
                     <th>Код</th>
-                    <th>Цена за шт.</th>
+                    <th>Цена за уп.</th>
                     <th>Кол-во</th>
                     <th>Общая стоимость</th>
                 </tr>
@@ -62,7 +62,7 @@
 					<span>
 						<i class="fa fa-minus-circle" aria-hidden="true"></i>
 					</span>
-                            <p>{{ $product['count'] }} шт.</p>
+                            <p>{{ $product['count'] }} уп.</p>
                             <span>
 						<i class="fa fa-plus-circle" aria-hidden="true"></i>
 					</span>

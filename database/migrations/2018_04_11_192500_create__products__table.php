@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->float('sale_many')->nullable();
             $table->float('price_one')->nullable();
             $table->float('sale_one')->nullable();
+            $table->integer('count_in_pack')->nullable();
             $table->integer('count')->nullable();
             $table->string('end_sale', 255)->nullable();
             $table->string('photo_maine', 255)->nullable();

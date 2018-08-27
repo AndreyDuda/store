@@ -53,7 +53,7 @@ header{
  header .phone, 
  .menu-left-mobile a{
 	margin: auto;
-	padding: 35px 5px;
+	padding: 20px 5px;
 	float: left;
 	color: #fff;
 	text-align: center;
@@ -81,7 +81,7 @@ header a:hover{
 }
 
 .logo img{
-	width: 170px;
+	width: 130px;
 	margin: auto;
 	-webkit-transition: 1s all;	
 	-moz-transition: 1s all;
@@ -203,7 +203,7 @@ header .phone{
 }
 .cart {
 	margin-left: 25px;
-	padding: 30px 0 ;
+	padding: 17px 0 ;
 	float: left;
 	position: relative;
 }
@@ -1955,7 +1955,7 @@ label span{
 }
 
 .phones-header{
-	margin-top: 10px;
+	margin-top: -3px;
 }
 .phones-header .icon{
 	color: #fff;
