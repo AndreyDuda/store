@@ -94,7 +94,7 @@
                 </div>
             </div>
             <div class="product-price">
-                <p>{{ $product->price_many }} <span><i class="fa fa-usd" aria-hidden="true"></i></span></p>
+                <p>{{ $product->price_many * $product->count_in_pack }} <span><i class="fa fa-usd" aria-hidden="true"></i></span></p>
                 <div class="isset"> {{ ($product->count > 0)? 'В наличии' : 'Нет в наличии' }} </div>
             </div>
         </div>
@@ -136,7 +136,7 @@
                     <tr>
                         <td>Упаковка</td>
                         <td>
-                            <a href="#" onclick="return false;" class="filter-link">{{ $product->count }} уп.</a>
+                            <a href="#" onclick="return false;" class="filter-link">{{ $product->count_in_pack }} шт.</a>
                         </td>
                     </tr>
                 </table>

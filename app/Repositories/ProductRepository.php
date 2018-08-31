@@ -17,4 +17,10 @@ class ProductRepository extends Repository
     {
         $this->model = $product;
     }
+
+    public function getOneСode($code){
+        $result = $this->model->where('code', $code)->first();
+
+        return $result;
+    }
 }

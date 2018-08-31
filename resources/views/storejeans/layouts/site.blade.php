@@ -7,7 +7,7 @@
     <meta name="Keywords" content="{{ $metaKey OR '' }}">
     <meta name="description" content="{{ $metaDesc OR '' }}">
     <title>{{ $title OR ''}}</title>
-    <link rel="icon" href="{{  asset('storejeans') }}/img/favicon.ico">
+    <link rel="icon" href="{{  asset('storejeans') }}/img/favicon_klever.ico">
     <link rel="stylesheet" href="{{  asset('storejeans') }}/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{  asset('storejeans') }}/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{  asset('storejeans') }}/libs/slick/css/slick.css">
