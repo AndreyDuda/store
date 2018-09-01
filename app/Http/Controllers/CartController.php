@@ -58,13 +58,32 @@ class CartController extends SiteController
         return $this->renderOutput();
     }
 
-    public function by(Request $request)
+    public function delProd(Request $request)
     {
         $id = $request->id;
         $product = $product = $this->product_rep->getOne($id);
         $cart = [];
 
         if (Session::has('cart')) {
+            $cart = Session::get('cart', false);
+            if ($cart) {
+                if (array_key_exists($product->id, $cart)) {
+                    unset($cart[$product->id]);
+                }
+                Session::put('cart', $cart);
+            }
+
+        }
+        return Session::get('cart', false);
+    }
+
+    public function by(Request $request)
+    {
+        $id = $request->id;
+        $product = $product = $this->product_rep->getOne($id);
+        $cart = [];
+
+        if (Session::has('cart') && count(Session::get('cart'))) {
             $cart = Session::get('cart', false);
             if ($cart) {
 
@@ -89,7 +108,8 @@ class CartController extends SiteController
                         'title' => $product->title,
                         'price' => $product->price_many,
                         'count' => 1,
-                        'url' => route('cartBy')
+                        'url' => route('cartBy'),
+                        'count_in_pack' => $product->count_in_pack
                     ];
 
                 }
@@ -97,7 +117,7 @@ class CartController extends SiteController
             }
 
         } else {
-            $photo_cart = 'no-image.png';
+            $photo_cart = 'system/no-image';
             $dir = 'storejeans' . '/img/catalog';
             $images = scandir($dir);
             if (in_array(str_replace('catalog/', '', $product->photo_maine . '.jpg'), $images)) {

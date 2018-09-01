@@ -58,7 +58,7 @@ class ExcelController extends Controller
                         'price_one'     => isset($dbExcel[0][$i][6]) ? $dbExcel[0][$i][6]   : 0,
                         'sale_one'      => isset($dbExcel[0][$i][7]) ? $dbExcel[0][$i][7]   : 0,
                         'count_in_pack' => isset($dbExcel[0][$i][8]) ? $dbExcel[0][$i][8]   : 0,
-                        'count'         => isset($dbExcel[0][$i][9]) ? $dbExcel[0][$i][9] : 0,
+                        'count'         => isset($dbExcel[0][$i][9]) ? $dbExcel[0][$i][9]   : 0,
                         'end_sale'      => isset($dbExcel[0][$i][10]) ? $dbExcel[0][$i][10] : 0,
                         'photo_maine'   => isset($dbExcel[0][$i][11]) ? $dbExcel[0][$i][11] : '',
                         'photo1'        => isset($dbExcel[0][$i][12]) ? $dbExcel[0][$i][12] : '',

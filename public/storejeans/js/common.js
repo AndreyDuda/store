@@ -22,6 +22,58 @@ $(document).ready(function(){
     });
 
     //$('.product-buy, .pruduct-plust').on('click', function() {
+	$('main').on('click', '#del_prod', function(){
+        var id    =  $(this).data('id');
+        var minus =  $(this).data('minus');
+        var count_product = 0;
+        var url   = '/delProd';
+        var total = 0;
+        var count =  parseInt($('.product-count'+id).text());
+        var jpg = '';
+        $.ajax({
+            type:'POST',
+            url:url,
+            headers:{'X-CSRF-TOKEN': $('input[name="_token"]').val()},
+            data:{id:id},
+            datatype:'JSON',
+            success: function(data) {
+
+                console.log(data);
+                var tableHead = '<tr>' +
+                    '<th>Наименование товара</th>' +
+                    '<th>Цена за шт.</th>' +
+                    '<th class="coli">Кол-во</th>' +
+                    '<th>Общая стоимость</th>' +
+                    '<th>Удалить</th>' +
+                    '</tr>';
+                var start = '';
+                var urlImg = $('#url').val();
+                $('.ttt tbody').empty();
+                $('.ttt tbody').append(tableHead);
+
+                $.each(data, function(index, value){
+                    jpg = (value.photo.trim() == 'system/no-image')? '.png':'.jpg';
+                    start += '<tr data-id="'+value.id+'"><td><div class="cart-product-info"><img src="'+urlImg +  (value.photo) + jpg+'" ><div>' +
+                        '<a href="#" class="cart-product-company">' + value.lable + '</a><br><a href="#" class="cart-product-title">' + value.title + '</a>' +
+                        '<p class="cart-product-code"><span></span> </p></div></div></td><td class="font-politica">' + value.price + '<span> $</span></td>' +
+                        '<td class="cart-quantity"><span><i data-minus="1" data-id="'+value.id+'" data-url="'+value.url+'" class="fa fa-minus-circle product-minus" aria-hidden="true"></i></span><p class="product-count'+value.id+'">' + value.count + ' уп.</p>'+
+                        '<span><i  data-id="'+value.id+'" data-url="'+value.url+'"  class="fa fa-plus-circle pruduct-plust" aria-hidden="true"></i></span></td><td class="font-politica">' + ((value.count*value.count_in_pack)*value.price) + '<span> $</span></td><td data-id="'+value.id+'"><span style="font-weight: 800; cursor: pointer;" data-id="'+value.id+'" id="del_prod" title="Удалить" style="color:red">X</span></td></tr>';
+                    total += value.count*value.price;
+                    count_product += 1;
+                });
+                $('.ttt tbody').append(start);
+                $('.total span').empty();
+                $('.total span').append(total);
+                $('#count-cart').empty();
+                $('#count-cart').text(count_product);
+                $('.modal-cart').css('display', 'block');
+            },
+            error:function() {
+                console.log('ERRORE');
+            }
+        });
+	});
+
 	$('main').on('click','.product-buy, .pruduct-plust, .product-minus', function() {
 		var id    =  $(this).data('id');
         var minus =  $(this).data('minus');
@@ -52,19 +104,26 @@ $(document).ready(function(){
                 success: function(data) {
 
                     console.log(data);
-                    var tableHead = '<tr><th>Наименование товара</th><th>Цена за уп.</th><th class="coli">Кол-во</th><th>Общая стоимость</th></tr>';
+                    var tableHead = '<tr>' +
+										'<th>Наименование товара</th>' +
+										'<th>Цена за уп.</th>' +
+										'<th class="coli">Кол-во</th>' +
+										'<th>Общая стоимость</th>' +
+										'<th>Удалить</th>' +
+									'</tr>';
                     var start = '';
                     var urlImg = $('#url').val();
                     $('.ttt tbody').empty();
                     $('.ttt tbody').append(tableHead);
 
                     $.each(data, function(index, value){
-                    	jpg = (value.photo == 'system/no-image')? '.png':'.jpg';
+                    	console.log(value.count_in_pack);
+                    	jpg = (value.photo.trim() == 'system/no-image')? '.png':'.jpg';
                         start += '<tr><td><div class="cart-product-info"><img src="'+urlImg +  (value.photo) + jpg+'" ><div>' +
                         '<a href="#" class="cart-product-company">' + value.lable + '</a><br><a href="#" class="cart-product-title">' + value.title + '</a>' +
-                        '<p class="cart-product-code"><span># </span> </p></div></div></td><td class="font-politica">' + value.price + '<span> $</span></td>' +
+                        '<p class="cart-product-code"><span></span> </p></div></div></td><td class="font-politica">' + value.price + '<span> $</span></td>' +
                         '<td class="cart-quantity"><span><i data-minus="1" data-id="'+value.id+'" data-url="'+value.url+'" class="fa fa-minus-circle product-minus" aria-hidden="true"></i></span><p class="product-count'+value.id+'">' + value.count + ' уп.</p>'+
-						'<span><i  data-id="'+value.id+'" data-url="'+value.url+'"  class="fa fa-plus-circle pruduct-plust" aria-hidden="true"></i></span></td><td class="font-politica">' + value.count*value.price + '<span> $</span></td></tr>';
+						'<span><i  data-id="'+value.id+'" data-url="'+value.url+'"  class="fa fa-plus-circle pruduct-plust" aria-hidden="true"></i></span></td><td class="font-politica">' + ((value.count*value.count_in_pack)*value.price) + '<span> $</span></td><td><span style="font-weight: 800; cursor: pointer;" data-id="'+value.id+'" id="del_prod" title="Удалить" style="color:red">X</span></td></tr>';
                         total += value.count*value.price;
                         count_product += 1;
                       });

@@ -30,6 +30,7 @@ Route::get('/cart',              'CartController@index')->name('cart');
 Route::post('/send_request/',    'CartController@sendRequest')->name('sendRequest');
 
 Route::post('/by/{id?}',         'CartController@by')->name('cartBy');
+Route::post('/delProd/{id?}',         'CartController@delProd')->name('cartDel');
 Route::post('/search/{search?}', 'ProductController@search')->name('searchProduct');
 
 
