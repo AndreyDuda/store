@@ -74,6 +74,9 @@ class CartController extends SiteController
             }
 
         }
+        /*if (count(Session::get('cart')) > 0) {
+            $request->session()->forget('cart');
+        }*/
         return Session::get('cart', false);
     }
 
@@ -83,7 +86,7 @@ class CartController extends SiteController
         $product = $product = $this->product_rep->getOne($id);
         $cart = [];
 
-        if (Session::has('cart') && count(Session::get('cart'))) {
+        if (Session::has('cart') && count(Session::get('cart')) > 0) {
             $cart = Session::get('cart', false);
             if ($cart) {
 
@@ -131,7 +134,8 @@ class CartController extends SiteController
                 'title' => $product->title,
                 'price' => $product->price_many,
                 'count' => 1,
-                'url' => route('cartBy')
+                'url' => route('cartBy'),
+                'count_in_pack' => $product->count_in_pack
             ];
 
             Session::put('cart', $cart);

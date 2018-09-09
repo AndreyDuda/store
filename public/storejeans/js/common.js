@@ -57,7 +57,7 @@ $(document).ready(function(){
                         '<a href="#" class="cart-product-company">' + value.lable + '</a><br><a href="#" class="cart-product-title">' + value.title + '</a>' +
                         '<p class="cart-product-code"><span></span> </p></div></div></td><td class="font-politica">' + value.price + '<span> $</span></td>' +
                         '<td class="cart-quantity"><span><i data-minus="1" data-id="'+value.id+'" data-url="'+value.url+'" class="fa fa-minus-circle product-minus" aria-hidden="true"></i></span><p class="product-count'+value.id+'">' + value.count + ' уп.</p>'+
-                        '<span><i  data-id="'+value.id+'" data-url="'+value.url+'"  class="fa fa-plus-circle pruduct-plust" aria-hidden="true"></i></span></td><td class="font-politica">' + ((value.count*value.count_in_pack)*value.price) + '<span> $</span></td><td data-id="'+value.id+'"><span style="font-weight: 800; cursor: pointer;" data-id="'+value.id+'" id="del_prod" title="Удалить" style="color:red">X</span></td></tr>';
+                        '<span><i  data-id="'+value.id+'" data-url="'+value.url+'"  class="fa fa-plus-circle pruduct-plust" aria-hidden="true"></i></span></td><td class="font-politica">' + ((value.count*parseInt(value.count_in_pack))*value.price) + '<span> $</span></td><td data-id="'+value.id+'"><span style="font-weight: 800; cursor: pointer; color:red" data-id="'+value.id+'" id="del_prod" title="Удалить">X</span></td></tr>';
                     total += value.count*value.price;
                     count_product += 1;
                 });
@@ -106,7 +106,7 @@ $(document).ready(function(){
                     console.log(data);
                     var tableHead = '<tr>' +
 										'<th>Наименование товара</th>' +
-										'<th>Цена за уп.</th>' +
+										'<th>Цена за шт.</th>' +
 										'<th class="coli">Кол-во</th>' +
 										'<th>Общая стоимость</th>' +
 										'<th>Удалить</th>' +
@@ -123,7 +123,7 @@ $(document).ready(function(){
                         '<a href="#" class="cart-product-company">' + value.lable + '</a><br><a href="#" class="cart-product-title">' + value.title + '</a>' +
                         '<p class="cart-product-code"><span></span> </p></div></div></td><td class="font-politica">' + value.price + '<span> $</span></td>' +
                         '<td class="cart-quantity"><span><i data-minus="1" data-id="'+value.id+'" data-url="'+value.url+'" class="fa fa-minus-circle product-minus" aria-hidden="true"></i></span><p class="product-count'+value.id+'">' + value.count + ' уп.</p>'+
-						'<span><i  data-id="'+value.id+'" data-url="'+value.url+'"  class="fa fa-plus-circle pruduct-plust" aria-hidden="true"></i></span></td><td class="font-politica">' + ((value.count*value.count_in_pack)*value.price) + '<span> $</span></td><td><span style="font-weight: 800; cursor: pointer;" data-id="'+value.id+'" id="del_prod" title="Удалить" style="color:red">X</span></td></tr>';
+						'<span><i  data-id="'+value.id+'" data-url="'+value.url+'"  class="fa fa-plus-circle pruduct-plust" aria-hidden="true"></i></span></td><td class="font-politica">' + ((value.count*parseInt(value.count_in_pack)*value.price)) + '<span> $</span></td><td><span style="font-weight: 800; cursor: pointer; color:red" data-id="'+value.id+'" id="del_prod" title="Удалить">X</span></td></tr>';
                         total += value.count*value.price;
                         count_product += 1;
                       });

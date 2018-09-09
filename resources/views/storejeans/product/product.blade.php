@@ -95,7 +95,12 @@
             </div>
             <div class="product-price">
                 <p>{{ $product->price_many * $product->count_in_pack }} <span><i class="fa fa-usd" aria-hidden="true"></i></span></p>
-                <div class="isset"> {{ ($product->count > 0)? 'В наличии' : 'Нет в наличии' }} </div>
+                <div class="isset"> Цена за 1 уп.</div>
+            </div>
+            <div class="product-price">
+                <p>{{ $product->price_many }} <span><i class="fa fa-usd" aria-hidden="true"></i></span></p>
+                <div class="isset"> Цена за 1 шт.</div>
+
             </div>
         </div>
         <hr>
@@ -139,6 +144,14 @@
                             <a href="#" onclick="return false;" class="filter-link">{{ $product->count_in_pack }} шт.</a>
                         </td>
                     </tr>
+                    <tr>
+                        <td>В наличии</td>
+                        <td>
+                            <div class="isset"> {{ ($product->count > 0)? 'В наличии' : 'Нет в наличии' }} </div>
+                        </td>
+                    </tr>
+
+
                 </table>
             </div>
 
@@ -360,9 +373,11 @@
                         <img src="{{ asset(env('THEME')) }}/img/ruler-icon.png" alt="Таблица размеров">
                         <p >Таблица размеров</p>
                     </div>
+                    @if($product->count > 0)
                     <div data-id="{{ $product->id }}" data-url="{{ route('cartBy') }}" class="product-buy">
                         Добавить в корзину
                         </div>
+                        @endif
                 </div>
                 <div class="product-number">
                     <p>Звоните по телефону для обсуждения всех подробностей</p>
