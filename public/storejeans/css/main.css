@@ -81,9 +81,9 @@ header a:hover{
 }
 
 .logo img{
-	width: 130px;
+	width: 260px;
 	margin: auto;
-	-webkit-transition: 1s all;	
+	-webkit-transition: 1s all;
 	-moz-transition: 1s all;
 	-ms-transition: 1s all;	
 	-o-transition: 1s all; 
@@ -154,7 +154,7 @@ header .phone{
 /*}*/
 .search{
 	margin-top: 30px;
-	min-width: 275px;
+	min-width: 210px;
 	height: 30px;
 	position: relative;
 	border-bottom: 1px solid #fff;
@@ -1436,9 +1436,12 @@ input[id="tab-2"]:checked ~ .ruler-content .tab-2{
 	margin-bottom: 7px;
 }
 .title-img{
-	height: 300px;
+	height: 550px;
 	background: url(../img/bg1-delivery.jpg) no-repeat;
-	background-position: -140px -70px;
+	/*background-position: -140px -70px;*/
+	background-size: cover;
+	margin-top: -30px;
+	text-shadow: 2px 2px 1px rgba(0.0.0 .1);
 }
 .title-img h2{
 	margin-top: -3px;
@@ -1533,6 +1536,7 @@ input[id="tab-2"]:checked ~ .ruler-content .tab-2{
 	font-size: 0.9em;
 }
 .payments{
+	text-shadow: 2px 2px 1px rgba(0.0.0 .1);
 	background: url(../img/bg2-delivery.jpg);
 	background-position: 0 0;
 	color: #fff;
@@ -1631,6 +1635,7 @@ input[id="tab-2"]:checked ~ .ruler-content .tab-2{
 	background: url(../img/bg3-delivery.jpg) no-repeat center;
 	color: #fff;
 	text-align: center;
+    text-shadow: 2px 2px 1px rgba(0.0.0 .1);
 }
 .return-box{
 	max-width: 700px;
