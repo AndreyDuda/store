@@ -49,35 +49,44 @@ class ProductController extends SiteController
             case 'male':
                 $input['females'][0] = '1';
                 $name_cat = 'Мужская одежда';
+                $categories = ' AND females = 1';
                 break;
             case 'female':
                 $input['females'][0] = '2';
                 $name_cat = 'Женская одежда';
+                $categories = ' AND females = 2';
                 break;
             case 'bestoffer':
-                $input['sale_many'][0] = '1';
+                $input['vigoda'][0] = '1';
                 $name_cat = 'Выгодные предложения';
+                $categories = ' AND vigoda = 1';
                 break;
             case 'new':
                 $input['new'][0] = '1';
                 $name_cat = 'Новинки';
+                $categories = ' AND new = 1';
                 break;
             case 'sale_many':
                 $input['sale'][0] = '1';
                 $name_cat = 'Распродажа';
+                $categories = ' AND sale = 1';
                 break;
             case 'all':
                 $name_cat = 'Весь каталог';
+                $categories = '';
                 break;
             case '':
                 $name_cat = 'Весь каталог';
+                $categories = '';
                 break;
             case 'label':
                 $name_cat = $categories;
                 $input['label'][0] = $categories;
+                $categories = '';
             default:
                 $input['categories'][0] = $categories;
                 $name_cat = $categories;
+                $categories = '';
                 break;
         }
 
@@ -100,8 +109,7 @@ class ProductController extends SiteController
             }
        
         $products = $this->product_rep->getAll($select, $paginate, $where, $order);
-
-        $slider_p = $this->product_rep->getAll($slider_p, false, 'sale_many <> ""', false, $count_p);
+        $slider_p = $this->product_rep->getAll($slider_p, false, 'vigoda = "1"'.$categories, false, $count_p);
         $dir      = 'storejeans'.'/img/catalog';
         $images   = scandir($dir);
 
