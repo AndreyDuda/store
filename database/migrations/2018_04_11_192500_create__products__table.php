@@ -17,7 +17,8 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->integer('product_id');
             $table->string('code',255)->nullable();
-            $table->string('new',255)->nullable();
+            $table->integer('new');
+            $table->integer('vigoda');
             $table->string('title', 255)->nullable();
             $table->float('price_many')->nullable();
             $table->float('sale_many')->nullable();
