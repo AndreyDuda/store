@@ -124,7 +124,7 @@ $(document).ready(function(){
                         '<p class="cart-product-code"><span></span> </p></div></div></td><td class="font-politica">' + value.price + '<span> $</span></td>' +
                         '<td class="cart-quantity"><span><i data-minus="1" data-id="'+value.id+'" data-url="'+value.url+'" class="fa fa-minus-circle product-minus" aria-hidden="true"></i></span><p class="product-count'+value.id+'">' + value.count + ' уп.</p>'+
 						'<span><i  data-id="'+value.id+'" data-url="'+value.url+'"  class="fa fa-plus-circle pruduct-plust" aria-hidden="true"></i></span></td><td class="font-politica">' + ((value.count*parseInt(value.count_in_pack)*value.price)) + '<span> $</span></td><td><span style="font-weight: 800; cursor: pointer; color:red" data-id="'+value.id+'" id="del_prod" title="Удалить">X</span></td></tr>';
-                        total += value.count*value.price;
+                        total += ((value.count*parseInt(value.count_in_pack)*value.price));
                         count_product += 1;
                       });
                     $('.ttt tbody').append(start);

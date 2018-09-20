@@ -10,7 +10,7 @@
                     @foreach($slider_p as $product)
                         <div class="item">
                             <a href="{{ route('productOne', ['id' => $product->id ] )  }}" class="item-tovar">
-                                <div class="img-tovar">
+                                <div class="img-tovar slider-img">
                                     @if(in_array(str_replace('catalog/', '' ,$product->photo_maine.'.jpg' ), $images ))
                                         <img src="{{asset('storejeans').'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                                     @else
@@ -264,7 +264,7 @@
             @foreach($slider_p as $product)
             <div class="item">
                 <a href="{{ route('productOne', ['id' => $product->id ] )  }}" class="item-tovar">
-                    <div class="img-tovar">
+                    <div class="img-tovar slider-img">
                         @if(in_array(str_replace('catalog/', '' ,$product->photo_maine.'.jpg' ), $images ))
                             <img src="{{asset('storejeans').'/img/'. $product->photo_maine}}.jpg" alt="{{ $product->categories }}">
                         @else

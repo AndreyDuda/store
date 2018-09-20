@@ -847,11 +847,15 @@ li.category-list-active a{
 	transition: .3s all;
 }
 .img-tovar{
-	width: 100%;
+	width: 65%;
 	height: 300px;
 	background-size: cover;
 	overflow: hidden;
+	margin: 0 auto;
 	
+}
+.slider-img{
+	height: auto!important;
 }
 .img-tovar img{
 	width: 100%;

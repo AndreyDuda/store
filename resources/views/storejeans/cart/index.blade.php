@@ -119,9 +119,9 @@ $total = 0;
 					</span>
                 </td>
 <?php
-$total += $product['price'] * $product['count'];
+$total += $product['price'] * $product['count_in_pack'] * $product['count'];
 ?>
-                <td class="font-politica">{{$product['price'] * $product['count']}} <span> $</span></td>
+                <td class="font-politica">{{$product['price'] * $product['count_in_pack'] * $product['count']}} <span> $</span></td>
             </tr>
             @endforeach
         </table>
