@@ -89,12 +89,14 @@ class ImageController extends AdminController
     public function uploadImage(Request $request)
     {
         if($request->isMethod('post')){
+            $name = '';
             foreach ($request->file() as $file){
-                foreach ($file as $f){
-                    $f->move('storejeans'.'/img/catalog', $f->getClientOriginalName());
+                foreach ($file as $f) {
+                    $name = $f->getClientOriginalName();
+                    $f->move(public_path().'/storejeans'.'/img/catalog' , $name);
                 }
             }
-            dd($request->file('image'));
+            $request->file('image');
         }
         $data = [
 
