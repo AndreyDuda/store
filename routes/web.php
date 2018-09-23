@@ -35,7 +35,7 @@ Route::post('/search/{search?}', 'ProductController@search')->name('searchProduc
 
 
 Route::group(['prefix' => 'panel', 'middleware' => 'auth'], function(){
-    Route::get('/',                  'Admin\ProductController@index')->name('adminProduct');
+    Route::get('/{product?}',        'Admin\ProductController@index')->name('adminProduct');
     Route::get('/editProduct/{id?}', 'Admin\ProductController@editProduct')->name('editProduct');
     Route::post('/editProduct',      'Admin\ProductController@editProduct')->name('updateProduct');
     Route::get('/newProduct',        'Admin\ProductController@newProduct')->name('newProduct');

@@ -103,7 +103,7 @@ $(document).ready(function(){
                 datatype:'JSON',
                 success: function(data) {
 
-                    console.log(data);
+
                     var tableHead = '<tr>' +
 										'<th>Наименование товара</th>' +
 										'<th>Цена за шт.</th>' +
@@ -117,7 +117,7 @@ $(document).ready(function(){
                     $('.ttt tbody').append(tableHead);
 
                     $.each(data, function(index, value){
-                    	console.log(value.count_in_pack);
+
                     	jpg = (value.photo.trim() == 'system/no-image')? '.png':'.jpg';
                         start += '<tr><td><div class="cart-product-info"><img src="'+urlImg +  (value.photo) + jpg+'" ><div>' +
                         '<a href="#" class="cart-product-company">' + value.lable + '</a><br><a href="#" class="cart-product-title">' + value.title + '</a>' +

@@ -15,7 +15,7 @@ class CreateRequestTable extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('telephone')->nullable();
+            $table->char('telephone', 255)->nullable();
             $table->char('email',255)->nullable();
             $table->string('fio',255)->nullable();
             $table->string('country',255)->nullable();

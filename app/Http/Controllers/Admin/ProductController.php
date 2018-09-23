@@ -141,20 +141,30 @@ class ProductController extends AdminController
     }
 
 
-    public function index()
+    public function index(Request $request)
     {
-        $step     = Config::get( 'settings.paginateStep' );
-        $paginate = Config::get( 'settings.paginate' );
-        $select   = ['id', 'product_id', 'code', 'title', 'price_many', 'label'];
         $where    = false;
         $order    = false;
+        $serach   = false;
+        $step     = Config::get('settings.paginateStep');
+        $paginate = Config::get('settings.paginate');
+        $select   = ['id', 'product_id', 'code', 'title', 'price_many', 'label'];
+
+        if (!isset($request->product)) {
+            $where = false;
+        } else {
+            $where = 'code LIKE "%'.$request->product.'%"';
+            $serach = $request->product;
+
+        }
         $products = $this->product_rep->getAll($select, $paginate, $where, $order);
         $data = [
             'products' => $products,
-            'step'     => $step
+            'step' => $step,
+            'serach' => $serach
         ];
 
-        $content    = view('storejeans' . '.admin.product.index')->with($data)->render();
+        $content = view('storejeans' . '.admin.product.index')->with($data)->render();
         $this->vars = array_add($this->vars, 'content', $content);
         $metatitle = $this->setting_rep->getOne('title');
         $this->vars = array_add($this->vars, 'title', $metatitle);

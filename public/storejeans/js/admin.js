@@ -90,6 +90,69 @@ $(document).ready(function () {
         }
     });
 
+    function adminSerchP(){
+        var url = $('adminSearchP').val();
+        var urlD = $('adminDelete').val();
+        var urlE = $('adminEdit').val();
+        var urlImg = $('adminImgSystem').val();
+        var search = $('#serchCode').val();
+        if (search.length > 0) {
+            $.ajax({
+                type: 'GET',
+                url: url,
+                headers: {'X-CSRF-TOKEN': $('input[name="_token"]').val()},
+                data: {product: search},
+                datatype: 'JSON',
+                success: function (data) {
+                    var table = '';
+
+                    $('#productAdmin').empty();
+                    data = jQuery.parseJSON(data);
+
+                    for(var i = 0; i < data.data.length; i++) {
+                        table += '<tr>';
+                        table += '<td title="'+data.data[i].code+'">'+data.data[i].code+'</td>';
+                        table += '<td title="'+data.data[i].label+'">'+data.data[i].label+'</td>';
+                        table += '<td title="'+data.data[i].title+'">'+data.data[i].title+'</td>';
+                        table += '<td title="'+data.data[i].desc+'">'+data.data[i].desc+'</td>';
+                        table += '<td>' +
+                                        '<a class="delete-product" title="Удалить товар" href="'+urlD+'/id'+data.data[i].id+'">'+
+                                            '<img  style="float: right;" src="'+urlImg+'/img/delete.png" alt="" class="edit-delete">' +
+                                        '</a>'+
+                                        '<a title="Редактировать товар" href="'+urlE+'/id'+data.data[i].id+'">'+
+                                            '<img  style="float: right;" src="'+urlImg+'/img/edit.png" alt="" class="edit-delete">' +
+                                        '</a>';
+                        table += '</tr>';
+
+                        console.log(data.data[i].code);
+                    }
+                    $('#productAdmin').append(table);
+
+                    var info = '<>';
+
+
+
+
+                },
+                error: function () {
+
+                }
+            });
+        }
+    }
+
+   /* $('.content').on('keyup', '#serchCode', function(){
+       adminSerchP();
+    });
+    $('.content').on('paste', '#serchCode', function(){
+        adminSerchP();
+    });
+    $('.content').on('click', '#serchCode', function(){
+        adminSerchP();
+    });*/
+
+
+
     $('.edit-product .img-for-product').on('click','img',function(){
 
         $('.modal-edit-product').hide();
